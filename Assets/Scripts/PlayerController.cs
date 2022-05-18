@@ -7,23 +7,25 @@ using UnityEngine;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+
+
     //Line
     private LineRenderer line;
     private int linePointCount;
+    private bool canDrawLine;
 
+    //Ray
     private Ray ray;
     private RaycastHit raycastHit;
-
     
-    void Start()
+    public void Init()
     {
         line = GetComponent<LineRenderer>();
-        
+        canDrawLine = false;
     }
     void Update()
     {
-
-        if (Input.GetMouseButton(0))
+        if (canDrawLine)
         {
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out raycastHit,500f))
@@ -33,11 +35,10 @@ public class PlayerController : MonoBehaviour
                     DrawLine(raycastHit.point);
                 }
             }
-
         }
         if (Input.GetMouseButtonUp(0))
         {
-            CancelLine();
+            DrawLine(false);
         }
     }
    private void DrawLine(Vector3 _pos)
@@ -46,9 +47,17 @@ public class PlayerController : MonoBehaviour
         line.positionCount = linePointCount;
         line.SetPosition(linePointCount - 1, _pos);
     }
-   private void CancelLine()
+   public void DrawLine(bool drawLine)
     {
-        linePointCount = 0;
-        line.positionCount = 0;
+        if (drawLine)
+        {
+            canDrawLine = true;
+        }
+        else
+        {
+            canDrawLine = false;
+            linePointCount = 0;
+            line.positionCount = 0;
+        }
     }
 }

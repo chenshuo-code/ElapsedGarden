@@ -7,8 +7,9 @@ using UnityEngine;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
-
-
+    public bool IsSpend;
+    public float TimeShipping; //Time on way to return back
+    public PlantBehaviour Plant;
     //Line
     private LineRenderer line;
     private int linePointCount;
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             DrawLine(false);
+            IsSpend = false;
         }
     }
    private void DrawLine(Vector3 _pos)

@@ -4,35 +4,44 @@ using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
-    [HideInInspector]public float GameTime; //Time from game start
+    [HideInInspector]public float GameTime; //Total game time from begin of the game
 
-    public float CycleTime; // Second time for one cycle
-
+    public float TimeScale; //Time scale to active a game time
+    public float CycleScale; // count of action for one cycle
+    
     public event CallBack EventNewCycle;
+    public event CallBack EventTimePass;
 
+    [HideInInspector] public float CycleCount; //Cycle count from Game Begin
+
+    private float  counter;
     private float timer;
-    private float cycleCount; //Cycle count from Game Begin
     public void Init()
     {
+        CycleCount = 0;
+        counter = 1;
         GameTime = 0;
-
-        EventNewCycle += OnCyclePassed;
+        timer = 0;
     }
-
     private void Update()
     {
-        GameTime += Time.deltaTime;
         timer += Time.deltaTime;
-        if (timer >= CycleTime)
+        if (timer>=TimeScale)
         {
             timer = 0;
-            if (EventNewCycle != null) EventNewCycle();
+            GameTime++;
+            if (EventTimePass != null) EventTimePass();
         }
     }
-
-    private void OnCyclePassed()
+    public  void OnCyclePassed()
     {
-        cycleCount++;
+        if (EventNewCycle != null) EventNewCycle();
+        counter++;
+        if (counter>=CycleScale)
+        {
+            counter = 0;
+            CycleCount++;
+        }
     }
 
 }

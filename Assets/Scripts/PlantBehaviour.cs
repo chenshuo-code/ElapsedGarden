@@ -9,6 +9,9 @@ public class PlantBehaviour : MonoBehaviour
 
     private bool isAlive; //If this plant is activate in alive
     private Material material;
+    private MeshFilter mesh;
+    private Mesh baseState;
+    public Mesh finalState;
     private PlayerController playerController; //Get player controller
     private FirstTreeBehaviour firstTree; //Get first tree
     private void Start()
@@ -19,6 +22,8 @@ public class PlantBehaviour : MonoBehaviour
         firstTree = GameManager.Instance.FirstTreeBehaviour;
         material = transform.GetComponent<Renderer>().material;
         material.color = Color.grey;
+        mesh = transform.GetComponent<MeshFilter>();
+        baseState = transform.GetComponent<MeshFilter>().mesh;
 
 
     }
@@ -37,6 +42,8 @@ public class PlantBehaviour : MonoBehaviour
         isAlive = true;
         material.color = AliveColor;
         GameManager.Instance.CountPlantActivate(1);
+        mesh.mesh = finalState;
+        
     }
     private void OnMouseDown()
     {
@@ -56,6 +63,7 @@ public class PlantBehaviour : MonoBehaviour
         isAlive = false;
         material.color = Color.gray;
         GameManager.Instance.CountPlantActivate(-1);
+        mesh.mesh = baseState;
     }
 
 }

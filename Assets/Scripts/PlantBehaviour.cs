@@ -8,11 +8,13 @@ public class PlantBehaviour : MonoBehaviour
 {
     public float MaxLifeTime; //Max time cost of this plant
     public float LifeDeductTime; //Time deducte with game time passed
+    public float LifeAccumulateSpeed; //Speed accumulate life time
     public Color AliveColor;
 
-    private float lifeTime;
+    private float lifeTime; 
     private bool isAlive; //If this plant is activate in alive
-    private bool canReborn; //If this plant's life is 0, we can reborn it's life
+    private bool isLifeMax;
+
     private Material material;
     private PlayerController playerController; //Get player controller
     private FirstTreeBehaviour firstTree; //Get first tree
@@ -27,7 +29,7 @@ public class PlantBehaviour : MonoBehaviour
     private void Start()
     {
         isAlive = false;
-        canReborn = true;
+        isLifeMax = false;
        
         playerController = GameManager.Instance.PlayerController;
         firstTree = GameManager.Instance.FirstTreeBehaviour;
@@ -52,7 +54,7 @@ public class PlantBehaviour : MonoBehaviour
         if (isAlive) 
         {
             lifeBar.fillAmount = lifeTime * lifeDisplayRate;
-            LifeNum.text = lifeTime.ToString();
+            LifeNum.text =  lifeTime.ToString();
         } 
     }
     #region Interaction player
@@ -72,18 +74,28 @@ public class PlantBehaviour : MonoBehaviour
         material.color = AliveColor; //Active Color Plant
         canvas.gameObject.SetActive(true); //Show life bar
 
-        //Give lifeTime to Max
-        if (canReborn)
-        {
-            lifeTime = MaxLifeTime;
-            canReborn = false;
-        }
-
-
         GameManager.Instance.CountPlantActivate(1); 
         timeManager.OnCyclePassed(); //cycle count
         
     }
+
+    private void OnMouseOver()
+    {
+        if (isAlive&&!isLifeMax&&playerController.PlayerState==PlayerState.OnSpend)
+        {
+
+            lifeTime += Time.deltaTime * LifeAccumulateSpeed;
+
+            if (lifeTime >= MaxLifeTime) isLifeMax = true;
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        
+    }
+
+
     private void OnMouseDown()
     {
         if (isAlive)
@@ -92,11 +104,12 @@ public class PlantBehaviour : MonoBehaviour
         }
     }
 
+
     private void ReturnTime()
     {
         playerController.PlayerState = PlayerState.OnReturn;
         playerController.DrawLine(true);
-        playerController.TimeShipping += MaxLifeTime;
+        playerController.TimeShipping += lifeTime;
         playerController.Plant = this;
     }
     #endregion
@@ -106,10 +119,9 @@ public class PlantBehaviour : MonoBehaviour
         if (isAlive)
         {
             lifeTime -= LifeDeductTime;
-            if (lifeTime <= 0)
+            if (lifeTime < 0)
             {
                 DeactivatePlant();
-                canReborn = true;
             }
         }
     }
@@ -119,6 +131,7 @@ public class PlantBehaviour : MonoBehaviour
     {
         isAlive = false;
         material.color = Color.gray;
+        lifeTime = 0;
         GameManager.Instance.CountPlantActivate(-1);
         canvas.gameObject.SetActive(false); //disable life bar
     }

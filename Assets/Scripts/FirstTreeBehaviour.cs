@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class FirstTreeBehaviour : MonoBehaviour
 {
@@ -17,16 +18,19 @@ public class FirstTreeBehaviour : MonoBehaviour
 
 
     //UI
+    private Transform canvas;
     private Image lifeBar;
     private float lifeDisplayRate;
+    private TMP_Text LifeNum;
+
     public void Init()
     {
         playerController = GameManager.Instance.PlayerController;
         timeManager = GameManager.Instance.TimeManager;
 
-        TotalLifeTime = 100;
-
+        canvas = transform.Find("Canvas");
         lifeBar = transform.Find("Canvas/LifeBar").GetComponent<Image>();
+        LifeNum = transform.Find("Canvas/LifeNum").GetComponent<TMP_Text>();
         lifeDisplayRate = 1 / TotalLifeTime;
 
         timeManager.EventNewCycle += OnCyclePassed;
@@ -37,6 +41,7 @@ public class FirstTreeBehaviour : MonoBehaviour
     private void Update()
     {
         lifeBar.fillAmount = TotalLifeTime * lifeDisplayRate;
+        LifeNum.text = TotalLifeTime.ToString();
         if (TotalLifeTime <= 0)
         {
             GameManager.Instance.GameOver();

@@ -6,7 +6,11 @@ using UnityEngine.UI;
 public class FirstTreeBehaviour : MonoBehaviour
 {
     public float TotalLifeTime; //Total life time for player
-    public float TimeDeductCycle; //Time deduct in each cycle
+    public float LifeDeductCycle; //Time deduct in each cycle
+    public float LifeDeductTime; //Life deduct when time passed
+
+    public bool ActiveDeductCycle;
+    public bool ActiveDeductTime;
 
     private PlayerController playerController; //Get player controller
     private TimeManager timeManager;
@@ -26,6 +30,7 @@ public class FirstTreeBehaviour : MonoBehaviour
         lifeDisplayRate = 1 / TotalLifeTime;
 
         timeManager.EventNewCycle += OnCyclePassed;
+        timeManager.EventTimePass += OnTimePassed;
         
     }
 
@@ -48,24 +53,31 @@ public class FirstTreeBehaviour : MonoBehaviour
 
     private void SpendTime()
     {
-        playerController.IsSpend = true;
+        playerController.PlayerState = PlayerState.OnSpend;
         playerController.DrawLine(true);
     }
     private void ReturnTime()
     {
-        if (!playerController.IsSpend && playerController.Plant!=null)
+        if (playerController.PlayerState == PlayerState.OnReturn && playerController.Plant!=null)
         {
             playerController.DrawLine(false);
             playerController.Plant.DeactivatePlant();
             TotalLifeTime += playerController.TimeShipping;
             playerController.TimeShipping = 0;
+            playerController.PlayerState = PlayerState.OnStay;
+
+            timeManager.OnCyclePassed();
             print(TotalLifeTime);
         }
     }
 
     private void OnCyclePassed()
     {
-        TotalLifeTime -= TimeDeductCycle;
+        if (ActiveDeductCycle) TotalLifeTime -= LifeDeductCycle;
+    }
+    private void OnTimePassed()
+    {
+        if (ActiveDeductTime) TotalLifeTime -= LifeDeductTime;
     }
     public void GivingTime(float timeGiven)
     {

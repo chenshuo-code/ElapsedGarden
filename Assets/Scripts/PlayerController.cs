@@ -3,11 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
+/// player state enum
+/// </summary>
+public enum PlayerState 
+{
+    OnSpend,
+    OnReturn,
+    OnStay,
+}
+
+/// <summary>
 /// Player Behavier controller
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
-    public bool IsSpend;
+    [HideInInspector]
+    public PlayerState PlayerState;
     public float TimeShipping; //Time on way to return back
     public PlantBehaviour Plant;
     //Line
@@ -23,6 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         line = GetComponent<LineRenderer>();
         canDrawLine = false;
+        PlayerState = PlayerState.OnStay;
     }
     void Update()
     {
@@ -40,7 +52,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             DrawLine(false);
-            IsSpend = false;
+            PlayerState = PlayerState.OnStay;
         }
     }
    private void DrawLine(Vector3 _pos)

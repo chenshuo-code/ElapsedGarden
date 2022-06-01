@@ -11,17 +11,13 @@ public class PlantBehaviour : MonoBehaviour
     public Color AliveColor;
 
     private float lifeTime;
-<<<<<<< Updated upstream
-    private bool isAlive; //If this plant is activate in alive
-    private bool canReborn; //If this plant's life is 0, we can reborn it's life
-=======
+
     private float deltaTime; // Delta time cumule during life giving
     private bool isAlive; //If this plant is activate in alive
     private bool isLifeMax;
     private bool canActivate;
     private bool canDeactivate;
 
->>>>>>> Stashed changes
     private Material material;
     private MeshFilter mesh;
     private Mesh baseState;
@@ -39,16 +35,12 @@ public class PlantBehaviour : MonoBehaviour
     private void Start()
     {
         isAlive = false;
-<<<<<<< Updated upstream
-        canReborn = true;
-       
-=======
         isLifeMax = false;
         canActivate = false;
         canDeactivate = false;
 
 
->>>>>>> Stashed changes
+
         playerController = GameManager.Instance.PlayerController;
         firstTree = GameManager.Instance.FirstTreeBehaviour;
         timeManager = GameManager.Instance.TimeManager;

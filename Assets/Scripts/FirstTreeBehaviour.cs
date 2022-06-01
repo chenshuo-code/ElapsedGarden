@@ -51,29 +51,11 @@ public class FirstTreeBehaviour : MonoBehaviour
     {
         SpendTime();
     }
-    private void OnMouseEnter()
-    {
-        ReturnTime();
-    }
 
     private void SpendTime()
     {
         playerController.PlayerState = PlayerState.OnSpend;
         playerController.DrawLine(true);
-    }
-    private void ReturnTime()
-    {
-        if (playerController.PlayerState == PlayerState.OnReturn && playerController.Plant!=null)
-        {
-            playerController.DrawLine(false);
-            playerController.Plant.DeactivatePlant();
-            TotalLifeTime += playerController.TimeShipping;
-            playerController.TimeShipping = 0;
-            playerController.PlayerState = PlayerState.OnStay;
-
-            timeManager.OnCyclePassed();
-            print(TotalLifeTime);
-        }
     }
 
     private void OnCyclePassed()
@@ -87,6 +69,10 @@ public class FirstTreeBehaviour : MonoBehaviour
     public void GivingTime(float timeGiven)
     {
         TotalLifeTime -= timeGiven;
+    }
+    public void ReceiveTime(float timeReceive)
+    {
+        TotalLifeTime += timeReceive;
     }
     
 }

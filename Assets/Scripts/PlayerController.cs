@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public PlayerState PlayerState;
     public float TimeShipping; //Time on way to return back
-    public PlantBehaviour Plant;
+  
     //Line
     private LineRenderer line;
     private int linePointCount;
@@ -29,7 +29,9 @@ public class PlayerController : MonoBehaviour
     //Ray
     private Ray ray;
     private RaycastHit raycastHit;
-    
+
+    private Vector3 savePointLocation;
+
     public void Init()
     {
         line = GetComponent<LineRenderer>();
@@ -38,10 +40,12 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        if (canDrawLine)
+        //Raycast test
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out raycastHit, 500f))
         {
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out raycastHit,500f))
+            //Draw line
+            if (canDrawLine) 
             {
                 if (raycastHit.collider.CompareTag("Ground"))
                 {
@@ -49,10 +53,17 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        if (Input.GetMouseButtonUp(0))
+
+
+        if (Input.GetMouseButtonUp(0)|| Input.GetMouseButtonUp(1)) //On mouse up, we cancel the draw line
         {
             DrawLine(false);
             PlayerState = PlayerState.OnStay;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+
         }
     }
    private void DrawLine(Vector3 _pos)

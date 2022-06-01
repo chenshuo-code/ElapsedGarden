@@ -8,6 +8,7 @@ public class PlantBehaviour : MonoBehaviour
 {
     public float MaxLifeTime; //Max time cost of this plant
     public float LifeDeductTime; //Time deducte with game time passed
+    public float LifeAccumulateSpeed;
     public Color AliveColor;
 
     private float lifeTime;
@@ -68,11 +69,6 @@ public class PlantBehaviour : MonoBehaviour
 
         if (!isAlive)
         {
-<<<<<<< Updated upstream
-            lifeBar.fillAmount = lifeTime * lifeDisplayRate;
-            LifeNum.text = lifeTime.ToString();
-        } 
-=======
             //Activating plant
             if (canActivate)
             {
@@ -103,7 +99,6 @@ public class PlantBehaviour : MonoBehaviour
             }
         }
 
->>>>>>> Stashed changes
     }
     #region Interaction player
     private void OnMouseEnter()
@@ -123,25 +118,7 @@ public class PlantBehaviour : MonoBehaviour
             }
         }
     }
-<<<<<<< Updated upstream
 
-    private void ActivatePlant()
-    {
-        playerController.DrawLine(false); // Cancel draw line
-        firstTree.GivingTime(MaxLifeTime); // Minus time in FirstTree
-        isAlive = true;
-
-        material.color = AliveColor;
-        GameManager.Instance.CountPlantActivate(1);
-        mesh.mesh = finalState;
-
-       
-        //Give lifeTime to Max
-        if (canReborn)
-        {
-            lifeTime = MaxLifeTime;
-            canReborn = false;
-=======
     private void OnMouseOver()
     {
         if (isAlive)
@@ -154,38 +131,21 @@ public class PlantBehaviour : MonoBehaviour
             {
                 ReturningTime();
             }
->>>>>>> Stashed changes
         }
-
-<<<<<<< Updated upstream
-
-        
-        timeManager.OnCyclePassed(); //cycle count
-        
     }
-    private void OnMouseDown()
-=======
+
     private  void OnMouseExit()
     {
         canActivate = false;
         canDeactivate = false;
     }
     private void ActivatePlant()
->>>>>>> Stashed changes
     {
         firstTree.GivingTime(MaxLifeTime); // Minus time in FirstTree
         isAlive = true;
         canActivate = false; //stop cumulate activate rate
         material.color = AliveColor; //Active Color 
 
-<<<<<<< Updated upstream
-    private void ReturnTime()
-    {
-        playerController.PlayerState = PlayerState.OnReturn;
-        playerController.DrawLine(true);
-        playerController.TimeShipping += MaxLifeTime;
-        playerController.Plant = this;
-=======
         GameManager.Instance.CountPlantActivate(1); 
         timeManager.OnCyclePassed(); //cycle count
         
@@ -196,7 +156,6 @@ public class PlantBehaviour : MonoBehaviour
         firstTree.ReceiveTime(MaxLifeTime);
         canDeactivate = false;
         DeactivatePlant();
->>>>>>> Stashed changes
     }
     #endregion
 
@@ -208,7 +167,6 @@ public class PlantBehaviour : MonoBehaviour
             if (lifeTime <= 0)
             {
                 DeactivatePlant();
-                canReborn = true;
             }
         }
     }
@@ -231,17 +189,10 @@ public class PlantBehaviour : MonoBehaviour
     {
         isAlive = false;
         material.color = Color.gray;
-<<<<<<< Updated upstream
-        GameManager.Instance.CountPlantActivate(-1);
 
-        mesh.mesh = baseState;
-
-        canvas.gameObject.SetActive(false); //disable life bar
-=======
         lifeTime = 0;
         isLifeMax = false;
         GameManager.Instance.CountPlantActivate(-1);
->>>>>>> Stashed changes
     }
     #endregion
 

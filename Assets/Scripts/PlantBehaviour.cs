@@ -18,6 +18,7 @@ public class PlantBehaviour : MonoBehaviour
     private bool isLifeMax;
     private bool canActivate;
     private bool canDeactivate;
+    private bool canStartFrom; //Can player continue start from this plant
 
     //Components
     private Color AliveColor;
@@ -42,7 +43,7 @@ public class PlantBehaviour : MonoBehaviour
         isLifeMax = false;
         canActivate = false;
         canDeactivate = false;
-
+        canStartFrom = false;
 
 
         playerController = GameManager.Instance.PlayerController;
@@ -113,6 +114,10 @@ public class PlantBehaviour : MonoBehaviour
             {
                 canActivate = true;
             }
+            else
+            {
+                canStartFrom = true;
+            }
         }
         else if (Input.GetMouseButton(1))
         {
@@ -125,7 +130,7 @@ public class PlantBehaviour : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (isAlive)
+        if (isAlive && canStartFrom)
         {
             if (Input.GetMouseButton(0))
             {
@@ -178,13 +183,13 @@ public class PlantBehaviour : MonoBehaviour
     private void SpendingTime()
     {
         playerController.PlayerState = PlayerState.OnSpend;
-        playerController.DrawLine(true);
+        playerController.ActivateDrawLine(true);
     }
     private void ReturningTime()
     {
         canDeactivate = true;
         playerController.PlayerState = PlayerState.OnReturn;
-        playerController.DrawLine(true);
+        playerController.ActivateDrawLine(true);
     }
 
     #region Functions public
@@ -194,10 +199,14 @@ public class PlantBehaviour : MonoBehaviour
     {
         isAlive = false;
         material.color = Color.gray;
-
+        canStartFrom = false;
         lifeTime = 0;
         isLifeMax = false;
         GameManager.Instance.CountPlantActivate(-1);
+    }
+    public void DeactivateStartFrom()
+    {
+        canStartFrom = false;
     }
     #endregion
 

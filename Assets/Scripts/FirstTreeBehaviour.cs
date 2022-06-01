@@ -55,7 +55,7 @@ public class FirstTreeBehaviour : MonoBehaviour
     private void SpendTime()
     {
         playerController.PlayerState = PlayerState.OnSpend;
-        playerController.DrawLine(true);
+        playerController.ActivateDrawLine(true);
     }
 
     private void OnCyclePassed()

@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0)|| Input.GetMouseButtonUp(1)) //On mouse up, we cancel the draw line
         {
-            DrawLine(false);
+            ActivateDrawLine(false);
             PlayerState = PlayerState.OnStay;
         }
 
@@ -66,13 +66,19 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-   private void DrawLine(Vector3 _pos)
+    private void DrawLine(Vector3 _pos)
     {
         linePointCount++;
         line.positionCount = linePointCount;
         line.SetPosition(linePointCount - 1, _pos);
     }
-   public void DrawLine(bool drawLine)
+    //Efface all line when we restart a match
+    public void EffaceLine()
+    {
+        linePointCount = 0;
+        line.positionCount = 0;
+    }
+    public void ActivateDrawLine(bool drawLine)
     {
         if (drawLine)
         {
@@ -81,8 +87,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             canDrawLine = false;
-            linePointCount = 0;
-            line.positionCount = 0;
         }
     }
 }

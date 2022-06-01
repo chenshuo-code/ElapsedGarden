@@ -9,7 +9,7 @@ public class PlantBehaviour : MonoBehaviour
     public float MaxLifeTime; //Max time cost of this plant
     public float LifeDeductTime; //Time deducte with game time passed
     public float LifeAccumulateSpeed;
-    public Color AliveColor;
+    public Mesh meshFinal;
 
     private float lifeTime;
 
@@ -19,10 +19,13 @@ public class PlantBehaviour : MonoBehaviour
     private bool canActivate;
     private bool canDeactivate;
 
+    //Components
+    private Color AliveColor;
     private Material material;
-    private MeshFilter mesh;
-    private Mesh baseState;
-    public Mesh finalState;
+    private MeshFilter meshFilter;
+    private Mesh meshBase;
+
+    //Script class
     private PlayerController playerController; //Get player controller
     private FirstTreeBehaviour firstTree; //Get first tree
     private TimeManager timeManager;//get time manager
@@ -51,9 +54,10 @@ public class PlantBehaviour : MonoBehaviour
         lifeTime = 0;
 
         material = transform.GetComponent<Renderer>().material;
+        AliveColor = material.color;
         material.color = Color.grey;
-        mesh = transform.GetComponent<MeshFilter>();
-        baseState = transform.GetComponent<MeshFilter>().mesh;
+        meshFilter = transform.GetComponent<MeshFilter>();
+        meshBase = meshFilter.mesh;
 
         canvas = transform.Find("Canvas");
         lifeBar = transform.Find("Canvas/LifeBar").GetComponent<Image>();
@@ -145,6 +149,7 @@ public class PlantBehaviour : MonoBehaviour
         isAlive = true;
         canActivate = false; //stop cumulate activate rate
         material.color = AliveColor; //Active Color 
+        meshFilter.mesh = meshFinal;
 
         GameManager.Instance.CountPlantActivate(1); 
         timeManager.OnCyclePassed(); //cycle count

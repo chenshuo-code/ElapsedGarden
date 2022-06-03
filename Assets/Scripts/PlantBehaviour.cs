@@ -116,7 +116,10 @@ public class PlantBehaviour : MonoBehaviour
             }
             else
             {
-                canStartFrom = true;
+                if (playerController.PlayerState == PlayerState.OnSpend)
+                {
+                    canStartFrom = true;
+                }
             }
         }
         else if (Input.GetMouseButton(1))
@@ -135,6 +138,7 @@ public class PlantBehaviour : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 SpendingTime();
+                print("spending");
             }
             if (Input.GetMouseButton(1))
             {
@@ -156,6 +160,7 @@ public class PlantBehaviour : MonoBehaviour
         material.color = AliveColor; //Active Color 
         meshFilter.mesh = meshFinal;
 
+        canStartFrom = true;
         GameManager.Instance.CountPlantActivate(1); 
         timeManager.OnCyclePassed(); //cycle count
         

@@ -2109,7 +2109,7 @@ GameObject:
   - component: {fileID: 1382646457}
   - component: {fileID: 1382646456}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: CheckPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2127,7 +2127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f240c02ebabccb4a8bb9fb582832c80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TreeMesh: {fileID: 4300000, guid: e5c361e80ae0ecb488009b4bf09bb2fc, type: 3}
+  TreeMesh: {fileID: 4300000, guid: afd700edd33134476b32c2af67400165, type: 3}
   RewardTime: 50
 --- !u!65 &1382646457
 BoxCollider:
@@ -2162,7 +2162,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4eaaa3032586832468e97a6452e498a4, type: 2}
+  - {fileID: 2100000, guid: d41a8bca790345f49b3ae205465ff2f8, type: 2}
+  - {fileID: 2100000, guid: d07dc9a550022a74792d211f343e0b16, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

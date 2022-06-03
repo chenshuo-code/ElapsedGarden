@@ -5,6 +5,7 @@ using UnityEngine;
 public class CheckPoint : MonoBehaviour
 {
     public Mesh TreeMesh;
+    public float RewardTime;
 
     private bool isActive;
 
@@ -45,7 +46,7 @@ public class CheckPoint : MonoBehaviour
     {
         isActive = true;
         meshFilter.mesh = TreeMesh;
-        firstTree.ReceiveTime(20);
+        firstTree.ReceiveTime(RewardTime);
         ResetTrace();
     }
     private void ResetTrace()

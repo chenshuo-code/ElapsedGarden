@@ -3,13 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
+/// player state enum
+/// </summary>
+public enum PlayerState 
+{
+    OnSpend,
+    OnReturn,
+    OnStay,
+}
+
+/// <summary>
 /// Player Behavier controller
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
-    public bool IsSpend;
+    [HideInInspector]
+    public PlayerState PlayerState;
     public float TimeShipping; //Time on way to return back
-    public PlantBehaviour Plant;
+  
     //Line
     private LineRenderer line;
     private int linePointCount;
@@ -18,18 +29,23 @@ public class PlayerController : MonoBehaviour
     //Ray
     private Ray ray;
     private RaycastHit raycastHit;
-    
+
+    private Vector3 savePointLocation;
+
     public void Init()
     {
         line = GetComponent<LineRenderer>();
         canDrawLine = false;
+        PlayerState = PlayerState.OnStay;
     }
     void Update()
     {
-        if (canDrawLine)
+        //Raycast test
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out raycastHit, 500f))
         {
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out raycastHit,500f))
+            //Draw line
+            if (canDrawLine) 
             {
                 if (raycastHit.collider.CompareTag("Ground"))
                 {
@@ -37,19 +53,32 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        if (Input.GetMouseButtonUp(0))
+
+
+        if (Input.GetMouseButtonUp(0)|| Input.GetMouseButtonUp(1)) //On mouse up, we cancel the draw line
         {
-            DrawLine(false);
-            IsSpend = false;
+            ActivateDrawLine(false);
+            PlayerState = PlayerState.OnStay;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+
         }
     }
-   private void DrawLine(Vector3 _pos)
+    private void DrawLine(Vector3 _pos)
     {
         linePointCount++;
         line.positionCount = linePointCount;
         line.SetPosition(linePointCount - 1, _pos);
     }
-   public void DrawLine(bool drawLine)
+    //Efface all line when we restart a match
+    public void EffaceLine()
+    {
+        linePointCount = 0;
+        line.positionCount = 0;
+    }
+    public void ActivateDrawLine(bool drawLine)
     {
         if (drawLine)
         {
@@ -58,8 +87,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             canDrawLine = false;
-            linePointCount = 0;
-            line.positionCount = 0;
         }
     }
 }

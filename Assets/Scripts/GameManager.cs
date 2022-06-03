@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public FirstTreeBehaviour FirstTreeBehaviour;
     [HideInInspector] public TimeManager TimeManager;
     [HideInInspector] public UIManager UIManager;
+    [HideInInspector] public  PlantBehaviour[] Plants;
 
-    private PlantBehaviour[] Plants;
     private float deactivatePlantsCount;
 
     private void Awake()

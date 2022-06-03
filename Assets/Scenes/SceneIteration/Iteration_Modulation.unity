@@ -1218,6 +1218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TreeMesh: {fileID: 4300000, guid: e5c361e80ae0ecb488009b4bf09bb2fc, type: 3}
+  RewardTime: 50
 --- !u!65 &843350342
 BoxCollider:
   m_ObjectHideFlags: 0

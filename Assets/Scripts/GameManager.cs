@@ -10,40 +10,55 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public FirstTreeBehaviour FirstTreeBehaviour;
     [HideInInspector] public TimeManager TimeManager;
     [HideInInspector] public UIManager UIManager;
-    [HideInInspector] public  PlantBehaviour[] Plants;
+    [HideInInspector] public GuideFlux GuideFlux;
 
-    private float deactivatePlantsCount;
+    [HideInInspector] public  List<PlantBehaviour> ListPlantsActive; //list of active plants from the last check point
 
     private void Awake()
     {
         Instance = this;
 
+        //Init instance managers
         TimeManager = FindObjectOfType<TimeManager>();
         TimeManager.Init();
         UIManager = FindObjectOfType<UIManager>();
         UIManager.Init();
         PlayerController = FindObjectOfType<PlayerController>();
         PlayerController.Init();
+        GuideFlux = FindObjectOfType<GuideFlux>();
+        GuideFlux.Init();
         FirstTreeBehaviour = FindObjectOfType<FirstTreeBehaviour>();
         FirstTreeBehaviour.Init();
 
-        Plants = FindObjectsOfType<PlantBehaviour>();
-        deactivatePlantsCount = Plants.Length;
 
+        ListPlantsActive = new List<PlantBehaviour>();
     }
-    public void CountPlantActivate(float plantCount)
+    public void AddPlantActive(PlantBehaviour plant)
     {
-        deactivatePlantsCount -= plantCount;
-        if (deactivatePlantsCount <= 0) GameWin();
+        ListPlantsActive.Add(plant);
     }
+
+    /// <summary>
+    /// Call on player is run out of flux
+    /// </summary>
     public void GameOver()
     {
-        UIManager.GameOver();
-        Time.timeScale = 0;
+        foreach (PlantBehaviour plant in ListPlantsActive)
+        {
+            plant.DeactivatePlant();
+        }
+        GuideFlux.EffaceLine();
+        GuideFlux.TeleportToMove(FirstTreeBehaviour.transform.position); // Have to change to the last check point
+        FirstTreeBehaviour.RefreshFlux();
     }
-    public void GameWin()
+
+    /// <summary>
+    /// Call on player arrive the check point
+    /// </summary>
+    public void CheckGame()
     {
-        UIManager.GameWin();
-        Time.timeScale = 0;
+        ListPlantsActive.Clear();
+        GuideFlux.EffaceLine();
+        FirstTreeBehaviour.RefreshFlux();
     }
 }

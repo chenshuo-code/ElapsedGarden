@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     private Transform gameOver;
 
     private TMP_Text gameTimeCount;
-    private TMP_Text gameCycleCount;
+
     private TimeManager timeManager;
     public void Init()
     {
@@ -21,7 +21,6 @@ public class UIManager : MonoBehaviour
 
         inGameCanvas = transform.Find("InGameCanvas");
         gameTimeCount = inGameCanvas.Find("GameTimeCount").GetComponent<TMP_Text>();
-        gameCycleCount = inGameCanvas.Find("GameCycleCount").GetComponent<TMP_Text>();
 
         afterGameCanvas = transform.Find("AfterGameCanvas");
         gameWin = afterGameCanvas.Find("GameWin");
@@ -29,16 +28,11 @@ public class UIManager : MonoBehaviour
 
         afterGameCanvas.gameObject.SetActive(false);
 
-        timeManager.EventNewCycle += ShowGameCycle;
-        ShowGameCycle();
         timeManager.EventTimePass += ShowGameTime;
         ShowGameTime();
     }
 
-    private void ShowGameCycle()
-    {
-        gameCycleCount.text = timeManager.CycleCount.ToString();
-    } 
+
     private void ShowGameTime()
     {
         gameTimeCount.text = timeManager.GameTime.ToString();

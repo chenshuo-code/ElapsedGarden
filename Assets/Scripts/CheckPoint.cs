@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Check point, for functions launche a round
+/// </summary>
 public class CheckPoint : MonoBehaviour
 {
     public Mesh TreeMesh;
-    public float RewardTime;
+    public float RewardFlux;
 
     private bool isActive;
 
-    private PlayerController playerController;
+    private GuideFlux guideFlux;
     private FirstTreeBehaviour firstTree;
 
     private MeshFilter meshFilter;
@@ -18,48 +21,33 @@ public class CheckPoint : MonoBehaviour
     {
         isActive = false;
 
-        playerController = GameManager.Instance.PlayerController;
+        guideFlux = GameManager.Instance.GuideFlux;
         firstTree = GameManager.Instance.FirstTreeBehaviour;
 
         meshFilter = transform.GetComponent<MeshFilter>();
 
     }
 
-    private void OnMouseEnter()
+    private void OnTriggerEnter(Collider other)
     {
-        if (Input.GetMouseButton(0))
+        if (other.gameObject.CompareTag("GuideFlux"))
         {
-            if (playerController.PlayerState == PlayerState.OnSpend && !isActive)
-            {
-                ActiveCheckPoint();
-            }
+            ActiveCheckPoint();
         }
     }
+
     private void OnMouseDown()
     {
         if (isActive)
         {
-            SpendingTime();
+            guideFlux.TeleportToMove(this.transform.position);
         }
     }
     private void ActiveCheckPoint()
     {
         isActive = true;
         meshFilter.mesh = TreeMesh;
-        firstTree.ReceiveTime(RewardTime);
-        ResetTrace();
-    }
-    private void ResetTrace()
-    {
-        playerController.EffaceLine();
-        for (int i = 0; i < GameManager.Instance.Plants.Length; i++)
-        {
-            GameManager.Instance.Plants[i].DeactivateStartFrom();
-        }
-    }
-    private void SpendingTime()
-    {
-        playerController.PlayerState = PlayerState.OnSpend;
-        playerController.ActivateDrawLine(true);
+        firstTree.IncreaseMaxFlux(RewardFlux); // To be test
+        GameManager.Instance.CheckGame();
     }
 }

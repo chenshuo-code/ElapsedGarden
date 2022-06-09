@@ -6,16 +6,14 @@ using TMPro;
 
 public class FirstTreeBehaviour : MonoBehaviour
 {
-    public float TotalLifeTime; //Total life time for player
-    public float LifeDeductCycle; //Time deduct in each cycle
-    public float LifeDeductTime; //Life deduct when time passed
+    public float MaxFlux; //
+    public float LifeDeductByTime; //Life deduct when time passed
+    public bool ActiveDeductByTime;
 
-    public bool ActiveDeductCycle;
-    public bool ActiveDeductTime;
-
-    private PlayerController playerController; //Get player controller
     private TimeManager timeManager;
+    private GuideFlux guideFlux;
 
+    private float totalFlux; //Flux of player
 
     //UI
     private Transform canvas;
@@ -25,54 +23,84 @@ public class FirstTreeBehaviour : MonoBehaviour
 
     public void Init()
     {
-        playerController = GameManager.Instance.PlayerController;
         timeManager = GameManager.Instance.TimeManager;
+        guideFlux = GameManager.Instance.GuideFlux;
 
         canvas = transform.Find("Canvas");
         lifeBar = transform.Find("Canvas/LifeBar").GetComponent<Image>();
         LifeNum = transform.Find("Canvas/LifeNum").GetComponent<TMP_Text>();
-        lifeDisplayRate = 1 / TotalLifeTime;
 
-        timeManager.EventNewCycle += OnCyclePassed;
+        lifeDisplayRate = 1 / MaxFlux;
+
+        totalFlux = MaxFlux;
+
         timeManager.EventTimePass += OnTimePassed;
-        
     }
 
     private void Update()
     {
-        lifeBar.fillAmount = TotalLifeTime * lifeDisplayRate;
-        LifeNum.text = TotalLifeTime.ToString();
-        if (TotalLifeTime <= 0)
+        //ShowUI
+        lifeBar.fillAmount = totalFlux * lifeDisplayRate;
+        LifeNum.text = totalFlux.ToString();
+
+    }
+
+    private void OnMouseDown()
+    {
+        ProvideFlux();
+    }
+
+    /// <summary>
+    /// Start provide flux from the first Tree
+    /// </summary>
+    private void ProvideFlux()
+    {
+        guideFlux.TeleportToMove(this.transform.position);
+    }
+
+    private void OnTimePassed()
+    {
+        if (ActiveDeductByTime) totalFlux -= LifeDeductByTime;
+    }
+
+    #region Public, Control flux
+
+    /// <summary>
+    /// Reduce flux of first tree
+    /// </summary>
+    /// <param name="fluxGiven">Flux to spend</param>
+    public void ReduceFlux(float fluxGiven)
+    {
+        totalFlux -= fluxGiven;
+        if (totalFlux <= 0)
         {
             GameManager.Instance.GameOver();
         }
     }
-    private void OnMouseDown()
+    /// <summary>
+    /// Add flux of first tree
+    /// </summary>
+    /// <param name="fluxReceive">Flux to receive</param>
+    public void AddFlux(float fluxReceive)
     {
-        SpendTime();
+        totalFlux += fluxReceive;
+        if (totalFlux >= MaxFlux)
+        {
+            totalFlux = MaxFlux;
+        }
+    }
+    /// <summary>
+    /// Increase limit of max flux
+    /// </summary>
+    /// <param name="fluxIncrease">Flux to increased</param>
+    public void IncreaseMaxFlux(float fluxIncrease)
+    {
+        MaxFlux += fluxIncrease;
     }
 
-    private void SpendTime()
+    public void RefreshFlux()
     {
-        playerController.PlayerState = PlayerState.OnSpend;
-        playerController.ActivateDrawLine(true);
+        totalFlux = MaxFlux;
     }
-
-    private void OnCyclePassed()
-    {
-        if (ActiveDeductCycle) TotalLifeTime -= LifeDeductCycle;
-    }
-    private void OnTimePassed()
-    {
-        if (ActiveDeductTime) TotalLifeTime -= LifeDeductTime;
-    }
-    public void GivingTime(float timeGiven)
-    {
-        TotalLifeTime -= timeGiven;
-    }
-    public void ReceiveTime(float timeReceive)
-    {
-        TotalLifeTime += timeReceive;
-    }
-    
+    #endregion
 }

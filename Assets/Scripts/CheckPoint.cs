@@ -12,8 +12,8 @@ public class CheckPoint : MonoBehaviour
 
     private bool isActive;
 
-    private GuideFlux guideFlux;
-    private FirstTreeBehaviour firstTree;
+    private GuideFluxBehaviour guideFlux;
+    private PlayerController playerController;
 
     private MeshFilter meshFilter;
 
@@ -22,7 +22,7 @@ public class CheckPoint : MonoBehaviour
         isActive = false;
 
         guideFlux = GameManager.Instance.GuideFlux;
-        firstTree = GameManager.Instance.FirstTreeBehaviour;
+        playerController = GameManager.Instance.PlayerController;
 
         meshFilter = transform.GetComponent<MeshFilter>();
 
@@ -40,14 +40,14 @@ public class CheckPoint : MonoBehaviour
     {
         if (isActive)
         {
-            guideFlux.TeleportToMove(this.transform.position);
+            playerController.TeleportToPosition(this.transform.position);
         }
     }
     private void ActiveCheckPoint()
     {
         isActive = true;
         meshFilter.mesh = TreeMesh;
-        firstTree.IncreaseMaxFlux(RewardFlux); // To be test
+        guideFlux.IncreaseMaxFlux(RewardFlux); // To be test
         GameManager.Instance.CheckGame();
     }
 }

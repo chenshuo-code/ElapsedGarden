@@ -18,7 +18,6 @@ public class PlantBehaviour : MonoBehaviour
     private bool isAlive; //If this plant is activate in alive
     private bool canActivate; //boolean to active plant
     private bool canDeactivate;
-    private bool canStartFrom; //Can player continue his path start from this plant
 
     //Components
     private Color aliveColor; //Actual color when plant alive
@@ -27,8 +26,8 @@ public class PlantBehaviour : MonoBehaviour
     private Mesh meshBase;
 
     //Script class
-    private GuideFlux guideFlux; //Get player controller
-    private FirstTreeBehaviour firstTree; //Get first tree
+    private GuideFluxBehaviour guideFlux; //Get GuideFlux
+    private PlayerController playerController; //Get player controller
     private TimeManager timeManager;//get time manager
 
     //UI
@@ -42,11 +41,9 @@ public class PlantBehaviour : MonoBehaviour
         isAlive = false;
         canActivate = false;
         canDeactivate = false;
-        canStartFrom = false;
-
 
         guideFlux = GameManager.Instance.GuideFlux;
-        firstTree = GameManager.Instance.FirstTreeBehaviour;
+        playerController = GameManager.Instance.PlayerController;
         timeManager = GameManager.Instance.TimeManager;
         timeManager.EventTimePass += DeductLifeWithGameTime;
         
@@ -119,14 +116,6 @@ public class PlantBehaviour : MonoBehaviour
             canActivate = false;
         }
     }
-
-    private void OnMouseDown()
-    {
-        if (canStartFrom)
-        {
-            guideFlux.TeleportToMove(this.transform.position);
-        }
-    }
     private void ActivatePlant()
     {
         GameManager.Instance.AddPlantActive(this); //To be test
@@ -135,8 +124,7 @@ public class PlantBehaviour : MonoBehaviour
         canActivate = false; //stop cumulate activate rate
         material.color = aliveColor; //Active Color 
         meshFilter.mesh = meshFinal;
-        canStartFrom = true;
-        firstTree.ReduceFlux(MaxLifeFlux); // Reduce flux in FirstTree
+        guideFlux.ReduceFlux(MaxLifeFlux); // Reduce flux in FirstTree
     }
 
     /// <summary>
@@ -144,7 +132,7 @@ public class PlantBehaviour : MonoBehaviour
     /// </summary>
     private void ReturnTime()
     {
-        firstTree.AddFlux(MaxLifeFlux);
+        guideFlux.AddFlux(MaxLifeFlux);
         canDeactivate = false;
         DeactivatePlant();
     }
@@ -171,12 +159,7 @@ public class PlantBehaviour : MonoBehaviour
     {
         isAlive = false;
         material.color = Color.gray;
-        canStartFrom = false;
         lifeFlux = 0;
-    }
-    public void DeactivateStartFrom()
-    {
-        canStartFrom = false;
     }
     #endregion
 

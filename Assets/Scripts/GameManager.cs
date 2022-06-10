@@ -6,11 +6,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [HideInInspector] public PlayerController PlayerController;
-    [HideInInspector] public FirstTreeBehaviour FirstTreeBehaviour;
+
     [HideInInspector] public TimeManager TimeManager;
     [HideInInspector] public UIManager UIManager;
-    [HideInInspector] public GuideFlux GuideFlux;
+    [HideInInspector] public PlayerController PlayerController;
+    [HideInInspector] public GuideFluxBehaviour GuideFlux;
+    [HideInInspector] public FirstTreeBehaviour FirstTreeBehaviour;
 
     [HideInInspector] public  List<PlantBehaviour> ListPlantsActive; //list of active plants from the last check point
 
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour
         UIManager.Init();
         PlayerController = FindObjectOfType<PlayerController>();
         PlayerController.Init();
-        GuideFlux = FindObjectOfType<GuideFlux>();
+        GuideFlux = FindObjectOfType<GuideFluxBehaviour>();
         GuideFlux.Init();
         FirstTreeBehaviour = FindObjectOfType<FirstTreeBehaviour>();
         FirstTreeBehaviour.Init();
@@ -47,9 +48,9 @@ public class GameManager : MonoBehaviour
         {
             plant.DeactivatePlant();
         }
-        GuideFlux.EffaceLine();
-        GuideFlux.TeleportToMove(FirstTreeBehaviour.transform.position); // Have to change to the last check point
-        FirstTreeBehaviour.RefreshFlux();
+        PlayerController.EffaceLine();
+        PlayerController.TeleportToPosition(FirstTreeBehaviour.transform.position); // Have to change to the last check point
+        GuideFlux.RefreshFlux();
     }
 
     /// <summary>
@@ -58,7 +59,7 @@ public class GameManager : MonoBehaviour
     public void CheckGame()
     {
         ListPlantsActive.Clear();
-        GuideFlux.EffaceLine();
-        FirstTreeBehaviour.RefreshFlux();
+        PlayerController.EffaceLine();
+        GuideFlux.RefreshFlux();
     }
 }

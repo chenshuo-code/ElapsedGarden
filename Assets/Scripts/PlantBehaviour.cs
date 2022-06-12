@@ -104,14 +104,14 @@ public class PlantBehaviour : MonoBehaviour
     #region Interaction player
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("GuideFlux"))
+        if (other.gameObject.CompareTag("Player"))
         {
             canActivate = true;
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("GuideFlux"))
+        if (other.gameObject.CompareTag("Player"))
         {
             canActivate = false;
         }

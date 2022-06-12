@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
             {
                 canMove = true;
             }
-            if (!raycastHit.transform.CompareTag("GuideFlux") && canMove)
+            if (raycastHit.transform.CompareTag("Ground") && canMove)
             {
                 //Move player to cursor
                 if (Vector3.Distance(raycastHit.point, transform.position) <= 10)
@@ -81,6 +81,11 @@ public class PlayerController : MonoBehaviour
                 //Reduce Flux on road
                 guideFlux.ReduceFlux(FluxConsume);
             }
+            else if (!raycastHit.transform.CompareTag("Player")&&canMove) //If Hit Game objet other than player, we move player to this GM
+            {
+                this.transform.position = Vector3.MoveTowards(transform.position,raycastHit.collider.transform.position,MoveSpeed);
+            }
+
         }
 
         if (Input.GetMouseButtonUp(0))

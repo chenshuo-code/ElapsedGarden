@@ -84,8 +84,10 @@ public class GuideFluxBehaviour : MonoBehaviour
     {
         MaxFlux += fluxIncrease;
     }
-
-    public void RefreshFlux()
+    /// <summary>
+    /// Reset player's flux
+    /// </summary>
+    public void ResetFlux()
     {
         totalFlux = MaxFlux;
     }

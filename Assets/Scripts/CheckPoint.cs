@@ -7,10 +7,18 @@ using UnityEngine;
 /// </summary>
 public class CheckPoint : MonoBehaviour
 {
+    /// <summary>
+    /// Mesh after activate
+    /// </summary>
     public Mesh TreeMesh;
+    /// <summary>
+    /// Max flux to be Increased on check point activate 
+    /// </summary>
     public float RewardFlux;
-
-    private bool isActive;
+    /// <summary>
+    /// defaut active
+    /// </summary>
+    public bool IsActive;
 
     private GuideFluxBehaviour guideFlux;
     private PlayerController playerController;
@@ -19,7 +27,7 @@ public class CheckPoint : MonoBehaviour
 
     private void Start()
     {
-        isActive = false;
+        IsActive = false;
 
         guideFlux = GameManager.Instance.GuideFlux;
         playerController = GameManager.Instance.PlayerController;
@@ -30,24 +38,33 @@ public class CheckPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("GuideFlux"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            ActiveCheckPoint();
+            if (!IsActive)
+            {
+                ActiveCheckPoint();
+            }
+            else
+            {
+                ReloadCheckPoint();
+            }
         }
     }
 
-    private void OnMouseDown()
+    /// <summary>
+    /// Reload from a Active CheckPoint
+    /// </summary>
+    private void ReloadCheckPoint()
     {
-        if (isActive)
-        {
-            playerController.TeleportToPosition(this.transform.position);
-        }
-    }
-    private void ActiveCheckPoint()
-    {
-        isActive = true;
-        meshFilter.mesh = TreeMesh;
-        guideFlux.IncreaseMaxFlux(RewardFlux); // To be test
         GameManager.Instance.CheckGame();
     }
+    public void ActiveCheckPoint()
+    {
+        IsActive = true;
+        meshFilter.mesh = TreeMesh;
+        guideFlux.IncreaseMaxFlux(RewardFlux); //Add max flux// To be test
+        GameManager.Instance.AddCheckPointActive(this);
+        GameManager.Instance.ActivateCheckPoint();
+    }
+    
 }

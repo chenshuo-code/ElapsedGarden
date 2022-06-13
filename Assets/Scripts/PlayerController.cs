@@ -1,92 +1,128 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
-/// <summary>
-/// player state enum
-/// </summary>
-public enum PlayerState 
-{
-    OnSpend,
-    OnReturn,
-    OnStay,
-}
 
 /// <summary>
 /// Player Behavier controller
+/// Control Player's movement, and draw line
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
-    [HideInInspector]
-    public PlayerState PlayerState;
-    public float TimeShipping; //Time on way to return back
-  
-    //Line
-    private LineRenderer line;
-    private int linePointCount;
-    private bool canDrawLine;
+    //Public parameters
 
-    //Ray
+    /// <summary>
+    /// Speed of player move
+    /// </summary>
+    public float MoveSpeed;
+    /// <summary>
+    /// Flux cosume during the road
+    /// </summary>
+    public float FluxConsume;
+
+    //private parameters
+
     private Ray ray;
     private RaycastHit raycastHit;
 
-    private Vector3 savePointLocation;
+    //Line
+    private LineRenderer line;
+    private int linePointCount;
+
+    private bool canMove;
+
+    //UI
+    private Transform canvas;
+    private Image lifeBar;
+    private float lifeDisplayRate;
+    private TMP_Text LifeNum;
+
+    private GuideFluxBehaviour guideFlux;
 
     public void Init()
     {
+        canMove = false;
+        
         line = GetComponent<LineRenderer>();
-        canDrawLine = false;
-        PlayerState = PlayerState.OnStay;
+        guideFlux = transform.GetComponent<GuideFluxBehaviour>();
+
+        //UI Bar
+        canvas = transform.Find("Canvas");
+        lifeBar = transform.Find("Canvas/LifeBar").GetComponent<Image>();
+        LifeNum = transform.Find("Canvas/LifeNum").GetComponent<TMP_Text>();
     }
-    void Update()
+    private void Update()
     {
+
         //Raycast test
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out raycastHit, 500f))
         {
-            //Draw line
-            if (canDrawLine) 
+            if (Input.GetMouseButtonDown(0)) 
             {
-                if (raycastHit.collider.CompareTag("Ground"))
-                {
-                    DrawLine(raycastHit.point);
-                }
+                canMove = true;
             }
+            if (raycastHit.transform.CompareTag("Ground") && canMove)
+            {
+                //Move player to cursor
+                if (Vector3.Distance(raycastHit.point, transform.position) <= 10)
+                {
+                    this.transform.position = Vector3.MoveTowards(transform.position, raycastHit.point, MoveSpeed);
+                }
+                else
+                {
+                    this.transform.position = Vector3.Lerp(transform.position, raycastHit.point, MoveSpeed / 10);
+                }
+
+                DrawLine(this.transform.position);
+
+                //Reduce Flux on road
+                guideFlux.ReduceFlux(FluxConsume);
+            }
+            else if (!raycastHit.transform.CompareTag("Player")&&canMove) //If Hit Game objet other than player, we move player to this GM
+            {
+                this.transform.position = Vector3.MoveTowards(transform.position,raycastHit.collider.transform.position,MoveSpeed);
+            }
+
         }
 
-
-        if (Input.GetMouseButtonUp(0)|| Input.GetMouseButtonUp(1)) //On mouse up, we cancel the draw line
+        if (Input.GetMouseButtonUp(0))
         {
-            ActivateDrawLine(false);
-            PlayerState = PlayerState.OnStay;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-
+            canMove = false;
         }
     }
+    /// <summary>
+    /// Draw line from given position
+    /// </summary>
+    /// <param name="_pos"></param>
     private void DrawLine(Vector3 _pos)
     {
         linePointCount++;
         line.positionCount = linePointCount;
         line.SetPosition(linePointCount - 1, _pos);
     }
-    //Efface all line when we restart a match
+
+    #region Public functions
+
+    /// <summary>
+    /// Teleport this guide flux to a giving position
+    /// </summary>
+    /// <param name="telePos">Position to teleport</param>
+    public void TeleportToPosition(Vector3 telePos)
+    {
+        this.transform.position = telePos;
+    }
+
+    /// <summary>
+    /// Efface all line when we restart a match
+    /// </summary>
     public void EffaceLine()
     {
         linePointCount = 0;
         line.positionCount = 0;
     }
-    public void ActivateDrawLine(bool drawLine)
-    {
-        if (drawLine)
-        {
-            canDrawLine = true;
-        }
-        else
-        {
-            canDrawLine = false;
-        }
-    }
+
+    #endregion
 }

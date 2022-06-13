@@ -2,64 +2,69 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Check point, for functions launche a round
+/// </summary>
 public class CheckPoint : MonoBehaviour
 {
+    /// <summary>
+    /// Mesh after activate
+    /// </summary>
     public Mesh TreeMesh;
-    public float RewardTime;
+    /// <summary>
+    /// Max flux to be Increased on check point activate 
+    /// </summary>
+    public float RewardFlux;
+    /// <summary>
+    /// defaut active
+    /// </summary>
+    public bool IsActive;
 
-    private bool isActive;
-
+    private GuideFluxBehaviour guideFlux;
     private PlayerController playerController;
-    private FirstTreeBehaviour firstTree;
 
     private MeshFilter meshFilter;
 
     private void Start()
     {
-        isActive = false;
+        IsActive = false;
 
+        guideFlux = GameManager.Instance.GuideFlux;
         playerController = GameManager.Instance.PlayerController;
-        firstTree = GameManager.Instance.FirstTreeBehaviour;
 
         meshFilter = transform.GetComponent<MeshFilter>();
 
     }
 
-    private void OnMouseEnter()
+    private void OnTriggerEnter(Collider other)
     {
-        if (Input.GetMouseButton(0))
+        if (other.gameObject.CompareTag("Player"))
         {
-            if (playerController.PlayerState == PlayerState.OnSpend && !isActive)
+            if (!IsActive)
             {
                 ActiveCheckPoint();
             }
+            else
+            {
+                ReloadCheckPoint();
+            }
         }
     }
-    private void OnMouseDown()
+
+    /// <summary>
+    /// Reload from a Active CheckPoint
+    /// </summary>
+    private void ReloadCheckPoint()
     {
-        if (isActive)
-        {
-            SpendingTime();
-        }
+        GameManager.Instance.CheckGame();
     }
-    private void ActiveCheckPoint()
+    public void ActiveCheckPoint()
     {
-        isActive = true;
+        IsActive = true;
         meshFilter.mesh = TreeMesh;
-        firstTree.ReceiveTime(RewardTime);
-        ResetTrace();
+        guideFlux.IncreaseMaxFlux(RewardFlux); //Add max flux// To be test
+        GameManager.Instance.AddCheckPointActive(this);
+        GameManager.Instance.ActivateCheckPoint();
     }
-    private void ResetTrace()
-    {
-        playerController.EffaceLine();
-        for (int i = 0; i < GameManager.Instance.Plants.Length; i++)
-        {
-            GameManager.Instance.Plants[i].DeactivateStartFrom();
-        }
-    }
-    private void SpendingTime()
-    {
-        playerController.PlayerState = PlayerState.OnSpend;
-        playerController.ActivateDrawLine(true);
-    }
+    
 }

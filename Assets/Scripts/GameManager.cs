@@ -6,44 +6,74 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [HideInInspector] public PlayerController PlayerController;
-    [HideInInspector] public FirstTreeBehaviour FirstTreeBehaviour;
+
     [HideInInspector] public TimeManager TimeManager;
     [HideInInspector] public UIManager UIManager;
-    [HideInInspector] public  PlantBehaviour[] Plants;
+    [HideInInspector] public PlayerController PlayerController;
+    [HideInInspector] public GuideFluxBehaviour GuideFlux;
+    [HideInInspector] public FirstTreeBehaviour FirstTreeBehaviour;
 
-    private float deactivatePlantsCount;
+    [HideInInspector] public  List<PlantBehaviour> ListPlantsActive; //list of active plants from the last check point
+    [HideInInspector] public List<CheckPoint> ListCheckPoints; //list of active check point
 
     private void Awake()
     {
         Instance = this;
 
+        //Init instance managers
         TimeManager = FindObjectOfType<TimeManager>();
         TimeManager.Init();
-        UIManager = FindObjectOfType<UIManager>();
-        UIManager.Init();
         PlayerController = FindObjectOfType<PlayerController>();
         PlayerController.Init();
+        GuideFlux = FindObjectOfType<GuideFluxBehaviour>();
+        GuideFlux.Init();
+        UIManager = FindObjectOfType<UIManager>();
+        UIManager.Init();
         FirstTreeBehaviour = FindObjectOfType<FirstTreeBehaviour>();
         FirstTreeBehaviour.Init();
 
-        Plants = FindObjectsOfType<PlantBehaviour>();
-        deactivatePlantsCount = Plants.Length;
 
+        ListPlantsActive = new List<PlantBehaviour>();
+        ListCheckPoints = new List<CheckPoint>();
     }
-    public void CountPlantActivate(float plantCount)
+    public void AddPlantActive(PlantBehaviour plant)
     {
-        deactivatePlantsCount -= plantCount;
-        if (deactivatePlantsCount <= 0) GameWin();
+        ListPlantsActive.Add(plant);
     }
+    public void AddCheckPointActive(CheckPoint checkPoint)
+    {
+        ListCheckPoints.Add(checkPoint);
+    }
+    /// <summary>
+    /// Call on player is run out of flux
+    /// </summary>
     public void GameOver()
     {
-        UIManager.GameOver();
-        Time.timeScale = 0;
+        foreach (PlantBehaviour plant in ListPlantsActive)
+        {
+            plant.DeactivatePlant();
+        }
+        PlayerController.TeleportToPosition(ListCheckPoints[ListCheckPoints.Count-1].transform.position); // Teleport to the last check point 
+        PlayerController.EffaceLine();
+        GuideFlux.ResetFlux();
+        UIManager.ShowReloadGameUI();
     }
-    public void GameWin()
+
+    /// <summary>
+    /// Call on player arrive the check point
+    /// </summary>
+    public void CheckGame()
     {
-        UIManager.GameWin();
-        Time.timeScale = 0;
+        UIManager.ShowReloadGameUI();
+    }
+    /// <summary>
+    /// Call on player active the check point
+    /// </summary>
+    public void ActivateCheckPoint()
+    {
+        ListPlantsActive.Clear();
+        PlayerController.EffaceLine();
+        GuideFlux.ResetFlux();
+        CheckGame();
     }
 }

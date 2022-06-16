@@ -3601,7 +3601,7 @@ GameObject:
   - component: {fileID: 8937359191010901069}
   - component: {fileID: 479642349305585033}
   m_Layer: 0
-  m_Name: TreeOrange
+  m_Name: TreeOrange_Affect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

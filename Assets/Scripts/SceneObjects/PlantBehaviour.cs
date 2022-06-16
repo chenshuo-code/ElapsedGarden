@@ -71,7 +71,7 @@ public class PlantBehaviour : MonoBehaviour
     private void Update()
     {
         //show UI life bar
-        if (lifeBar != null && LifeNum!=null)
+        if (canvas!=null)
         {
             lifeBar.fillAmount = lifeFlux * lifeDisplayRate;
             LifeNum.text = lifeFlux.ToString();
@@ -86,8 +86,13 @@ public class PlantBehaviour : MonoBehaviour
                 if (lifeFlux >= MaxLifeFlux)
                 {
                     ActivatePlant();
+                    guideFlux.ReduceFlux(MaxLifeFlux); // Reduce flux in FirstTree
                 }
-
+                //If player didn't have enough flux, we take all player's flux
+                if (lifeFlux>= guideFlux.CurrentFlux) 
+                {
+                    guideFlux.ReduceFlux(guideFlux.CurrentFlux);
+                }
             }
             else if (lifeFlux > 0)
             {
@@ -101,7 +106,7 @@ public class PlantBehaviour : MonoBehaviour
 
                 if (lifeFlux <= 0)
                 {
-                    ReturnTime();
+                    ReturnFlux();
                 }
             }
         }
@@ -122,18 +127,18 @@ public class PlantBehaviour : MonoBehaviour
             canActivate = false;
         }
     }
+    #endregion
 
     /// <summary>
     /// Desactivate plant and add flux to first tree (not in use)
     /// </summary>
-    private void ReturnTime()
+    private void ReturnFlux()
     {
         lifeFlux = 0;
         guideFlux.AddFlux(MaxLifeFlux);
         canDeactivate = false;
         DeactivatePlant();
     }
-    #endregion
 
     /// <summary>
     /// Function to deduct plant's life with time pass (not in use)
@@ -160,7 +165,6 @@ public class PlantBehaviour : MonoBehaviour
         canActivate = false; //stop cumulate activate rate
         material.color = aliveColor; //Active Color 
         meshFilter.mesh = meshFinal;
-        guideFlux.ReduceFlux(MaxLifeFlux); // Reduce flux in FirstTree
         lifeFlux = MaxLifeFlux;
     }
     public void DeactivatePlant()

@@ -12,10 +12,11 @@ public class GuideFluxBehaviour : MonoBehaviour
     public float MaxFlux; 
     public float LifeDeductByTime; //Life deduct when time passed
     public bool ActiveDeductByTime;
+    public float CurrentFlux; //Flux of player
 
     private TimeManager timeManager;
 
-    private float totalFlux; //Flux of player
+  
 
     //UI
     private Transform canvas;
@@ -33,7 +34,7 @@ public class GuideFluxBehaviour : MonoBehaviour
 
         lifeDisplayRate = 1 / MaxFlux;
 
-        totalFlux = MaxFlux;
+        CurrentFlux = MaxFlux;
 
         timeManager.EventTimePass += OnTimePassed;
     }
@@ -41,13 +42,13 @@ public class GuideFluxBehaviour : MonoBehaviour
     private void Update()
     {
         //ShowUI
-        lifeBar.fillAmount = totalFlux * lifeDisplayRate;
-        LifeNum.text = totalFlux.ToString();
+        lifeBar.fillAmount = CurrentFlux * lifeDisplayRate;
+        LifeNum.text = CurrentFlux.ToString();
 
     }
     private void OnTimePassed()
     {
-        if (ActiveDeductByTime) totalFlux -= LifeDeductByTime;
+        if (ActiveDeductByTime) CurrentFlux -= LifeDeductByTime;
     }
 
     #region Public, Control flux
@@ -58,8 +59,8 @@ public class GuideFluxBehaviour : MonoBehaviour
     /// <param name="fluxGiven">Flux to spend</param>
     public void ReduceFlux(float fluxGiven)
     {
-        totalFlux -= fluxGiven;
-        if (totalFlux <= 0)
+        CurrentFlux -= fluxGiven;
+        if (CurrentFlux <= 0)
         {
             GameManager.Instance.GameOver();
         }
@@ -70,10 +71,10 @@ public class GuideFluxBehaviour : MonoBehaviour
     /// <param name="fluxReceive">Flux to receive</param>
     public void AddFlux(float fluxReceive)
     {
-        totalFlux += fluxReceive;
-        if (totalFlux >= MaxFlux)
+        CurrentFlux += fluxReceive;
+        if (CurrentFlux >= MaxFlux)
         {
-            totalFlux = MaxFlux;
+            CurrentFlux = MaxFlux;
         }
     }
     /// <summary>
@@ -89,7 +90,7 @@ public class GuideFluxBehaviour : MonoBehaviour
     /// </summary>
     public void ResetFlux()
     {
-        totalFlux = MaxFlux;
+        CurrentFlux = MaxFlux;
     }
     #endregion
 }

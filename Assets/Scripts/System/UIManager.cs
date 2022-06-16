@@ -16,7 +16,6 @@ public class UIManager : MonoBehaviour
     private TimeManager timeManager;
     private PlayerController playerController;
 
-    private bool onReload = false;
     private int indexCheckPoint = 0;
     public void Init()
     {
@@ -41,13 +40,10 @@ public class UIManager : MonoBehaviour
     #region public, On game reload
     public void ShowReloadGameUI()
     {
-        onReload = true;
         reloadGameCanvas.gameObject.SetActive(true);
     }
     public void HideReloadGameUI()
     {
-        
-        onReload = false;
         reloadGameCanvas.gameObject.SetActive(false);
     }
     public void TurnToLeftCheckPoint()

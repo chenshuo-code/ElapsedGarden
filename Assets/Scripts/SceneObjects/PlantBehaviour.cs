@@ -10,12 +10,13 @@ public class PlantBehaviour : MonoBehaviour
     public float LifeAccumulateSpeed; //Speed of life accumulation
     public float LifeDeductTime; //Time deducte with game time passed
     public bool ActiveDeductByTime;//If active, plant's life will deduct with time
+    public bool IsAlive; //If this plant is activate in alive
 
     public Mesh meshFinal; //final mesh on plant active
 
     private float lifeFlux;//Current life flux
 
-    private bool isAlive; //If this plant is activate in alive
+
     private bool canActivate; //boolean to active plant
     private bool canDeactivate;
 
@@ -38,7 +39,12 @@ public class PlantBehaviour : MonoBehaviour
     
     private void Start()
     {
-        isAlive = false;
+        Init();
+    }
+
+    protected virtual void Init()
+    {
+        IsAlive = false;
         canActivate = false;
         canDeactivate = false;
 
@@ -46,7 +52,7 @@ public class PlantBehaviour : MonoBehaviour
         playerController = GameManager.Instance.PlayerController;
         timeManager = GameManager.Instance.TimeManager;
         timeManager.EventTimePass += DeductLifeWithGameTime;
-        
+
 
         lifeFlux = 0;
 
@@ -65,10 +71,12 @@ public class PlantBehaviour : MonoBehaviour
     private void Update()
     {
         //show UI life bar
-        lifeBar.fillAmount = lifeFlux * lifeDisplayRate;
-        LifeNum.text = lifeFlux.ToString();
-
-        if (!isAlive)
+        if (lifeBar != null && LifeNum!=null)
+        {
+            lifeBar.fillAmount = lifeFlux * lifeDisplayRate;
+            LifeNum.text = lifeFlux.ToString();
+        }
+        if (!IsAlive)
         {
             //Activating plant
             if (canActivate)
@@ -77,7 +85,6 @@ public class PlantBehaviour : MonoBehaviour
 
                 if (lifeFlux >= MaxLifeFlux)
                 {
-                    lifeFlux = MaxLifeFlux;
                     ActivatePlant();
                 }
 
@@ -94,7 +101,6 @@ public class PlantBehaviour : MonoBehaviour
 
                 if (lifeFlux <= 0)
                 {
-                    lifeFlux = 0;
                     ReturnTime();
                 }
             }
@@ -116,22 +122,13 @@ public class PlantBehaviour : MonoBehaviour
             canActivate = false;
         }
     }
-    private void ActivatePlant()
-    {
-        GameManager.Instance.AddPlantActive(this); //To be test
-
-        isAlive = true;
-        canActivate = false; //stop cumulate activate rate
-        material.color = aliveColor; //Active Color 
-        meshFilter.mesh = meshFinal;
-        guideFlux.ReduceFlux(MaxLifeFlux); // Reduce flux in FirstTree
-    }
 
     /// <summary>
     /// Desactivate plant and add flux to first tree (not in use)
     /// </summary>
     private void ReturnTime()
     {
+        lifeFlux = 0;
         guideFlux.AddFlux(MaxLifeFlux);
         canDeactivate = false;
         DeactivatePlant();
@@ -143,7 +140,7 @@ public class PlantBehaviour : MonoBehaviour
     /// </summary>
     private void DeductLifeWithGameTime()
     {
-        if (isAlive && ActiveDeductByTime)
+        if (IsAlive && ActiveDeductByTime)
         {
             lifeFlux -= LifeDeductTime;
             if (lifeFlux <= 0)
@@ -155,9 +152,20 @@ public class PlantBehaviour : MonoBehaviour
 
 
     #region Functions public
+    public virtual void ActivatePlant()
+    {
+        GameManager.Instance.AddPlantActive(this); //To be test
+
+        IsAlive = true;
+        canActivate = false; //stop cumulate activate rate
+        material.color = aliveColor; //Active Color 
+        meshFilter.mesh = meshFinal;
+        guideFlux.ReduceFlux(MaxLifeFlux); // Reduce flux in FirstTree
+        lifeFlux = MaxLifeFlux;
+    }
     public void DeactivatePlant()
     {
-        isAlive = false;
+        IsAlive = false;
         material.color = Color.gray;
         lifeFlux = 0;
     }

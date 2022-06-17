@@ -20,6 +20,8 @@ public class PlantBehaviour : MonoBehaviour
     private bool canActivate; //boolean to active plant
     private bool canDeactivate;
 
+    private bool isInitFinish=false;
+
     //Components
     private Color aliveColor; //Actual color when plant alive
     private Material material;
@@ -36,7 +38,8 @@ public class PlantBehaviour : MonoBehaviour
     private Image lifeBar;
     private float lifeDisplayRate;
     private TMP_Text LifeNum;
-    
+
+
     private void Start()
     {
         Init();
@@ -67,51 +70,59 @@ public class PlantBehaviour : MonoBehaviour
         LifeNum = transform.Find("Canvas/LifeNum").GetComponent<TMP_Text>();
         lifeDisplayRate = 1 / MaxLifeFlux;
 
+        isInitFinish = true;
+
     }
     private void Update()
     {
-        //show UI life bar
-        if (canvas!=null)
+        if (isInitFinish)
         {
-            lifeBar.fillAmount = lifeFlux * lifeDisplayRate;
-            LifeNum.text = lifeFlux.ToString();
-        }
-        if (!IsAlive)
-        {
-            //Activating plant
-            if (canActivate)
+            //show UI life bar
+            if (canvas != null)
             {
-                lifeFlux += LifeAccumulateSpeed;
+                lifeBar.fillAmount = lifeFlux * lifeDisplayRate;
+                LifeNum.text = lifeFlux.ToString();
+            }
+            if (!IsAlive)
+            {
+                //Activating plant
+                if (canActivate)
+                {
+                    lifeFlux += LifeAccumulateSpeed;
 
-                if (lifeFlux >= MaxLifeFlux)
-                {
-                    ActivatePlant();
-                    guideFlux.ReduceFlux(MaxLifeFlux); // Reduce flux in FirstTree
-                }
-                else if(lifeFlux >= guideFlux.CurrentFlux)
-                {
-                    //guideFlux.ReduceFlux(guideFlux.CurrentFlux);
-                    GameManager.Instance.GameOver();
-                }
-                //If player didn't have enough flux, we take all player's flux
-  
-            }
-            else if (lifeFlux > 0)
-            {
-                lifeFlux -= LifeAccumulateSpeed;
-            }
-        }else
-        {
-            if (canDeactivate)
-            {
-                lifeFlux -= LifeAccumulateSpeed;
+                    if (lifeFlux >= MaxLifeFlux)
+                    {
+                        ActivatePlant();
+                        guideFlux.ReduceFlux(MaxLifeFlux); // Reduce flux in FirstTree
+                    }
+                    else if (lifeFlux >= guideFlux.CurrentFlux)
+                    {
+                        //guideFlux.ReduceFlux(guideFlux.CurrentFlux);
+                        GameManager.Instance.GameOver();
+                    }
+                    //If player didn't have enough flux, we take all player's flux
 
-                if (lifeFlux <= 0)
+                }
+                else if (lifeFlux > 0)
                 {
-                    ReturnFlux();
+                    lifeFlux -= LifeAccumulateSpeed;
+                }
+            }
+            else
+            {
+                if (canDeactivate)
+                {
+                    lifeFlux -= LifeAccumulateSpeed;
+
+                    if (lifeFlux <= 0)
+                    {
+                        ReturnFlux();
+                        print(isInitFinish);
+                    }
                 }
             }
         }
+       
 
     }
     #region Interaction player

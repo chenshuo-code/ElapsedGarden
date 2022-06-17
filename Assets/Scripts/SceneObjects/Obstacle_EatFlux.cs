@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle_EatFlux : MonoBehaviour
+public class Obstacle_EatFlux : ObstacleBehaviour
 {
     public float EatSpeed;
 
@@ -16,7 +16,7 @@ public class Obstacle_EatFlux : MonoBehaviour
 
     private void Update()
     {
-        if (canActivate)
+        if (canActivate && IsActive)
         {
             guideFlux.ReduceFlux(EatSpeed);
         }
@@ -34,5 +34,10 @@ public class Obstacle_EatFlux : MonoBehaviour
         {
             canActivate = false;
         }
+    }
+
+    public override void DeactivateObstacle()
+    {
+        IsActive = false;
     }
 }

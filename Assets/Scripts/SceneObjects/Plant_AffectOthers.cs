@@ -16,6 +16,15 @@ public class Plant_AffectOthers : PlantBehaviour
     /// </summary>
     public List<PlantBehaviour> PlantsDeactivateList;
 
+    /// <summary>
+    /// Obstacles to be deactivated after this plant active
+    /// </summary>
+    public List<ObstacleBehaviour> ObstaclesDeactivateList;
+
+    /// <summary>
+    /// Obstacles to be activated after this plant active
+    /// </summary>
+    public List<ObstacleBehaviour> ObstaclesActivateList;
     protected override void Init()
     {
         base.Init();
@@ -36,6 +45,53 @@ public class Plant_AffectOthers : PlantBehaviour
             if (plant.IsAlive)
             {
                 plant.DeactivatePlant();
+            }
+        }
+        foreach (ObstacleBehaviour Obstacle in ObstaclesActivateList)
+        {
+            if (!Obstacle.IsActive)
+            {
+                Obstacle.ActivateObstacle();
+            }
+        }     
+        foreach (ObstacleBehaviour Obstacle in ObstaclesDeactivateList)
+        {
+            if (Obstacle.IsActive)
+            {
+                Obstacle.DeactivateObstacle();
+            }
+        }
+
+    }
+    public override void DeactivatePlant()
+    {
+        base.DeactivatePlant();
+        foreach (PlantBehaviour plant in PlantsActivateList)
+        {
+            if (plant.IsAlive)
+            {
+                plant.DeactivatePlant();
+            }
+        }
+        foreach (PlantBehaviour plant in PlantsDeactivateList)
+        {
+            if (!plant.IsAlive)
+            {
+                plant.ActivatePlant();
+            }
+        }
+        foreach (ObstacleBehaviour Obstacle in ObstaclesActivateList)
+        {
+            if (Obstacle.IsActive)
+            {
+                Obstacle.DeactivateObstacle();
+            }
+        }
+        foreach (ObstacleBehaviour Obstacle in ObstaclesDeactivateList)
+        {
+            if (!Obstacle.IsActive)
+            {
+                Obstacle.ActivateObstacle();
             }
         }
     }

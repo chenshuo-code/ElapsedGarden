@@ -130,45 +130,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 725743509}
     m_Modifications:
-    - target: {fileID: 8840540751971007478, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8840540752637135690, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1601620435}
-    - target: {fileID: 8840540752637135694, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8840540752877049772, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
-      propertyPath: MaxLifeFlux
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8840540752877049772, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
-      propertyPath: LifeAccumulateSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8840540752877049776, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8840540752877049779, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8840540752877049779, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8840540752877049779, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8840540752877049779, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8840540752877049779, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -213,14 +181,6 @@ PrefabInstance:
     - target: {fileID: 8840540752877049783, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
       propertyPath: m_Name
       value: TreePink
-      objectReference: {fileID: 0}
-    - target: {fileID: 8840540752877049783, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8840540753105939557, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
@@ -420,7 +380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6680659604304460719, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
       propertyPath: LifeAccumulateSpeed
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6680659604353431389, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
       propertyPath: m_Layer
@@ -708,7 +668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6680659604304460719, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
       propertyPath: LifeAccumulateSpeed
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6680659604353431389, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
       propertyPath: m_Layer
@@ -824,41 +784,13 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1601620435}
-    - target: {fileID: 6680659603596302295, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6680659603838665999, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6680659604304460712, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6680659604304460717, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
       propertyPath: m_Name
       value: TreeRound
       objectReference: {fileID: 0}
-    - target: {fileID: 6680659604304460717, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6680659604304460718, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6680659604304460718, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6680659604304460718, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6680659604304460718, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6680659604304460718, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
       propertyPath: m_LocalPosition.x
@@ -898,18 +830,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6680659604304460718, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6680659604304460719, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
-      propertyPath: MaxLifeFlux
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6680659604304460719, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
-      propertyPath: LifeAccumulateSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6680659604353431389, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
-      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1183,7 +1103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7140062367687678461, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
       propertyPath: LifeAccumulateSpeed
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7140062367687678462, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
       propertyPath: m_RootOrder
@@ -1420,7 +1340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842701333933120924, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
       propertyPath: LifeAccumulateSpeed
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4842701333933120925, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
       propertyPath: m_RootOrder
@@ -1512,41 +1432,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 725743509}
     m_Modifications:
-    - target: {fileID: 7140062367118063658, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7140062367118063670, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1601620435}
-    - target: {fileID: 7140062367687678460, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7140062367687678461, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
-      propertyPath: MaxLifeFlux
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7140062367687678461, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
-      propertyPath: LifeAccumulateSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7140062367687678462, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7140062367687678462, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7140062367687678462, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7140062367687678462, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7140062367687678462, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1591,18 +1483,6 @@ PrefabInstance:
     - target: {fileID: 7140062367687678463, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
       propertyPath: m_Name
       value: FlowerRed
-      objectReference: {fileID: 0}
-    - target: {fileID: 7140062367687678463, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7140062367776880093, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7140062367839763150, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
@@ -1942,33 +1822,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlowerPurple
       objectReference: {fileID: 0}
-    - target: {fileID: 4842701333933120898, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842701333933120924, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
-      propertyPath: MaxLifeFlux
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842701333933120924, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
-      propertyPath: LifeAccumulateSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 4842701333933120925, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
       propertyPath: m_RootOrder
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842701333933120925, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842701333933120925, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842701333933120925, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842701333933120925, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2010,26 +1866,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4842701333933120927, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4842701334191866546, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1601620435}
-    - target: {fileID: 4842701334191866550, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842701334658288869, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842701335380214394, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
 --- !u!4 &1361948083 stripped
@@ -2062,7 +1902,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8840540752877049772, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
       propertyPath: LifeAccumulateSpeed
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8840540752877049776, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
       propertyPath: m_IsTrigger
@@ -2168,7 +2008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8840540752877049772, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
       propertyPath: LifeAccumulateSpeed
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8840540752877049776, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
       propertyPath: m_IsTrigger
@@ -2244,57 +2084,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 725743509}
     m_Modifications:
-    - target: {fileID: 4133034614548042546, guid: acf23457134e08b478369655e74a575c, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4133034615283046883, guid: acf23457134e08b478369655e74a575c, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4133034615283046911, guid: acf23457134e08b478369655e74a575c, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1601620435}
-    - target: {fileID: 4133034616348884137, guid: acf23457134e08b478369655e74a575c, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4133034616363965528, guid: acf23457134e08b478369655e74a575c, type: 3}
-      propertyPath: MaxLifeFlux
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4133034616363965528, guid: acf23457134e08b478369655e74a575c, type: 3}
-      propertyPath: LifeAccumulateSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4133034616363965529, guid: acf23457134e08b478369655e74a575c, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4133034616363965534, guid: acf23457134e08b478369655e74a575c, type: 3}
       propertyPath: m_Name
       value: TreeBamboo
       objectReference: {fileID: 0}
-    - target: {fileID: 4133034616363965534, guid: acf23457134e08b478369655e74a575c, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4133034616363965535, guid: acf23457134e08b478369655e74a575c, type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4133034616363965535, guid: acf23457134e08b478369655e74a575c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4133034616363965535, guid: acf23457134e08b478369655e74a575c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4133034616363965535, guid: acf23457134e08b478369655e74a575c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4133034616363965535, guid: acf23457134e08b478369655e74a575c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2497,48 +2297,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 725743509}
     m_Modifications:
-    - target: {fileID: 8070473278408018540, guid: 806a11d06e67a174f817b69b55df595e, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8070473279405938213, guid: 806a11d06e67a174f817b69b55df595e, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8070473279730072486, guid: 806a11d06e67a174f817b69b55df595e, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1601620435}
-    - target: {fileID: 8070473279730072506, guid: 806a11d06e67a174f817b69b55df595e, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8070473280005888529, guid: 806a11d06e67a174f817b69b55df595e, type: 3}
-      propertyPath: MaxLifeFlux
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8070473280005888529, guid: 806a11d06e67a174f817b69b55df595e, type: 3}
-      propertyPath: LifeAccumulateSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8070473280005888533, guid: 806a11d06e67a174f817b69b55df595e, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8070473280005888534, guid: 806a11d06e67a174f817b69b55df595e, type: 3}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8070473280005888534, guid: 806a11d06e67a174f817b69b55df595e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8070473280005888534, guid: 806a11d06e67a174f817b69b55df595e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8070473280005888534, guid: 806a11d06e67a174f817b69b55df595e, type: 3}
-      propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8070473280005888534, guid: 806a11d06e67a174f817b69b55df595e, type: 3}
@@ -2584,10 +2348,6 @@ PrefabInstance:
     - target: {fileID: 8070473280005888554, guid: 806a11d06e67a174f817b69b55df595e, type: 3}
       propertyPath: m_Name
       value: FlowerYellow
-      objectReference: {fileID: 0}
-    - target: {fileID: 8070473280005888554, guid: 806a11d06e67a174f817b69b55df595e, type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 806a11d06e67a174f817b69b55df595e, type: 3}
@@ -2787,7 +2547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8840540752877049772, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
       propertyPath: LifeAccumulateSpeed
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8840540752877049776, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
       propertyPath: m_IsTrigger
@@ -3400,10 +3160,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1601620435}
-    - target: {fileID: 479642349305585033, guid: 133bf30f2e895f24e83475e591da0150, type: 3}
-      propertyPath: meshFinal
-      value: 
-      objectReference: {fileID: 4300000, guid: 8dffe205c75754f83aa4ab1ab20fd671, type: 3}
     - target: {fileID: 479642349399139139, guid: 133bf30f2e895f24e83475e591da0150, type: 3}
       propertyPath: m_Camera
       value: 
@@ -3456,10 +3212,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8937359191010901071, guid: 133bf30f2e895f24e83475e591da0150, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 5d26b112bbf0f544f893e318a32f162d, type: 3}
     - target: {fileID: 8937359191250706615, guid: 133bf30f2e895f24e83475e591da0150, type: 3}
       propertyPath: m_Camera
       value: 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8840540751971007479}
   - component: {fileID: 8840540751971007473}
   - component: {fileID: 8840540751971007472}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LifeBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8840540752637135690}
   - component: {fileID: 8840540752637135689}
   - component: {fileID: 8840540752637135688}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8840540752877049783}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.501297, y: 2.9143183, z: 2}
@@ -289,9 +289,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613ea818b8a93084abd29540566451ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxLifeTime: 16
+  MaxLifeFlux: 20
+  LifeAccumulateSpeed: 0.1
   LifeDeductTime: 0
-  LifeAccumulateSpeed: 1
+  ActiveDeductByTime: 0
+  IsAlive: 0
   meshFinal: {fileID: 4300000, guid: 05a67726490a9634f838662c083eb8de, type: 3}
 --- !u!1 &8840540753105939557
 GameObject:
@@ -304,7 +306,7 @@ GameObject:
   - component: {fileID: 8840540753105939558}
   - component: {fileID: 8840540753105939552}
   - component: {fileID: 8840540753105939559}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LifeNum
   m_TagString: Untagged
   m_Icon: {fileID: 0}

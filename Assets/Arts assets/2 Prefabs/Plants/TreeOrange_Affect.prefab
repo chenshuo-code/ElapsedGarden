@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeFlux: 10
-  LifeAccumulateSpeed: 0.5
+  LifeAccumulateSpeed: 0.1
   LifeDeductTime: 0
   ActiveDeductByTime: 0
   IsAlive: 0
@@ -206,7 +206,6 @@ GameObject:
   - component: {fileID: 479642347785532951}
   - component: {fileID: 479642347785532948}
   - component: {fileID: 479642347785532949}
-  - component: {fileID: 479642347785532946}
   m_Layer: 0
   m_Name: FlowerOrange (5)
   m_TagString: Untagged
@@ -293,7 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeFlux: 10
-  LifeAccumulateSpeed: 0.5
+  LifeAccumulateSpeed: 0.1
   LifeDeductTime: 0
   ActiveDeductByTime: 0
   IsAlive: 0
@@ -311,26 +310,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.02, y: 1.15, z: 0.91}
   m_Center: {x: -0.0040225983, y: 0.280937, z: -0.023313522}
---- !u!114 &479642347785532946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 479642347785532944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b6ccde3bfddf0449aaef95da2c4c7a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxLifeFlux: 40
-  LifeAccumulateSpeed: 0.5
-  LifeDeductTime: 0
-  ActiveDeductByTime: 0
-  IsAlive: 0
-  meshFinal: {fileID: 0}
-  PlantsActivateList: []
-  PlantsDeactivateList: []
 --- !u!1 &479642347799545065
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +425,6 @@ GameObject:
   - component: {fileID: 479642347933236275}
   - component: {fileID: 479642347933236272}
   - component: {fileID: 479642347933236273}
-  - component: {fileID: 479642347933236270}
   m_Layer: 0
   m_Name: FlowerOrange (6)
   m_TagString: Untagged
@@ -533,7 +511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeFlux: 10
-  LifeAccumulateSpeed: 0.5
+  LifeAccumulateSpeed: 0.1
   LifeDeductTime: 0
   ActiveDeductByTime: 0
   IsAlive: 0
@@ -551,26 +529,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.02, y: 1.15, z: 0.91}
   m_Center: {x: -0.0040225983, y: 0.280937, z: -0.023313522}
---- !u!114 &479642347933236270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 479642347933236268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b6ccde3bfddf0449aaef95da2c4c7a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxLifeFlux: 40
-  LifeAccumulateSpeed: 0.5
-  LifeDeductTime: 0
-  ActiveDeductByTime: 0
-  IsAlive: 0
-  meshFinal: {fileID: 0}
-  PlantsActivateList: []
-  PlantsDeactivateList: []
 --- !u!1 &479642348008242910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,7 +1329,6 @@ GameObject:
   - component: {fileID: 479642348610023336}
   - component: {fileID: 479642348610023337}
   - component: {fileID: 479642348610023334}
-  - component: {fileID: 479642348610023335}
   m_Layer: 0
   m_Name: FlowerOrange (3)
   m_TagString: Untagged
@@ -1458,7 +1415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeFlux: 10
-  LifeAccumulateSpeed: 0.5
+  LifeAccumulateSpeed: 0.1
   LifeDeductTime: 0
   ActiveDeductByTime: 0
   IsAlive: 0
@@ -1476,26 +1433,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.02, y: 1.15, z: 0.91}
   m_Center: {x: -0.0040225983, y: 0.280937, z: -0.023313522}
---- !u!114 &479642348610023335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 479642348610023333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b6ccde3bfddf0449aaef95da2c4c7a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxLifeFlux: 40
-  LifeAccumulateSpeed: 0.5
-  LifeDeductTime: 0
-  ActiveDeductByTime: 0
-  IsAlive: 0
-  meshFinal: {fileID: 0}
-  PlantsActivateList: []
-  PlantsDeactivateList: []
 --- !u!1 &479642348629046011
 GameObject:
   m_ObjectHideFlags: 0
@@ -1822,7 +1759,6 @@ GameObject:
   - component: {fileID: 479642348915882001}
   - component: {fileID: 479642348915881998}
   - component: {fileID: 479642348915881999}
-  - component: {fileID: 479642348915881996}
   m_Layer: 0
   m_Name: FlowerOrange (4)
   m_TagString: Untagged
@@ -1909,7 +1845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeFlux: 10
-  LifeAccumulateSpeed: 0.5
+  LifeAccumulateSpeed: 0.1
   LifeDeductTime: 0
   ActiveDeductByTime: 0
   IsAlive: 0
@@ -1927,26 +1863,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.02, y: 1.15, z: 0.91}
   m_Center: {x: -0.0040225983, y: 0.280937, z: -0.023313522}
---- !u!114 &479642348915881996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 479642348915881994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b6ccde3bfddf0449aaef95da2c4c7a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxLifeFlux: 40
-  LifeAccumulateSpeed: 0.5
-  LifeDeductTime: 0
-  ActiveDeductByTime: 0
-  IsAlive: 0
-  meshFinal: {fileID: 0}
-  PlantsActivateList: []
-  PlantsDeactivateList: []
 --- !u!1 &479642348919000128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1960,7 +1876,6 @@ GameObject:
   - component: {fileID: 479642348919000135}
   - component: {fileID: 479642348919000132}
   - component: {fileID: 479642348919000133}
-  - component: {fileID: 479642348919000130}
   m_Layer: 0
   m_Name: FlowerOrange (2)
   m_TagString: Untagged
@@ -2047,7 +1962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeFlux: 10
-  LifeAccumulateSpeed: 0.5
+  LifeAccumulateSpeed: 0.1
   LifeDeductTime: 0
   ActiveDeductByTime: 0
   IsAlive: 0
@@ -2065,26 +1980,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.02, y: 1.15, z: 0.91}
   m_Center: {x: -0.0040225983, y: 0.280937, z: -0.023313522}
---- !u!114 &479642348919000130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 479642348919000128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b6ccde3bfddf0449aaef95da2c4c7a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxLifeFlux: 40
-  LifeAccumulateSpeed: 0.5
-  LifeDeductTime: 0
-  ActiveDeductByTime: 0
-  IsAlive: 0
-  meshFinal: {fileID: 0}
-  PlantsActivateList: []
-  PlantsDeactivateList: []
 --- !u!1 &479642348955250283
 GameObject:
   m_ObjectHideFlags: 0
@@ -2859,7 +2754,6 @@ GameObject:
   - component: {fileID: 479642349313192658}
   - component: {fileID: 479642349313192659}
   - component: {fileID: 479642349313192656}
-  - component: {fileID: 479642349313192657}
   m_Layer: 0
   m_Name: FlowerOrange (7)
   m_TagString: Untagged
@@ -2946,7 +2840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeFlux: 10
-  LifeAccumulateSpeed: 0.5
+  LifeAccumulateSpeed: 0.1
   LifeDeductTime: 0
   ActiveDeductByTime: 0
   IsAlive: 0
@@ -2964,26 +2858,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.02, y: 1.15, z: 0.91}
   m_Center: {x: -0.0040225983, y: 0.280937, z: -0.023313522}
---- !u!114 &479642349313192657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 479642349313192655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b6ccde3bfddf0449aaef95da2c4c7a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxLifeFlux: 40
-  LifeAccumulateSpeed: 0.5
-  LifeDeductTime: 0
-  ActiveDeductByTime: 0
-  IsAlive: 0
-  meshFinal: {fileID: 0}
-  PlantsActivateList: []
-  PlantsDeactivateList: []
 --- !u!1 &479642349399139263
 GameObject:
   m_ObjectHideFlags: 0
@@ -3251,7 +3125,6 @@ GameObject:
   - component: {fileID: 479642349527743832}
   - component: {fileID: 479642349527743833}
   - component: {fileID: 479642349527743830}
-  - component: {fileID: 479642349527743831}
   m_Layer: 0
   m_Name: FlowerOrange (1)
   m_TagString: Untagged
@@ -3338,7 +3211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeFlux: 10
-  LifeAccumulateSpeed: 0.5
+  LifeAccumulateSpeed: 0.1
   LifeDeductTime: 0
   ActiveDeductByTime: 0
   IsAlive: 0
@@ -3356,26 +3229,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.02, y: 1.15, z: 0.91}
   m_Center: {x: -0.0040225983, y: 0.280937, z: -0.023313522}
---- !u!114 &479642349527743831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 479642349527743829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b6ccde3bfddf0449aaef95da2c4c7a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxLifeFlux: 40
-  LifeAccumulateSpeed: 0.5
-  LifeDeductTime: 0
-  ActiveDeductByTime: 0
-  IsAlive: 0
-  meshFinal: {fileID: 0}
-  PlantsActivateList: []
-  PlantsDeactivateList: []
 --- !u!1 &479642349584020615
 GameObject:
   m_ObjectHideFlags: 0
@@ -3614,7 +3467,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8937359191010901066}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -48.78, y: 4.5, z: -7.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3638,7 +3491,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8937359191010901066}
-  m_Mesh: {fileID: 4300000, guid: 71d18be3e229645eda1e33ac39f9d3b1, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 5d26b112bbf0f544f893e318a32f162d, type: 3}
 --- !u!23 &8937359191010901068
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3707,7 +3560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeFlux: 40
-  LifeAccumulateSpeed: 0.5
+  LifeAccumulateSpeed: 0.1
   LifeDeductTime: 0
   ActiveDeductByTime: 0
   IsAlive: 0

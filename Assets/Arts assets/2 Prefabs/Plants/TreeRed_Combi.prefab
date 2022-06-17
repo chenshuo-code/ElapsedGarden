@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeFlux: 10
-  LifeAccumulateSpeed: 0.5
+  LifeAccumulateSpeed: 0.1
   LifeDeductTime: 0
   ActiveDeductByTime: 0
   IsAlive: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeFlux: 10
-  LifeAccumulateSpeed: 0.5
+  LifeAccumulateSpeed: 0.1
   LifeDeductTime: 0
   ActiveDeductByTime: 0
   IsAlive: 0
@@ -822,7 +822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeFlux: 10
-  LifeAccumulateSpeed: 0.5
+  LifeAccumulateSpeed: 0.1
   LifeDeductTime: 0
   ActiveDeductByTime: 0
   IsAlive: 0
@@ -940,7 +940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeFlux: 10
-  LifeAccumulateSpeed: 0.5
+  LifeAccumulateSpeed: 0.1
   LifeDeductTime: 0
   ActiveDeductByTime: 0
   IsAlive: 0
@@ -2149,7 +2149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeFlux: 10
-  LifeAccumulateSpeed: 0.5
+  LifeAccumulateSpeed: 0.1
   LifeDeductTime: 0
   ActiveDeductByTime: 0
   IsAlive: 0
@@ -2419,7 +2419,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7943497650447928096}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -22.08, y: 4.5, z: -23.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2509,7 +2509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLifeFlux: 200
-  LifeAccumulateSpeed: 0.5
+  LifeAccumulateSpeed: 0.1
   LifeDeductTime: 0
   ActiveDeductByTime: 0
   IsAlive: 0

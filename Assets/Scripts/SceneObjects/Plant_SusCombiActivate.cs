@@ -15,4 +15,10 @@ public class Plant_SusCombiActivate : PlantBehaviour
         base.ActivatePlant();
         PlantToActive.ReduceSuscombiPlantsCount();
     }
+    public override void DeactivatePlant()
+    {
+        base.DeactivatePlant();
+        PlantToActive.RegisterSuscombiPlants();
+
+    }
 }

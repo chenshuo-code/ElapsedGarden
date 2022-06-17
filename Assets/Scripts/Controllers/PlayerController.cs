@@ -69,11 +69,11 @@ public class PlayerController : MonoBehaviour
                 //Move player to cursor
                 if (Vector3.Distance(raycastHit.point, transform.position) <= 10)
                 {
-                    this.transform.position = Vector3.MoveTowards(transform.position, raycastHit.point, MoveSpeed);
+                    this.transform.position = Vector3.MoveTowards(transform.position, raycastHit.point, MoveSpeed/10);
                 }
                 else
                 {
-                    this.transform.position = Vector3.Lerp(transform.position, raycastHit.point, MoveSpeed / 10);
+                    this.transform.position = Vector3.Lerp(transform.position, raycastHit.point, MoveSpeed / 100);
                 }
 
                 DrawLine(this.transform.position);
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (!raycastHit.transform.CompareTag("Player")&&canMove) //If Hit Game objet other than player, we move player to this GM
             {
-                this.transform.position = Vector3.MoveTowards(transform.position,raycastHit.collider.transform.position,MoveSpeed);
+                this.transform.position = Vector3.MoveTowards(transform.position,raycastHit.collider.transform.position,MoveSpeed/10);
             }
 
         }

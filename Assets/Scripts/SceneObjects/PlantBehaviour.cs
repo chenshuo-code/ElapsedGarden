@@ -88,11 +88,13 @@ public class PlantBehaviour : MonoBehaviour
                     ActivatePlant();
                     guideFlux.ReduceFlux(MaxLifeFlux); // Reduce flux in FirstTree
                 }
-                //If player didn't have enough flux, we take all player's flux
-                if (lifeFlux>= guideFlux.CurrentFlux) 
+                else if(lifeFlux >= guideFlux.CurrentFlux)
                 {
-                    guideFlux.ReduceFlux(guideFlux.CurrentFlux);
+                    //guideFlux.ReduceFlux(guideFlux.CurrentFlux);
+                    GameManager.Instance.GameOver();
                 }
+                //If player didn't have enough flux, we take all player's flux
+  
             }
             else if (lifeFlux > 0)
             {
@@ -167,7 +169,7 @@ public class PlantBehaviour : MonoBehaviour
         meshFilter.mesh = meshFinal;
         lifeFlux = MaxLifeFlux;
     }
-    public void DeactivatePlant()
+    public virtual void DeactivatePlant()
     {
         IsAlive = false;
         material.color = Color.gray;

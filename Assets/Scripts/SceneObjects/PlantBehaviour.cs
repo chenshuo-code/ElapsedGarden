@@ -108,7 +108,7 @@ public class PlantBehaviour : MonoBehaviour
                     lifeFlux -= LifeAccumulateSpeed;
                 }
             }
-            else
+            else //Recover flux //Not in use
             {
                 if (canDeactivate)
                 {
@@ -128,7 +128,7 @@ public class PlantBehaviour : MonoBehaviour
     #region Interaction player
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && guideFlux.IsPlayerAlive)
         {
             canActivate = true;
         }

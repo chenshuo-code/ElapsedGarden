@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1601620435}
+    - target: {fileID: 8840540752877049772, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8840540752877049779, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -380,7 +384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6680659604304460719, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
       propertyPath: LifeAccumulateSpeed
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6680659604353431389, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
       propertyPath: m_Layer
@@ -673,7 +677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6680659604304460719, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
       propertyPath: LifeAccumulateSpeed
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6680659604353431389, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
       propertyPath: m_Layer
@@ -837,6 +841,10 @@ PrefabInstance:
     - target: {fileID: 6680659604304460718, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680659604304460719, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f85a48def24ed546aaa7817b8c97569, type: 3}
@@ -1109,7 +1117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7140062367687678461, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
       propertyPath: LifeAccumulateSpeed
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7140062367687678462, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
       propertyPath: m_RootOrder
@@ -1346,7 +1354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842701333933120924, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
       propertyPath: LifeAccumulateSpeed
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4842701333933120925, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
       propertyPath: m_RootOrder
@@ -1442,6 +1450,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1601620435}
+    - target: {fileID: 7140062367687678461, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7140062367687678462, guid: d9bc2ddfc1aca0b4ebc86f272b99e7f6, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1828,6 +1840,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlowerPurple
       objectReference: {fileID: 0}
+    - target: {fileID: 4842701333933120924, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4842701333933120925, guid: 3c8efa4948d21c64e9cbc14f14eabde9, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1908,7 +1924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8840540752877049772, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
       propertyPath: LifeAccumulateSpeed
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8840540752877049776, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
       propertyPath: m_IsTrigger
@@ -2014,7 +2030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8840540752877049772, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
       propertyPath: LifeAccumulateSpeed
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8840540752877049776, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
       propertyPath: m_IsTrigger
@@ -2094,6 +2110,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1601620435}
+    - target: {fileID: 4133034616363965528, guid: acf23457134e08b478369655e74a575c, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4133034616363965534, guid: acf23457134e08b478369655e74a575c, type: 3}
       propertyPath: m_Name
       value: TreeBamboo
@@ -2312,6 +2332,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1601620435}
+    - target: {fileID: 8070473280005888529, guid: 806a11d06e67a174f817b69b55df595e, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8070473280005888534, guid: 806a11d06e67a174f817b69b55df595e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2559,7 +2583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8840540752877049772, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
       propertyPath: LifeAccumulateSpeed
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8840540752877049776, guid: fb4b125d8f4aa77438ed1c8bcb2b1ce6, type: 3}
       propertyPath: m_IsTrigger
@@ -3144,10 +3168,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 725743509}
     m_Modifications:
+    - target: {fileID: 378806864563126619, guid: 133bf30f2e895f24e83475e591da0150, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 479642347785532948, guid: 133bf30f2e895f24e83475e591da0150, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 479642347799545069, guid: 133bf30f2e895f24e83475e591da0150, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1601620435}
+    - target: {fileID: 479642347933236272, guid: 133bf30f2e895f24e83475e591da0150, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 479642348008242914, guid: 133bf30f2e895f24e83475e591da0150, type: 3}
       propertyPath: m_Camera
       value: 
@@ -3160,10 +3196,22 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1601620435}
+    - target: {fileID: 479642348610023337, guid: 133bf30f2e895f24e83475e591da0150, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 479642348905950495, guid: 133bf30f2e895f24e83475e591da0150, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1601620435}
+    - target: {fileID: 479642348915881998, guid: 133bf30f2e895f24e83475e591da0150, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 479642348919000132, guid: 133bf30f2e895f24e83475e591da0150, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 479642348955250287, guid: 133bf30f2e895f24e83475e591da0150, type: 3}
       propertyPath: m_Camera
       value: 
@@ -3172,10 +3220,22 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1601620435}
+    - target: {fileID: 479642349305585033, guid: 133bf30f2e895f24e83475e591da0150, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 479642349313192659, guid: 133bf30f2e895f24e83475e591da0150, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 479642349399139139, guid: 133bf30f2e895f24e83475e591da0150, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1601620435}
+    - target: {fileID: 479642349527743833, guid: 133bf30f2e895f24e83475e591da0150, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8937359191010901066, guid: 133bf30f2e895f24e83475e591da0150, type: 3}
       propertyPath: m_Name
       value: TreeOrange_Affect
@@ -3294,6 +3354,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 725743509}
     m_Modifications:
+    - target: {fileID: 1482548489266319220, guid: a2244fc7680fd1746ac6f5581c4a0167, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482548489279945515, guid: a2244fc7680fd1746ac6f5581c4a0167, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1482548489293027957, guid: a2244fc7680fd1746ac6f5581c4a0167, type: 3}
       propertyPath: m_Camera
       value: 
@@ -3302,6 +3370,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1601620435}
+    - target: {fileID: 1482548489576372419, guid: a2244fc7680fd1746ac6f5581c4a0167, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482548489879161395, guid: a2244fc7680fd1746ac6f5581c4a0167, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1482548490103888691, guid: a2244fc7680fd1746ac6f5581c4a0167, type: 3}
       propertyPath: m_Camera
       value: 
@@ -3314,6 +3390,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1601620435}
+    - target: {fileID: 1691896631876629183, guid: a2244fc7680fd1746ac6f5581c4a0167, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7943497650224863197, guid: a2244fc7680fd1746ac6f5581c4a0167, type: 3}
       propertyPath: m_Camera
       value: 
@@ -3321,6 +3401,10 @@ PrefabInstance:
     - target: {fileID: 7943497650447928096, guid: a2244fc7680fd1746ac6f5581c4a0167, type: 3}
       propertyPath: m_Name
       value: TreeRed_Combi
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943497650447928097, guid: a2244fc7680fd1746ac6f5581c4a0167, type: 3}
+      propertyPath: LifeAccumulateSpeed
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7943497650447928100, guid: a2244fc7680fd1746ac6f5581c4a0167, type: 3}
       propertyPath: m_RootOrder
@@ -3437,6 +3521,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5686498861272256326, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686498861272256326, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686498861272256326, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686498861272256326, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.953717
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686498861272256326, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.30070576
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686498861272256326, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686498861272256326, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686498861272256326, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 5686498861583261894, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
       propertyPath: m_Name
       value: GuideFlux

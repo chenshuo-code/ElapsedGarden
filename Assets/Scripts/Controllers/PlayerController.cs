@@ -71,15 +71,23 @@ public class PlayerController : MonoBehaviour
                 {
                     this.transform.position = Vector3.MoveTowards(transform.position, raycastHit.point, MoveSpeed/10);
                 }
-                else
+                else if(Vector3.Distance(raycastHit.point, transform.position) <= 20)
                 {
                     this.transform.position = Vector3.Lerp(transform.position, raycastHit.point, MoveSpeed / 100);
                 }
+                else
+                {
+                    this.transform.position = Vector3.MoveTowards(transform.position, raycastHit.point, MoveSpeed*1.5f / 10);
+                }
 
-                DrawLine(this.transform.position);
+                if (guideFlux.IsPlayerAlive)
+                {
+                    DrawLine(this.transform.position);
 
-                //Reduce Flux on road
-                guideFlux.ReduceFlux(FluxConsume);
+                    //Reduce Flux on road
+                    guideFlux.ReduceFlux(FluxConsume);
+                }
+
             }
             else if (!raycastHit.transform.CompareTag("Player")&&canMove) //If Hit Game objet other than player, we move player to this GM
             {

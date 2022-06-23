@@ -49,14 +49,9 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void GameOver()
     {
-        foreach (PlantBehaviour plant in ListPlantsActive)
-        {
-            plant.DeactivatePlant();
-        }
-        PlayerController.TeleportToPosition(ListCheckPoints[ListCheckPoints.Count-1].transform.position); // Teleport to the last check point 
+        GuideFlux.IsPlayerAlive = false;
+ 
         PlayerController.EffaceLine();
-        GuideFlux.ResetFlux();
-        UIManager.ShowReloadGameUI();
     }
 
     /// <summary>
@@ -65,6 +60,7 @@ public class GameManager : MonoBehaviour
     public void CheckGame()
     {
         UIManager.ShowReloadGameUI();
+        GuideFlux.ResetFlux();
     }
     /// <summary>
     /// Call on player active the check point
@@ -72,8 +68,6 @@ public class GameManager : MonoBehaviour
     public void ActivateCheckPoint()
     {
         ListPlantsActive.Clear();
-        PlayerController.EffaceLine();
-        GuideFlux.ResetFlux();
         CheckGame();
     }
 }

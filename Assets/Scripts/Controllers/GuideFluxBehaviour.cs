@@ -11,12 +11,14 @@ public class GuideFluxBehaviour : MonoBehaviour
 {
     public float MaxFlux; 
     public float LifeDeductByTime; //Life deduct when time passed
+
+
     public bool ActiveDeductByTime;
-    public float CurrentFlux; //Flux of player
+
+    [HideInInspector]public bool IsPlayerAlive; //Detect if player is in state alive
+    [HideInInspector] public float CurrentFlux; //Flux of player
 
     private TimeManager timeManager;
-
-  
 
     //UI
     private Transform canvas;
@@ -37,6 +39,8 @@ public class GuideFluxBehaviour : MonoBehaviour
         CurrentFlux = MaxFlux;
 
         timeManager.EventTimePass += OnTimePassed;
+
+        IsPlayerAlive = true;
     }
 
     private void Update()

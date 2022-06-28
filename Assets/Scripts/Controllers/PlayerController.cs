@@ -24,14 +24,22 @@ public class PlayerController : MonoBehaviour
 
     //private parameters
 
-    private Ray ray;
-    private RaycastHit raycastHit;
-
+    private Ray rayCursor;
+    private RaycastHit raycastHitCursor;
+    private Ray rayForward;
+    private RaycastHit raycastHitForward;
     //Line
+
     private LineRenderer line;
     private int linePointCount;
 
+    private new Rigidbody rigidbody;
+    private Camera gameCamera;
+
     private bool canMove;
+    private bool isBlocked;
+
+    private Vector3 hitPos; //Cursor hit position project in ground 
 
     //UI
     private Transform canvas;
@@ -44,10 +52,14 @@ public class PlayerController : MonoBehaviour
     public void Init()
     {
         canMove = false;
-        
+        isBlocked = false;
+
         line = GetComponent<LineRenderer>();
+        rigidbody = GetComponent<Rigidbody>();
+
         guideFlux = transform.GetComponent<GuideFluxBehaviour>();
 
+        gameCamera = transform.GetComponentInChildren<Camera>();
         //UI Bar
         canvas = transform.Find("Canvas");
         lifeBar = transform.Find("Canvas/LifeBar").GetComponent<Image>();
@@ -56,29 +68,45 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
 
-        //Raycast test
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out raycastHit, 500f))
+        rayCursor = gameCamera.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(rayCursor, out raycastHitCursor,Mathf.Infinity))
         {
+            hitPos = new Vector3(raycastHitCursor.point.x,1,raycastHitCursor.point.z);
+            Debug.DrawRay(transform.position, hitPos - transform.position, Color.red);
+
             if (Input.GetMouseButtonDown(0)) 
             {
                 canMove = true;
             }
-            if (raycastHit.transform.CompareTag("Ground") && canMove)
+
+            //If face to an obstacle, stop move
+            if (Physics.Raycast(transform.position, hitPos - transform.position, out raycastHitForward, 3)) 
+            {
+                if (raycastHitForward.collider.CompareTag("Obstacle"))
+                {
+                    print("Hit obstacle" + raycastHitForward.collider.gameObject.name);
+                    isBlocked = true;
+                    
+                }
+            }
+            else
+            {
+                isBlocked = false;
+            }
+            if (canMove && !isBlocked)
             {
                 //Move player to cursor
-                if (Vector3.Distance(raycastHit.point, transform.position) <= 10)
+                print("Move");
+                if ((hitPos - transform.position).magnitude<=20)
                 {
-                    this.transform.position = Vector3.MoveTowards(transform.position, raycastHit.point, MoveSpeed/10);
-                }
-                else if(Vector3.Distance(raycastHit.point, transform.position) <= 20)
-                {
-                    this.transform.position = Vector3.Lerp(transform.position, raycastHit.point, MoveSpeed / 100);
+                    transform.position = Vector3.Lerp(transform.position, hitPos, MoveSpeed / 100);
                 }
                 else
                 {
-                    this.transform.position = Vector3.MoveTowards(transform.position, raycastHit.point, MoveSpeed*1.5f / 10);
+                    transform.position = Vector3.MoveTowards(transform.position, hitPos, MoveSpeed / 10);
                 }
+
 
                 if (guideFlux.IsPlayerAlive)
                 {
@@ -89,10 +117,10 @@ public class PlayerController : MonoBehaviour
                 }
 
             }
-            else if (!raycastHit.transform.CompareTag("Player")&&canMove) //If Hit Game objet other than player, we move player to this GM
-            {
-                this.transform.position = Vector3.MoveTowards(transform.position,raycastHit.collider.transform.position,MoveSpeed/10);
-            }
+            //else if (!raycastHitCursor.transform.CompareTag("Player")&&canMove) //If Hit Game objet other than player, we move player to this GM
+            //{
+            //    this.transform.position = Vector3.MoveTowards(transform.position,raycastHitCursor.collider.transform.position,MoveSpeed/10);
+            //}
 
         }
 

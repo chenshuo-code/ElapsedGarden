@@ -39,7 +39,6 @@ public class PlayerController : MonoBehaviour
     private bool canMove;
     private bool isBlocked;
 
-    private Vector3 hitPos; //Cursor hit position project in ground 
 
     //UI
     private Transform canvas;
@@ -72,8 +71,7 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(rayCursor, out raycastHitCursor,Mathf.Infinity))
         {
-            hitPos = new Vector3(raycastHitCursor.point.x,1,raycastHitCursor.point.z);
-            Debug.DrawRay(transform.position, hitPos - transform.position, Color.red);
+            Debug.DrawRay(transform.position, raycastHitCursor.point - transform.position, Color.red);
 
             if (Input.GetMouseButtonDown(0)) 
             {
@@ -81,7 +79,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //If face to an obstacle, stop move
-            if (Physics.Raycast(transform.position, hitPos - transform.position, out raycastHitForward, 3)) 
+            if (Physics.Raycast(transform.position, raycastHitCursor.point - transform.position, out raycastHitForward, 3)) 
             {
                 if (raycastHitForward.collider.CompareTag("Obstacle"))
                 {
@@ -98,13 +96,13 @@ public class PlayerController : MonoBehaviour
             {
                 //Move player to cursor
                 print("Move");
-                if ((hitPos - transform.position).magnitude<=20)
+                if ((raycastHitCursor.point - transform.position).magnitude<=20)
                 {
-                    transform.position = Vector3.Lerp(transform.position, hitPos, MoveSpeed / 100);
+                    transform.position = Vector3.Lerp(transform.position, raycastHitCursor.point, MoveSpeed / 100);
                 }
                 else
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, hitPos, MoveSpeed / 10);
+                    transform.position = Vector3.MoveTowards(transform.position, raycastHitCursor.point, MoveSpeed / 10);
                 }
 
 

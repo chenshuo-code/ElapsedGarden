@@ -177,7 +177,7 @@ public class PlantBehaviour : MonoBehaviour
         material.color = aliveColor; //Active Color 
         meshFilter.mesh = meshFinal;
         lifeFlux = MaxLifeFlux;
-        gameObject.layer = LayerMask.NameToLayer("Path");
+        gameObject.layer = LayerMask.NameToLayer("Color");
 
 
     }

@@ -28,10 +28,9 @@ public class PlayerController : MonoBehaviour
     private RaycastHit raycastHitCursor;
     private Ray rayForward;
     private RaycastHit raycastHitForward;
-    //Line
-
-    private LineRenderer line;
-    private int linePointCount;
+    
+    //Trail
+    private TrailRenderer trail;
 
     private new Rigidbody rigidbody;
     private Camera gameCamera;
@@ -39,6 +38,8 @@ public class PlayerController : MonoBehaviour
     private bool canMove;
     private bool isBlocked;
 
+    //Particle Trace
+    private ParticleSystem particleTrace;
 
     //UI
     private Transform canvas;
@@ -53,11 +54,10 @@ public class PlayerController : MonoBehaviour
         canMove = false;
         isBlocked = false;
 
-        line = GetComponent<LineRenderer>();
+        trail = GetComponentInChildren<TrailRenderer>();
+        particleTrace = transform.Find("ParticleTrace").GetComponent<ParticleSystem>();
         rigidbody = GetComponent<Rigidbody>();
-
         guideFlux = transform.GetComponent<GuideFluxBehaviour>();
-
         gameCamera = transform.GetComponentInChildren<Camera>();
         //UI Bar
         canvas = transform.Find("Canvas");
@@ -108,10 +108,16 @@ public class PlayerController : MonoBehaviour
 
                 if (guideFlux.IsPlayerAlive)
                 {
-                    DrawLine(this.transform.position);
+                    trail.emitting = true;
+                    particleTrace.Play(true);
 
                     //Reduce Flux on road
                     guideFlux.ReduceFlux(FluxConsume);
+                }
+                else
+                {
+                    trail.emitting = false;
+                    particleTrace.Stop(true);
                 }
 
             }
@@ -127,17 +133,7 @@ public class PlayerController : MonoBehaviour
             canMove = false;
         }
     }
-    /// <summary>
-    /// Draw line from given position
-    /// </summary>
-    /// <param name="_pos"></param>
-    private void DrawLine(Vector3 _pos)
-    {
-        linePointCount++;
-        line.positionCount = linePointCount;
-        line.SetPosition(linePointCount - 1, _pos);
-        line.endWidth = 0.5f;
-    }
+
 
     #region Public functions
 
@@ -148,15 +144,6 @@ public class PlayerController : MonoBehaviour
     public void TeleportToPosition(Vector3 telePos)
     {
         this.transform.position = telePos;
-    }
-
-    /// <summary>
-    /// Efface all line when we restart a match
-    /// </summary>
-    public void EffaceLine()
-    {
-        linePointCount = 0;
-        line.positionCount = 0;
     }
 
     #endregion

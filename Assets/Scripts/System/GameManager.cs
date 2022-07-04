@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
     public void CheckGame()
     {
         UIManager.ShowReloadGameUI();
-        GuideFlux.ResetFlux();
+        GuideFlux.OnRecharge();
         GuideFlux.IsPlayerAlive = true;
     }
     /// <summary>

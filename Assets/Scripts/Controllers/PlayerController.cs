@@ -28,18 +28,12 @@ public class PlayerController : MonoBehaviour
     private RaycastHit raycastHitCursor;
     private Ray rayForward;
     private RaycastHit raycastHitForward;
-    
-    //Trail
-    private TrailRenderer trail;
 
     private new Rigidbody rigidbody;
     private Camera gameCamera;
 
     private bool canMove;
     private bool isBlocked;
-
-    //Particle Trace
-    private ParticleSystem particleTrace;
 
     //UI
     private Transform canvas;
@@ -54,8 +48,6 @@ public class PlayerController : MonoBehaviour
         canMove = false;
         isBlocked = false;
 
-        trail = GetComponentInChildren<TrailRenderer>();
-        particleTrace = transform.Find("ParticleTrace").GetComponent<ParticleSystem>();
         rigidbody = GetComponent<Rigidbody>();
         guideFlux = transform.GetComponent<GuideFluxBehaviour>();
         gameCamera = transform.GetComponentInChildren<Camera>();
@@ -95,7 +87,6 @@ public class PlayerController : MonoBehaviour
             if (canMove && !isBlocked)
             {
                 //Move player to cursor
-                print("Move");
                 if ((raycastHitCursor.point - transform.position).magnitude<=20)
                 {
                     transform.position = Vector3.Lerp(transform.position, raycastHitCursor.point, MoveSpeed / 100);
@@ -108,24 +99,12 @@ public class PlayerController : MonoBehaviour
 
                 if (guideFlux.IsPlayerAlive)
                 {
-                    trail.emitting = true;
-                    particleTrace.Play(true);
 
                     //Reduce Flux on road
                     guideFlux.ReduceFlux(FluxConsume);
                 }
-                else
-                {
-                    trail.emitting = false;
-                    particleTrace.Stop(true);
-                }
 
             }
-            //else if (!raycastHitCursor.transform.CompareTag("Player")&&canMove) //If Hit Game objet other than player, we move player to this GM
-            //{
-            //    this.transform.position = Vector3.MoveTowards(transform.position,raycastHitCursor.collider.transform.position,MoveSpeed/10);
-            //}
-
         }
 
         if (Input.GetMouseButtonUp(0))

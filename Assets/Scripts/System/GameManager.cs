@@ -50,8 +50,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         GuideFlux.IsPlayerAlive = false;
- 
-        PlayerController.EffaceLine();
     }
 
     /// <summary>
@@ -60,7 +58,7 @@ public class GameManager : MonoBehaviour
     public void CheckGame()
     {
         UIManager.ShowReloadGameUI();
-        GuideFlux.ResetFlux();
+        GuideFlux.OnRecharge();
         GuideFlux.IsPlayerAlive = true;
     }
     /// <summary>

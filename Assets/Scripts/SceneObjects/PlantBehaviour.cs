@@ -38,8 +38,6 @@ public class PlantBehaviour : MonoBehaviour
     private Image lifeBar;
     private float lifeDisplayRate;
     private TMP_Text LifeNum;
-
-
     private void Start()
     {
         Init();
@@ -88,6 +86,7 @@ public class PlantBehaviour : MonoBehaviour
                 //Activating plant
                 if (canActivate)
                 {
+
                     lifeFlux += LifeAccumulateSpeed;
 
                     if (lifeFlux >= MaxLifeFlux)
@@ -95,12 +94,13 @@ public class PlantBehaviour : MonoBehaviour
                         ActivatePlant();
                         guideFlux.ReduceFlux(MaxLifeFlux); // Reduce flux in FirstTree
                     }
-                    else if (lifeFlux >= guideFlux.CurrentFlux)
+                    else if (lifeFlux >= guideFlux.CurrentFlux) //If player didn't have enough flux
                     {
+                        canActivate = false;
                         //guideFlux.ReduceFlux(guideFlux.CurrentFlux);
-                        GameManager.Instance.GameOver();
+                        //GameManager.Instance.GameOver();
                     }
-                    //If player didn't have enough flux, we take all player's flux
+                    
 
                 }
                 else if (lifeFlux > 0)
@@ -179,6 +179,9 @@ public class PlantBehaviour : MonoBehaviour
         material.color = aliveColor; //Active Color 
         meshFilter.mesh = meshFinal;
         lifeFlux = MaxLifeFlux;
+        gameObject.layer = LayerMask.NameToLayer("Color");
+
+
     }
     public virtual void DeactivatePlant()
     {

@@ -50,8 +50,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         GuideFlux.IsPlayerAlive = false;
- 
-        PlayerController.EffaceLine();
     }
 
     /// <summary>

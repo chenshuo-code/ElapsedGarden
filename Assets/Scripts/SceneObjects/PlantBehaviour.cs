@@ -38,8 +38,6 @@ public class PlantBehaviour : MonoBehaviour
     private Image lifeBar;
     private float lifeDisplayRate;
     private TMP_Text LifeNum;
-
-
     private void Start()
     {
         Init();
@@ -179,6 +177,9 @@ public class PlantBehaviour : MonoBehaviour
         material.color = aliveColor; //Active Color 
         meshFilter.mesh = meshFinal;
         lifeFlux = MaxLifeFlux;
+        gameObject.layer = LayerMask.NameToLayer("Path");
+
+
     }
     public virtual void DeactivatePlant()
     {

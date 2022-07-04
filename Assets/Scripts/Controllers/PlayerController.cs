@@ -136,6 +136,7 @@ public class PlayerController : MonoBehaviour
         linePointCount++;
         line.positionCount = linePointCount;
         line.SetPosition(linePointCount - 1, _pos);
+        line.endWidth = 0.5f;
     }
 
     #region Public functions

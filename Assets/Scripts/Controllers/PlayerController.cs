@@ -35,7 +35,6 @@ public class PlayerController : MonoBehaviour
     private bool canMove;
     private bool isBlocked;
 
-    private bool isInitDone = false;
 
     //UI
     private Transform canvas;
@@ -57,9 +56,9 @@ public class PlayerController : MonoBehaviour
         canvas = transform.Find("Canvas");
         lifeBar = transform.Find("Canvas/LifeBar").GetComponent<Image>();
         LifeNum = transform.Find("Canvas/LifeNum").GetComponent<TMP_Text>();
-        isInitDone = true;
+
     }
-#if isInitDone
+
     private void Update()
     {
 
@@ -118,7 +117,6 @@ public class PlayerController : MonoBehaviour
     }
 
 
-#endif
 
     #region Public functions
 

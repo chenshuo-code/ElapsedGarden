@@ -34,7 +34,7 @@ public class GuideFluxBehaviour : MonoBehaviour
     private float initPSTrailEmissionRate;
     private float initPSFluxSize;
 
-    private bool isInitDone = false;
+
 
     //UI
     private Transform canvas;
@@ -69,9 +69,9 @@ public class GuideFluxBehaviour : MonoBehaviour
 
         IsPlayerAlive = true;
 
-        isInitDone = true;
+    
     }
-#if isInitDone
+
 
 
 
@@ -89,7 +89,7 @@ public class GuideFluxBehaviour : MonoBehaviour
 
     }
     
-#endif
+
     private void OnTimePassed()
     {
         if (ActiveDeductByTime) CurrentFlux -= LifeDeductByTime;

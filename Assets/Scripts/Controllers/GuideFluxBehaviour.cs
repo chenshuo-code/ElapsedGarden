@@ -34,6 +34,8 @@ public class GuideFluxBehaviour : MonoBehaviour
     private float initPSTrailEmissionRate;
     private float initPSFluxSize;
 
+    private bool isInitDone = false;
+
     //UI
     private Transform canvas;
     private Image lifeBar;
@@ -66,7 +68,12 @@ public class GuideFluxBehaviour : MonoBehaviour
         timeManager.EventTimePass += OnTimePassed;
 
         IsPlayerAlive = true;
+
+        isInitDone = true;
     }
+#if isInitDone
+
+
 
     private void Update()
     {
@@ -81,6 +88,8 @@ public class GuideFluxBehaviour : MonoBehaviour
         LifeNum.text = CurrentFlux.ToString();
 
     }
+    
+#endif
     private void OnTimePassed()
     {
         if (ActiveDeductByTime) CurrentFlux -= LifeDeductByTime;

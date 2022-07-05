@@ -27,8 +27,8 @@ public class GameManager : MonoBehaviour
         PlayerController.Init();
         GuideFlux = FindObjectOfType<GuideFluxBehaviour>();
         GuideFlux.Init();
-        UIManager = FindObjectOfType<UIManager>();
-        UIManager.Init();
+        //UIManager = FindObjectOfType<UIManager>();
+        //UIManager.Init();
         FirstTreeBehaviour = FindObjectOfType<FirstTreeBehaviour>();
         FirstTreeBehaviour.Init();
 
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void CheckGame()
     {
-        UIManager.ShowReloadGameUI();
+        //UIManager.ShowReloadGameUI();
         GuideFlux.OnRecharge();
         GuideFlux.IsPlayerAlive = true;
     }

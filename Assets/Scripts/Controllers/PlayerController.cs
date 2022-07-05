@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public float FluxConsume;
 
+    public GameObject ColorZonePrefab;
+    public int ColorZoneRate;
+
     //private parameters
 
     private Ray rayCursor;
@@ -35,6 +38,7 @@ public class PlayerController : MonoBehaviour
     private bool canMove;
     private bool isBlocked;
 
+    private int ColorZoneCount = 0;  
 
     //UI
     private Transform canvas;
@@ -99,6 +103,12 @@ public class PlayerController : MonoBehaviour
                     transform.position = Vector3.MoveTowards(transform.position, raycastHitCursor.point, MoveSpeed / 10);
                 }
 
+                ColorZoneCount++;
+                if (ColorZoneCount>=ColorZoneRate)
+                {
+                    ColorZoneCount = 0;
+                }
+
 
                 if (guideFlux.IsPlayerAlive)
                 {
@@ -116,7 +126,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
+    private void SpawnColorZone()
+    {
+        GameObject.Instantiate(ColorZonePrefab);
+    }
 
     #region Public functions
 

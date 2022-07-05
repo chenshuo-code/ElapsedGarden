@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     public float FluxConsume;
 
     public GameObject ColorZonePrefab;
-    public int ColorZoneRate;
+    public float ColorZoneRate;
 
     //private parameters
 
@@ -32,13 +32,16 @@ public class PlayerController : MonoBehaviour
     private Ray rayForward;
     private RaycastHit raycastHitForward;
 
+    private Transform colorZoneManager;
+
     private new Rigidbody rigidbody;
     private Camera gameCamera;
 
     private bool canMove;
     private bool isBlocked;
 
-    private int ColorZoneCount = 0;  
+    private float colorZoneCount = 0;
+    private Vector3 lastColorZonePos = Vector3.zero;
 
     //UI
     private Transform canvas;
@@ -56,6 +59,8 @@ public class PlayerController : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         guideFlux = transform.GetComponent<GuideFluxBehaviour>();
         gameCamera = transform.Find("Main Camera").GetComponent<Camera>();
+        colorZoneManager = GameObject.Find("ColorZoneManager").transform;
+
         //UI Bar
         canvas = transform.Find("Canvas");
         lifeBar = transform.Find("Canvas/LifeBar").GetComponent<Image>();
@@ -82,9 +87,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (raycastHitForward.collider.CompareTag("Obstacle"))
                 {
-                    print("Hit obstacle" + raycastHitForward.collider.gameObject.name);
                     isBlocked = true;
-                    
                 }
             }
             else
@@ -96,23 +99,21 @@ public class PlayerController : MonoBehaviour
                 //Move player to cursor
                 if ((raycastHitCursor.point - transform.position).magnitude<=20)
                 {
-                    transform.position = Vector3.Lerp(transform.position, raycastHitCursor.point, MoveSpeed / 100);
+                    transform.position = Vector3.Lerp(transform.position, raycastHitCursor.point+Vector3.up, MoveSpeed / 100);
                 }
                 else
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, raycastHitCursor.point, MoveSpeed / 10);
+                    transform.position = Vector3.MoveTowards(transform.position, raycastHitCursor.point + Vector3.up, MoveSpeed / 10);
                 }
-
-                ColorZoneCount++;
-                if (ColorZoneCount>=ColorZoneRate)
-                {
-                    ColorZoneCount = 0;
-                }
-
 
                 if (guideFlux.IsPlayerAlive)
                 {
 
+                    if (Vector3.Distance(lastColorZonePos, transform.position) >= ColorZoneRate)
+                    {
+                        SpawnColorZone();
+                        lastColorZonePos = SpawnColorZone();
+                    }
                     //Reduce Flux on road
                     guideFlux.ReduceFlux(FluxConsume);
                 }
@@ -126,9 +127,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void SpawnColorZone()
+    private Vector3 SpawnColorZone()
     {
-        GameObject.Instantiate(ColorZonePrefab);
+        GameObject _gm = GameObject.Instantiate(ColorZonePrefab);
+        _gm.transform.position = this.transform.position;
+        return _gm.transform.position;
     }
 
     #region Public functions

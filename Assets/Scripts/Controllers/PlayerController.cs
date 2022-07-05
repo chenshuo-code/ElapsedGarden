@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
         rayCursor = gameCamera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(rayCursor, out raycastHitCursor,Mathf.Infinity))
+        if (Physics.Raycast(rayCursor, out raycastHitCursor,float.MaxValue, 3<<LayerMask.NameToLayer("Ground")))
         {
             Debug.DrawRay(transform.position, raycastHitCursor.point - transform.position, Color.red);
 

@@ -22,9 +22,9 @@ public class GuideFluxBehaviour : MonoBehaviour
     //FeedBack visual
     private MeshRenderer meshRenderer;
 
-    //Trail
-    private TrailRenderer trail;
-    private float initTrailWidth;
+    ////Trail
+    //private TrailRenderer trail;
+    //private float initTrailWidth;
 
     //Particle System
     private ParticleSystem particleTrace;
@@ -54,14 +54,14 @@ public class GuideFluxBehaviour : MonoBehaviour
         particleTrail = transform.Find("PSTrail").GetComponent<ParticleSystem>();
         particleFlux = transform.Find("PSFlux").GetComponent<ParticleSystem>();
 
-        trail = GetComponentInChildren<TrailRenderer>();
+        //trail = GetComponentInChildren<TrailRenderer>();
         meshRenderer = GetComponent<MeshRenderer>();
 
         lifeDisplayRate = 1 / MaxFlux;
 
         CurrentFlux = MaxFlux;
 
-        initTrailWidth = trail.endWidth;
+        //initTrailWidth = trail.endWidth;
         initPSTrailEmissionRate = particleTrail.emissionRate;
         initPSFluxSize = particleFlux.startSize;
 
@@ -78,7 +78,7 @@ public class GuideFluxBehaviour : MonoBehaviour
     private void Update()
     {
         //FeedBack
-        trail.startWidth = initTrailWidth / MaxFlux * CurrentFlux;
+        //trail.startWidth = initTrailWidth / MaxFlux * CurrentFlux;
         particleTrail.emissionRate = initPSTrailEmissionRate/ MaxFlux * CurrentFlux;
         particleFlux.startSize = initPSFluxSize / MaxFlux * CurrentFlux;
 
@@ -100,7 +100,7 @@ public class GuideFluxBehaviour : MonoBehaviour
     /// </summary>
     private void OnGameOver()
     {
-        trail.emitting = false;
+        //trail.emitting = false;
         particleTrace.Stop(true);
         particleTrail.Stop(true);
     }
@@ -153,8 +153,8 @@ public class GuideFluxBehaviour : MonoBehaviour
     {
         CurrentFlux = MaxFlux;
 
-        trail.emitting = true;
-        trail.startWidth = initTrailWidth;
+        //trail.emitting = true;
+        //trail.startWidth = initTrailWidth;
         particleTrace.Play(true);
         particleTrail.Play(true);
     }

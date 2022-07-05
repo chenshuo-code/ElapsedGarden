@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
         rigidbody = GetComponent<Rigidbody>();
         guideFlux = transform.GetComponent<GuideFluxBehaviour>();
-        gameCamera = transform.GetComponentInChildren<Camera>();
+        gameCamera = transform.Find("Main Camera").GetComponent<Camera>();
         //UI Bar
         canvas = transform.Find("Canvas");
         lifeBar = transform.Find("Canvas/LifeBar").GetComponent<Image>();

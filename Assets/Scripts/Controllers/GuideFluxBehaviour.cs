@@ -11,10 +11,6 @@ public class GuideFluxBehaviour : MonoBehaviour
 {
     public float MaxFlux; 
     public float LifeDeductByTime; //Life deduct when time passed
-    /// <summary>
-    /// Material of guide flux when it is dead
-    /// </summary>
-    public Material MatDead;
 
     public bool ActiveDeductByTime;
 
@@ -24,7 +20,6 @@ public class GuideFluxBehaviour : MonoBehaviour
     private TimeManager timeManager;
 
     //FeedBack visual
-    private Material MatInit;
     private MeshRenderer meshRenderer;
 
     //Trail
@@ -34,8 +29,10 @@ public class GuideFluxBehaviour : MonoBehaviour
     //Particle System
     private ParticleSystem particleTrace;
     private ParticleSystem particleTrail;
+    private ParticleSystem particleFlux;
 
     private float initPSTrailEmissionRate;
+    private float initPSFluxSize;
 
     //UI
     private Transform canvas;
@@ -53,10 +50,10 @@ public class GuideFluxBehaviour : MonoBehaviour
 
         particleTrace = transform.Find("PSTrace").GetComponent<ParticleSystem>();
         particleTrail = transform.Find("PSTrail").GetComponent<ParticleSystem>();
+        particleFlux = transform.Find("PSFlux").GetComponent<ParticleSystem>();
 
         trail = GetComponentInChildren<TrailRenderer>();
         meshRenderer = GetComponent<MeshRenderer>();
-        MatInit = meshRenderer.material;
 
         lifeDisplayRate = 1 / MaxFlux;
 
@@ -64,7 +61,7 @@ public class GuideFluxBehaviour : MonoBehaviour
 
         initTrailWidth = trail.endWidth;
         initPSTrailEmissionRate = particleTrail.emissionRate;
-
+        initPSFluxSize = particleFlux.startSize;
 
         timeManager.EventTimePass += OnTimePassed;
 
@@ -76,6 +73,7 @@ public class GuideFluxBehaviour : MonoBehaviour
         //FeedBack
         trail.startWidth = initTrailWidth / MaxFlux * CurrentFlux;
         particleTrail.emissionRate = initPSTrailEmissionRate/ MaxFlux * CurrentFlux;
+        particleFlux.startSize = initPSFluxSize / MaxFlux * CurrentFlux;
 
 
         //ShowUI
@@ -93,8 +91,6 @@ public class GuideFluxBehaviour : MonoBehaviour
     /// </summary>
     private void OnGameOver()
     {
-        meshRenderer.material = MatDead;
-        print(meshRenderer.material.name) ;
         trail.emitting = false;
         particleTrace.Stop(true);
         particleTrail.Stop(true);
@@ -147,7 +143,6 @@ public class GuideFluxBehaviour : MonoBehaviour
     public void OnRecharge()
     {
         CurrentFlux = MaxFlux;
-        meshRenderer.material = MatInit;
 
         trail.emitting = true;
         trail.startWidth = initTrailWidth;

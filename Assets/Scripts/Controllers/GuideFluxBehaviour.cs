@@ -22,18 +22,14 @@ public class GuideFluxBehaviour : MonoBehaviour
     //FeedBack visual
     private MeshRenderer meshRenderer;
 
-    ////Trail
-    //private TrailRenderer trail;
-    //private float initTrailWidth;
 
     //Particle System
-    private ParticleSystem particleTrace;
     private ParticleSystem particleTrail;
     private ParticleSystem particleFlux;
 
     private float initPSTrailEmissionRate;
     private float initPSFluxSize;
-
+    private Color initPSFluxStartColor;
 
 
     //UI
@@ -50,7 +46,6 @@ public class GuideFluxBehaviour : MonoBehaviour
         lifeBar = transform.Find("Canvas/LifeBar").GetComponent<Image>();
         LifeNum = transform.Find("Canvas/LifeNum").GetComponent<TMP_Text>();
 
-        particleTrace = transform.Find("PSTrace").GetComponent<ParticleSystem>();
         particleTrail = transform.Find("PSTrail").GetComponent<ParticleSystem>();
         particleFlux = transform.Find("PSFlux").GetComponent<ParticleSystem>();
 
@@ -64,6 +59,7 @@ public class GuideFluxBehaviour : MonoBehaviour
         //initTrailWidth = trail.endWidth;
         initPSTrailEmissionRate = particleTrail.emissionRate;
         initPSFluxSize = particleFlux.startSize;
+        initPSFluxStartColor = particleFlux.startColor;
 
         timeManager.EventTimePass += OnTimePassed;
 
@@ -78,7 +74,6 @@ public class GuideFluxBehaviour : MonoBehaviour
     private void Update()
     {
         //FeedBack
-        //trail.startWidth = initTrailWidth / MaxFlux * CurrentFlux;
         particleTrail.emissionRate = initPSTrailEmissionRate/ MaxFlux * CurrentFlux;
         particleFlux.startSize = initPSFluxSize / MaxFlux * CurrentFlux;
 
@@ -101,7 +96,6 @@ public class GuideFluxBehaviour : MonoBehaviour
     private void OnGameOver()
     {
         //trail.emitting = false;
-        particleTrace.Stop(true);
         particleTrail.Stop(true);
     }
 
@@ -118,6 +112,11 @@ public class GuideFluxBehaviour : MonoBehaviour
         if (CurrentFlux >= 0)
         {
             CurrentFlux -= fluxGiven;
+
+            if (CurrentFlux<=MaxFlux*0.3f) //If current flux is lower than 30% of max flux
+            {
+                particleFlux.startColor = Color.red;
+            }
             
         }
         else
@@ -152,10 +151,7 @@ public class GuideFluxBehaviour : MonoBehaviour
     public void OnRecharge()
     {
         CurrentFlux = MaxFlux;
-
-        //trail.emitting = true;
-        //trail.startWidth = initTrailWidth;
-        particleTrace.Play(true);
+        particleFlux.startColor = initPSFluxStartColor;
         particleTrail.Play(true);
     }
     #endregion

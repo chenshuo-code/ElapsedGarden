@@ -96,15 +96,25 @@ public class PlayerController : MonoBehaviour
             }
             if (canMove && !isBlocked)
             {
+                float _distance = Vector3.Distance(transform.position, raycastHitCursor.point);
+                //float _haut = (raycastHitForward.point.z - transform.position.z);
+                //_distance -= _haut;
+
+                //Limit distance range
+                switch (_distance)
+                {
+                    case float n when (n <= 0):
+                        _distance = 0;
+                        break;
+                    case float n when (n >= 15):
+                        _distance = 15;
+                        break;
+                    default:
+                        break;
+                }
                 //Move player to cursor
-                if ((raycastHitCursor.point - transform.position).magnitude<=20)
-                {
-                    transform.position = Vector3.Lerp(transform.position, raycastHitCursor.point+Vector3.up, MoveSpeed / 100);
-                }
-                else
-                {
-                    transform.position = Vector3.MoveTowards(transform.position, raycastHitCursor.point + Vector3.up, MoveSpeed / 10);
-                }
+                rigidbody.velocity = (raycastHitCursor.point - transform.position).normalized*_distance;
+
 
                 if (guideFlux.IsPlayerAlive)
                 {
@@ -129,7 +139,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 SpawnColorZone()
     {
-        GameObject _gm = GameObject.Instantiate(ColorZonePrefab);
+        GameObject _gm = GameObject.Instantiate(ColorZonePrefab, colorZoneManager, true);
+        _gm.GetComponent<ColorZoneBehaviour>().ActiveColorZone(guideFlux.CurrentFlux/guideFlux.MaxFlux);
         _gm.transform.position = this.transform.position;
         return _gm.transform.position;
     }

@@ -5035,7 +5035,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 951497191}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &305264539
 PrefabInstance:
@@ -6750,7 +6750,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 951497191}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &1797298107
 ParticleSystemRenderer:
@@ -7014,7 +7014,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 0.69411767}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -7076,7 +7076,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.8
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -8069,8 +8069,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.8980392, g: 0.68304396, b: 0.066666655, a: 0}
-        key1: {r: 0.89411765, g: 0.72377807, b: 0.06666668, a: 0}
+        key0: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 0}
+        key1: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 0}
         key2: {r: 0.23921569, g: 0, b: 0.9843137, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 1}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -12381,7 +12381,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5be965bd4e313134da7194bce4cc4e0b, type: 2}
     - target: {fileID: 5686498861583261893, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5686498861583261894, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
       propertyPath: m_Name
@@ -12557,7 +12557,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a056ac423ccc20a4d8783c6e39c2a790, type: 2}
     - target: {fileID: 5686498861583261901, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
       propertyPath: MoveSpeed
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5686498861583261901, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
       propertyPath: FluxConsume
@@ -12571,9 +12571,29 @@ PrefabInstance:
       propertyPath: ColorZonePrefab
       value: 
       objectReference: {fileID: 1589025116112153423, guid: 999aca5681320ac4699f9766f2c91940, type: 3}
+    - target: {fileID: 5686498861583261902, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
+      propertyPath: Speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686498861583261903, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
+      propertyPath: m_Mass
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686498861583261903, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686498861583261903, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5686498861583261903, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
       propertyPath: m_Constraints
-      value: 116
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686498861583261903, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5686498861583261903, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
       propertyPath: m_CollisionDetection

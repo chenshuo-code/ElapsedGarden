@@ -30,14 +30,14 @@ public class Plant_AffectOthers : PlantBehaviour
         base.Init();
     }
 
-    public override void ActivatePlant()
+    public override void ActivatePlant(bool needGrow)
     {
-        base.ActivatePlant();
+        base.ActivatePlant(false);
         foreach (PlantBehaviour plant in PlantsActivateList)
         {
             if (!plant.IsAlive)
             {
-                plant.ActivatePlant();
+                plant.ActivatePlant(true);
             }
         }
         foreach (PlantBehaviour plant in PlantsDeactivateList)
@@ -77,7 +77,7 @@ public class Plant_AffectOthers : PlantBehaviour
         {
             if (!plant.IsAlive)
             {
-                plant.ActivatePlant();
+                plant.ActivatePlant(true);
             }
         }
         foreach (ObstacleBehaviour Obstacle in ObstaclesActivateList)

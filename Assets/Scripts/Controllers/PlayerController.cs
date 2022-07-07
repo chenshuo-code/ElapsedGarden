@@ -22,8 +22,15 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public float FluxConsume;
 
+    /// <summary>
+    /// Prefab to coloring zone
+    /// </summary>
     public GameObject ColorZonePrefab;
+    /// <summary>
+    /// Distance between two color zones
+    /// </summary>
     public float ColorZoneRate;
+    
 
     //private parameters
 
@@ -141,7 +148,7 @@ public class PlayerController : MonoBehaviour
     {
         GameObject _gm = GameObject.Instantiate(ColorZonePrefab, colorZoneManager, true);
         _gm.GetComponent<ColorZoneBehaviour>().ActiveColorZone(guideFlux.CurrentFlux/guideFlux.MaxFlux);
-        _gm.transform.position = this.transform.position;
+        _gm.transform.position = this.transform.position+Vector3.down;
         return _gm.transform.position;
     }
 

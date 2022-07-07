@@ -9,7 +9,7 @@ public class ColorZoneBehaviour : MonoBehaviour
     public void ActiveColorZone(float scaleSize)
     {
         this.scaleSize = scaleSize;
-        transform.DOScale(new Vector3(5* scaleSize, 0.1f, 5* scaleSize), 2f).OnComplete(ScaleMore);
+        transform.DOScale(new Vector3(7* scaleSize, 0.1f, 7* scaleSize), 2f).OnComplete(ScaleMore);
     }
     private void ScaleMore()
     {

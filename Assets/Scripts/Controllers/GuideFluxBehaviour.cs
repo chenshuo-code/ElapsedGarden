@@ -14,6 +14,11 @@ public class GuideFluxBehaviour : MonoBehaviour
 
     public bool ActiveDeductByTime;
 
+    /// <summary>
+    /// Speed to resolve plante with flux
+    /// </summary>
+    public float ResolveSpeed;
+
     [HideInInspector]public bool IsPlayerAlive; //Detect if player is in state alive
     [HideInInspector] public float CurrentFlux; //Flux of player
 

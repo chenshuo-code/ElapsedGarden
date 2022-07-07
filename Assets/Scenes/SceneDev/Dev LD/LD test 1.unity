@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2150,8 +2150,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550588859}
-  m_LocalRotation: {x: -0.42277363, y: -0.54252017, z: -0.37205198, w: 0.62330705}
-  m_LocalPosition: {x: 73.15874, y: -177.67522, z: 68.51091}
+  m_LocalRotation: {x: 0.20072202, y: 0.061379485, z: 0.012601874, w: -0.9776423}
+  m_LocalPosition: {x: 1.6471668, y: 26.01252, z: -38.63159}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2673,8 +2673,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659378730}
-  m_LocalRotation: {x: -0.43026713, y: 0.53659654, z: -0.36336002, w: -0.62841386}
-  m_LocalPosition: {x: 73.23945, y: 273.49353, z: 68.466194}
+  m_LocalRotation: {x: -0.22400428, y: -0.06893321, z: 0.015885754, w: -0.97201747}
+  m_LocalPosition: {x: 1.6513667, y: 69.81038, z: -38.633827}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3267,6 +3267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 839530576}
   - component: {fileID: 839530575}
+  - component: {fileID: 839530577}
   m_Layer: 0
   m_Name: Water (3)ReflectionSceneCamera
   m_TagString: Untagged
@@ -3324,14 +3325,23 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839530574}
-  m_LocalRotation: {x: -0.42277363, y: -0.54252017, z: -0.37205198, w: 0.62330705}
-  m_LocalPosition: {x: 73.23945, y: -253.05353, z: 68.466194}
+  m_LocalRotation: {x: -0.22400406, y: 0.068933286, z: 0.01588597, w: 0.9720175}
+  m_LocalPosition: {x: 1.6513667, y: -49.370377, z: -38.633827}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 70
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!45 &839530577
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839530574}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 0}
 --- !u!1001 &853395129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3783,8 +3793,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960591877}
-  m_LocalRotation: {x: -0.42277363, y: -0.54252017, z: -0.37205198, w: 0.62330705}
-  m_LocalPosition: {x: 73.23945, y: -205.45352, z: 68.466194}
+  m_LocalRotation: {x: -0.21988964, y: 0.05001836, z: 0.011290183, w: 0.9741762}
+  m_LocalPosition: {x: 1.6513395, y: -1.7703781, z: -38.633823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9840,6 +9850,115 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
+--- !u!4 &4262274883616208066 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5686498861272256326, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
+  m_PrefabInstance: {fileID: 4262274883616208065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4262274883616208067 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5686498861272256321, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
+  m_PrefabInstance: {fileID: 4262274883616208065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4262274883616208068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4262274883616208067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a879e317c20b0d41a9a56f1a97f4cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ApplyMethod: 0
+  SampleCount: 1
+  PerPixelNormals: 1
+  Intensity: 1
+  Tint: {r: 0, g: 0, b: 0, a: 1}
+  Radius: 2
+  PowerExponent: 1.8
+  Bias: 0.05
+  Thickness: 1
+  Downsample: 1
+  CacheAware: 1
+  FadeEnabled: 0
+  FadeStart: 100
+  FadeLength: 50
+  FadeToIntensity: 0
+  FadeToTint: {r: 0, g: 0, b: 0, a: 1}
+  FadeToRadius: 2
+  FadeToPowerExponent: 1
+  FadeToThickness: 1
+  BlurEnabled: 1
+  BlurRadius: 3
+  BlurPasses: 1
+  BlurSharpness: 15
+  FilterEnabled: 1
+  FilterDownsample: 1
+  FilterBlending: 0.8
+  FilterResponse: 0.5
+--- !u!114 &4262274883616208069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4262274883616208067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 4262274883616208066}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1001 &9094543631614832395
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -50,12 +50,6 @@ public class PlayerController : MonoBehaviour
     private float colorZoneCount = 0;
     private Vector3 lastColorZonePos = Vector3.zero;
 
-    //UI
-    private Transform canvas;
-    private Image lifeBar;
-    private float lifeDisplayRate;
-    private TMP_Text LifeNum;
-
     private GuideFluxBehaviour guideFlux;
 
     public void Init()
@@ -68,10 +62,6 @@ public class PlayerController : MonoBehaviour
         gameCamera = transform.Find("Main Camera").GetComponent<Camera>();
         colorZoneManager = GameObject.Find("ColorZoneManager").transform;
 
-        //UI Bar
-        canvas = transform.Find("Canvas");
-        lifeBar = transform.Find("Canvas/LifeBar").GetComponent<Image>();
-        LifeNum = transform.Find("Canvas/LifeNum").GetComponent<TMP_Text>();
 
     }
 

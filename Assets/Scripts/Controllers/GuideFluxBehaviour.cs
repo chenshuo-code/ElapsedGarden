@@ -47,10 +47,6 @@ public class GuideFluxBehaviour : MonoBehaviour
     {
         timeManager = GameManager.Instance.TimeManager;
 
-        canvas = transform.Find("Canvas");
-        lifeBar = transform.Find("Canvas/LifeBar").GetComponent<Image>();
-        LifeNum = transform.Find("Canvas/LifeNum").GetComponent<TMP_Text>();
-
         particleTrail = transform.Find("PSTrail").GetComponent<ParticleSystem>();
         particleFlux = transform.Find("PSFlux").GetComponent<ParticleSystem>();
 
@@ -81,11 +77,6 @@ public class GuideFluxBehaviour : MonoBehaviour
         //FeedBack
         particleTrail.emissionRate = initPSTrailEmissionRate/ MaxFlux * CurrentFlux;
         particleFlux.startSize = initPSFluxSize / MaxFlux * CurrentFlux;
-
-
-        //ShowUI
-        lifeBar.fillAmount = CurrentFlux * lifeDisplayRate;
-        LifeNum.text = CurrentFlux.ToString();
 
     }
     

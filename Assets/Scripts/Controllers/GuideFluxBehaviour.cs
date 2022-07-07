@@ -34,8 +34,6 @@ public class GuideFluxBehaviour : MonoBehaviour
     private float initPSTrailEmissionRate;
     private float initPSFluxSize;
 
-    private bool isInitDone = false;
-
     //UI
     private Transform canvas;
     private Image lifeBar;
@@ -54,7 +52,7 @@ public class GuideFluxBehaviour : MonoBehaviour
         particleTrail = transform.Find("PSTrail").GetComponent<ParticleSystem>();
         particleFlux = transform.Find("PSFlux").GetComponent<ParticleSystem>();
 
-        trail = GetComponentInChildren<TrailRenderer>();
+        trail = transform.Find("Trail").GetComponent<TrailRenderer>();
         meshRenderer = GetComponent<MeshRenderer>();
 
         lifeDisplayRate = 1 / MaxFlux;
@@ -68,12 +66,7 @@ public class GuideFluxBehaviour : MonoBehaviour
         timeManager.EventTimePass += OnTimePassed;
 
         IsPlayerAlive = true;
-
-        isInitDone = true;
     }
-#if isInitDone
-
-
 
     private void Update()
     {
@@ -88,8 +81,6 @@ public class GuideFluxBehaviour : MonoBehaviour
         LifeNum.text = CurrentFlux.ToString();
 
     }
-    
-#endif
     private void OnTimePassed()
     {
         if (ActiveDeductByTime) CurrentFlux -= LifeDeductByTime;

@@ -22,6 +22,16 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public float FluxConsume;
 
+    /// <summary>
+    /// Prefab to coloring zone
+    /// </summary>
+    public GameObject ColorZonePrefab;
+    /// <summary>
+    /// Distance between two color zones
+    /// </summary>
+    public float ColorZoneRate;
+    
+
     //private parameters
 
     private Ray rayCursor;
@@ -29,17 +39,16 @@ public class PlayerController : MonoBehaviour
     private Ray rayForward;
     private RaycastHit raycastHitForward;
 
+    private Transform colorZoneManager;
+
     private new Rigidbody rigidbody;
     private Camera gameCamera;
 
     private bool canMove;
     private bool isBlocked;
 
-    //UI
-    private Transform canvas;
-    private Image lifeBar;
-    private float lifeDisplayRate;
-    private TMP_Text LifeNum;
+    private float colorZoneCount = 0;
+    private Vector3 lastColorZonePos = Vector3.zero;
 
     private GuideFluxBehaviour guideFlux;
 
@@ -50,18 +59,18 @@ public class PlayerController : MonoBehaviour
 
         rigidbody = GetComponent<Rigidbody>();
         guideFlux = transform.GetComponent<GuideFluxBehaviour>();
-        gameCamera = transform.GetComponentInChildren<Camera>();
-        //UI Bar
-        canvas = transform.Find("Canvas");
-        lifeBar = transform.Find("Canvas/LifeBar").GetComponent<Image>();
-        LifeNum = transform.Find("Canvas/LifeNum").GetComponent<TMP_Text>();
+        gameCamera = transform.Find("Main Camera").GetComponent<Camera>();
+        colorZoneManager = GameObject.Find("ColorZoneManager").transform;
+
+
     }
+
     private void Update()
     {
 
         rayCursor = gameCamera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(rayCursor, out raycastHitCursor,Mathf.Infinity))
+        if (Physics.Raycast(rayCursor, out raycastHitCursor,float.MaxValue, 3<<LayerMask.NameToLayer("Ground")))
         {
             Debug.DrawRay(transform.position, raycastHitCursor.point - transform.position, Color.red);
 
@@ -75,9 +84,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (raycastHitForward.collider.CompareTag("Obstacle"))
                 {
-                    print("Hit obstacle" + raycastHitForward.collider.gameObject.name);
                     isBlocked = true;
-                    
                 }
             }
             else
@@ -86,20 +93,34 @@ public class PlayerController : MonoBehaviour
             }
             if (canMove && !isBlocked)
             {
+                float _distance = Vector3.Distance(transform.position, raycastHitCursor.point);
+                //float _haut = (raycastHitForward.point.z - transform.position.z);
+                //_distance -= _haut;
+
+                //Limit distance range
+                switch (_distance)
+                {
+                    case float n when (n <= 0):
+                        _distance = 0;
+                        break;
+                    case float n when (n >= 15):
+                        _distance = 15;
+                        break;
+                    default:
+                        break;
+                }
                 //Move player to cursor
-                if ((raycastHitCursor.point - transform.position).magnitude<=20)
-                {
-                    transform.position = Vector3.Lerp(transform.position, raycastHitCursor.point, MoveSpeed / 100);
-                }
-                else
-                {
-                    transform.position = Vector3.MoveTowards(transform.position, raycastHitCursor.point, MoveSpeed / 10);
-                }
+                rigidbody.velocity = (raycastHitCursor.point - transform.position).normalized*_distance;
 
 
                 if (guideFlux.IsPlayerAlive)
                 {
 
+                    if (Vector3.Distance(lastColorZonePos, transform.position) >= ColorZoneRate)
+                    {
+                        SpawnColorZone();
+                        lastColorZonePos = SpawnColorZone();
+                    }
                     //Reduce Flux on road
                     guideFlux.ReduceFlux(FluxConsume);
                 }
@@ -113,6 +134,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private Vector3 SpawnColorZone()
+    {
+        GameObject _gm = GameObject.Instantiate(ColorZonePrefab, colorZoneManager, true);
+        _gm.GetComponent<ColorZoneBehaviour>().ActiveColorZone(guideFlux.CurrentFlux/guideFlux.MaxFlux);
+        _gm.transform.position = this.transform.position+Vector3.down;
+        return _gm.transform.position;
+    }
 
     #region Public functions
 
@@ -127,3 +155,5 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 }
+
+

@@ -12,9 +12,9 @@ public class Plant_SusCombiActivate : PlantBehaviour
         base.Init();
         PlantToActive.RegisterSuscombiPlants();
     }
-    public override void ActivatePlant()
+    public override void ActivatePlant(bool needGrow)
     {
-        base.ActivatePlant();
+        base.ActivatePlant(false);
         if (PlantToActive!=null) PlantToActive.ReduceSuscombiPlantsCount();
 
         if(obstacleToDeactive!=null) obstacleToDeactive.ReduceSuscombiPlantsCount();

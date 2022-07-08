@@ -105,13 +105,13 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - WaveSpeed: {r: 19, g: 9, b: -16, a: -7}
-    - _Color: {r: 1, g: 0.593259, b: 0, a: 0.42745098}
+    - _Color: {r: 1, g: 0.593259, b: 0, a: 0.0627451}
     - _EmisColor: {r: 0.2, g: 0.2, b: 0.2, a: 0}
-    - _EmissionColor: {r: 1.0592737, g: 0.83743626, b: 0, a: 1}
+    - _EmissionColor: {r: 0.8679245, g: 0.63016987, b: 0, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _HorizonColor: {r: 0.17199996, g: 0.46299994, b: 0.43499997, a: 1}
     - _RefrColor: {r: 0.33999997, g: 0.85, b: 0.92, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecColor: {r: 1, g: 0.5870646, b: 0, a: 0.8862745}
+    - _SpecColor: {r: 1, g: 0.5870646, b: 0, a: 0}
     - _TintColor: {r: 1, g: 0.6688552, b: 0.135849, a: 1}
   m_BuildTextureStacks: []

@@ -11,12 +11,13 @@ public class GuideFluxBehaviour : MonoBehaviour
 {
     public float MaxFlux; 
     public float LifeDeductByTime; //Life deduct when time passed
-    /// <summary>
-    /// Material of guide flux when it is dead
-    /// </summary>
-    public Material MatDead;
 
     public bool ActiveDeductByTime;
+
+    /// <summary>
+    /// Speed to resolve plante with flux
+    /// </summary>
+    public float ResolveSpeed;
 
     [HideInInspector]public bool IsPlayerAlive; //Detect if player is in state alive
     [HideInInspector] public float CurrentFlux; //Flux of player
@@ -24,18 +25,17 @@ public class GuideFluxBehaviour : MonoBehaviour
     private TimeManager timeManager;
 
     //FeedBack visual
-    private Material MatInit;
     private MeshRenderer meshRenderer;
 
-    //Trail
-    private TrailRenderer trail;
-    private float initTrailWidth;
 
     //Particle System
-    private ParticleSystem particleTrace;
     private ParticleSystem particleTrail;
+    private ParticleSystem particleFlux;
 
     private float initPSTrailEmissionRate;
+    private float initPSFluxSize;
+    private Color initPSFluxStartColor;
+
 
     //UI
     private Transform canvas;
@@ -47,42 +47,40 @@ public class GuideFluxBehaviour : MonoBehaviour
     {
         timeManager = GameManager.Instance.TimeManager;
 
-        canvas = transform.Find("Canvas");
-        lifeBar = transform.Find("Canvas/LifeBar").GetComponent<Image>();
-        LifeNum = transform.Find("Canvas/LifeNum").GetComponent<TMP_Text>();
-
-        particleTrace = transform.Find("PSTrace").GetComponent<ParticleSystem>();
         particleTrail = transform.Find("PSTrail").GetComponent<ParticleSystem>();
+        particleFlux = transform.Find("PSFlux").GetComponent<ParticleSystem>();
 
-        trail = GetComponentInChildren<TrailRenderer>();
+        //trail = GetComponentInChildren<TrailRenderer>();
         meshRenderer = GetComponent<MeshRenderer>();
-        MatInit = meshRenderer.material;
 
         lifeDisplayRate = 1 / MaxFlux;
 
         CurrentFlux = MaxFlux;
 
-        initTrailWidth = trail.endWidth;
+        //initTrailWidth = trail.endWidth;
         initPSTrailEmissionRate = particleTrail.emissionRate;
-
+        initPSFluxSize = particleFlux.startSize;
+        initPSFluxStartColor = particleFlux.startColor;
 
         timeManager.EventTimePass += OnTimePassed;
 
         IsPlayerAlive = true;
+
+    
     }
+
+
+
 
     private void Update()
     {
         //FeedBack
-        trail.startWidth = initTrailWidth / MaxFlux * CurrentFlux;
         particleTrail.emissionRate = initPSTrailEmissionRate/ MaxFlux * CurrentFlux;
-
-
-        //ShowUI
-        lifeBar.fillAmount = CurrentFlux * lifeDisplayRate;
-        LifeNum.text = CurrentFlux.ToString();
+        particleFlux.startSize = initPSFluxSize / MaxFlux * CurrentFlux;
 
     }
+    
+
     private void OnTimePassed()
     {
         if (ActiveDeductByTime) CurrentFlux -= LifeDeductByTime;
@@ -93,10 +91,7 @@ public class GuideFluxBehaviour : MonoBehaviour
     /// </summary>
     private void OnGameOver()
     {
-        meshRenderer.material = MatDead;
-        print(meshRenderer.material.name) ;
-        trail.emitting = false;
-        particleTrace.Stop(true);
+        //trail.emitting = false;
         particleTrail.Stop(true);
     }
 
@@ -113,6 +108,11 @@ public class GuideFluxBehaviour : MonoBehaviour
         if (CurrentFlux >= 0)
         {
             CurrentFlux -= fluxGiven;
+
+            if (CurrentFlux<=MaxFlux*0.3f) //If current flux is lower than 30% of max flux
+            {
+                particleFlux.startColor = Color.red;
+            }
             
         }
         else
@@ -147,11 +147,7 @@ public class GuideFluxBehaviour : MonoBehaviour
     public void OnRecharge()
     {
         CurrentFlux = MaxFlux;
-        meshRenderer.material = MatInit;
-
-        trail.emitting = true;
-        trail.startWidth = initTrailWidth;
-        particleTrace.Play(true);
+        particleFlux.startColor = initPSFluxStartColor;
         particleTrail.Play(true);
     }
     #endregion

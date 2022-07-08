@@ -3,6 +3,7 @@ Shader "Hidden/GrayFxShader"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _MainColor ("Colour", Color) = (0.3,0.3,0.3,1)
         _PathTex ("PathTex", 2D) = "white" {}
     }
     SubShader
@@ -40,15 +41,17 @@ Shader "Hidden/GrayFxShader"
 
             sampler2D _MainTex;
             sampler2D _PathTex;
+            float4 _MainColor;
 
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
-                fixed4 pathCol = tex2D(_PathTex, i.uv);
+                fixed4 pathCol = tex2D(_PathTex, i.uv)*_MainColor;
+
                 // just invert the colors
                 if(pathCol.r == 0 && pathCol.g == 0 && pathCol.b == 0)
                 {
-                    col.rgb = (col.r + col.b + col.g) * 0.3;
+                    col.rgb = (col.r  + col.b+ col.g)* 1*_MainColor;
                 }
                 return col;
             }

@@ -25,7 +25,7 @@ public class Plant_CombiActivate : PlantBehaviour
         suscombiPlantsCount--;
         if (suscombiPlantsCount <=0)
         {
-            this.ActivatePlant();
+            this.ActivatePlant(true);
         }
     }
 }

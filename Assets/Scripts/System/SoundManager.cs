@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using FMODUnity;
+using FMOD.Studio;
 public class SoundManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    FMOD.Studio.EventInstance eventInstance;
+    public void Init()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    }
+    public void PlayFmodEvent()
     {
-        
+
     }
 }

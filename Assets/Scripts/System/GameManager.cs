@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
 
     [HideInInspector] public TimeManager TimeManager;
+    [HideInInspector] public SoundManager SoundManager;
     [HideInInspector] public UIManager UIManager;
     [HideInInspector] public PlayerController PlayerController;
     [HideInInspector] public GuideFluxBehaviour GuideFlux;
@@ -27,11 +28,6 @@ public class GameManager : MonoBehaviour
         PlayerController.Init();
         GuideFlux = FindObjectOfType<GuideFluxBehaviour>();
         GuideFlux.Init();
-        //UIManager = FindObjectOfType<UIManager>();
-        //UIManager.Init();
-        FirstTreeBehaviour = FindObjectOfType<FirstTreeBehaviour>();
-        FirstTreeBehaviour.Init();
-
 
         ListPlantsActive = new List<PlantBehaviour>();
         ListCheckPoints = new List<CheckPoint>();
@@ -39,10 +35,6 @@ public class GameManager : MonoBehaviour
     public void AddPlantActive(PlantBehaviour plant)
     {
         ListPlantsActive.Add(plant);
-    }
-    public void AddCheckPointActive(CheckPoint checkPoint)
-    {
-        ListCheckPoints.Add(checkPoint);
     }
     /// <summary>
     /// Call on player is run out of flux
@@ -64,9 +56,9 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Call on player active the check point
     /// </summary>
-    public void ActivateCheckPoint()
+    public void ActivateCheckPoint(CheckPoint checkPoint)
     {
-        ListPlantsActive.Clear();
+        ListCheckPoints.Add(checkPoint);
         CheckGame();
     }
 }

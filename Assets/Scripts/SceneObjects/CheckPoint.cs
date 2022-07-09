@@ -16,9 +16,13 @@ public class CheckPoint : MonoBehaviour
     /// </summary>
     public float RewardFlux;
     /// <summary>
-    /// defaut active
+    /// default active
     /// </summary>
-    public bool IsActive;
+    public bool DefaultActive;
+
+    public float TreeFlux = 600;
+
+    private bool isActive;
 
     private GuideFluxBehaviour guideFlux;
     private PlayerController playerController;
@@ -27,20 +31,21 @@ public class CheckPoint : MonoBehaviour
 
     private void Start()
     {
-        IsActive = false;
+        isActive = false;
 
         guideFlux = GameManager.Instance.GuideFlux;
         playerController = GameManager.Instance.PlayerController;
 
         meshFilter = transform.GetComponent<MeshFilter>();
 
+        if (DefaultActive) ActiveCheckPoint();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (!IsActive)
+            if (!isActive)
             {
                 ActiveCheckPoint();
             }
@@ -56,15 +61,22 @@ public class CheckPoint : MonoBehaviour
     /// </summary>
     private void ReloadCheckPoint()
     {
-        GameManager.Instance.CheckGame();
+        if (TreeFlux>= guideFlux.GetFluxToRecharge())
+        {
+            TreeFlux = TreeFlux - (guideFlux.GetFluxToRecharge());
+            GameManager.Instance.CheckGame();
+        }
+        else
+        {
+            print("this tree is deaded");
+        }
     }
     public void ActiveCheckPoint()
     {
-        IsActive = true;
+        isActive = true;
         meshFilter.mesh = TreeMesh;
-        guideFlux.IncreaseMaxFlux(RewardFlux); //Add max flux// To be test
-        GameManager.Instance.AddCheckPointActive(this);
-        GameManager.Instance.ActivateCheckPoint();
+        guideFlux.IncreaseMaxFlux(RewardFlux); //Add max flux
+        GameManager.Instance.ActivateCheckPoint(this);
     }
     
 }

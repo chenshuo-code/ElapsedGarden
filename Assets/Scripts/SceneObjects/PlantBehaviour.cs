@@ -78,7 +78,7 @@ public class PlantBehaviour : MonoBehaviour
                 if (lifeFlux >= MaxLifeFlux)
                 {
                     ActivatePlant(false);
-                    guideFlux.ReduceFlux(MaxLifeFlux); // Reduce flux in FirstTree
+                    guideFlux.ReduceFlux(MaxLifeFlux,false); // Reduce flux in FirstTree
                 }
                 else if (lifeFlux >= guideFlux.CurrentFlux) //If player didn't have enough flux
                 {

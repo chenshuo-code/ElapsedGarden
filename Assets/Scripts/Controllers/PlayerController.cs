@@ -94,8 +94,6 @@ public class PlayerController : MonoBehaviour
             if (canMove && !isBlocked)
             {
                 float _distance = Vector3.Distance(transform.position, raycastHitCursor.point);
-                //float _haut = (raycastHitForward.point.z - transform.position.z);
-                //_distance -= _haut;
 
                 //Limit distance range
                 switch (_distance)
@@ -122,7 +120,7 @@ public class PlayerController : MonoBehaviour
                         lastColorZonePos = SpawnColorZone();
                     }
                     //Reduce Flux on road
-                    guideFlux.ReduceFlux(FluxConsume);
+                    guideFlux.ReduceFlux(FluxConsume,true);
                 }
 
             }

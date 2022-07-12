@@ -22,6 +22,8 @@ public class GuideFluxBehaviour : MonoBehaviour
     [HideInInspector]public bool IsPlayerAlive; //Detect if player is in state alive
     [HideInInspector] public float CurrentFlux; //Flux of player
 
+    private float tempFlux; // Temporary flux lost 
+
     private TimeManager timeManager;
 
     //FeedBack visual
@@ -99,14 +101,20 @@ public class GuideFluxBehaviour : MonoBehaviour
     #region Public, Control flux
 
     /// <summary>
-    /// Reduce flux of first tree
+    /// Reduce flux of player
     /// </summary>
     /// <param name="fluxGiven">Flux to spend</param>
-    public void ReduceFlux(float fluxGiven)
+    /// <param name="isTemporary">is flux spend temporary(can be recharge in check point)</param>
+    public void ReduceFlux(float fluxGiven, bool isTemporary)
     {
         
         if (CurrentFlux >= 0)
         {
+            if (isTemporary)
+            {
+                tempFlux += fluxGiven;
+            }
+
             CurrentFlux -= fluxGiven;
 
             if (CurrentFlux<=MaxFlux*0.3f) //If current flux is lower than 30% of max flux
@@ -122,7 +130,7 @@ public class GuideFluxBehaviour : MonoBehaviour
         }
     }
     /// <summary>
-    /// Add flux of first tree
+    /// Add flux of player
     /// </summary>
     /// <param name="fluxReceive">Flux to receive</param>
     public void AddFlux(float fluxReceive)
@@ -141,14 +149,28 @@ public class GuideFluxBehaviour : MonoBehaviour
     {
         MaxFlux += fluxIncrease;
     }
+
+    /// <summary>
+    /// Get how many flux to be recharged in this check point
+    /// </summary>
+    /// <returns>Flux to recharge</returns>
+    public float GetFluxToRecharge()
+    {
+        float _fluxToCharge;
+        return _fluxToCharge = MaxFlux - tempFlux - CurrentFlux;
+    }
+
     /// <summary>
     /// Call when player is arrived on check point
     /// </summary>
+    /// <returns>Flux to recharge</returns>
     public void OnRecharge()
     {
         CurrentFlux = MaxFlux;
         particleFlux.startColor = initPSFluxStartColor;
         particleTrail.Play(true);
+
+        if (tempFlux > 0) tempFlux = 0;
     }
     #endregion
 }

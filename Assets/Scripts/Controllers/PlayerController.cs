@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using FMOD.Studio;
 
 
 /// <summary>
@@ -46,8 +47,8 @@ public class PlayerController : MonoBehaviour
 
     private bool canMove;
     private bool isBlocked;
+    private bool isMoving;
 
-    private float colorZoneCount = 0;
     private Vector3 lastColorZonePos = Vector3.zero;
 
     private GuideFluxBehaviour guideFlux;
@@ -56,12 +57,12 @@ public class PlayerController : MonoBehaviour
     {
         canMove = false;
         isBlocked = false;
+        isMoving = false;
 
         rigidbody = GetComponent<Rigidbody>();
         guideFlux = transform.GetComponent<GuideFluxBehaviour>();
         gameCamera = transform.Find("Main Camera").GetComponent<Camera>();
         colorZoneManager = GameObject.Find("ColorZoneManager").transform;
-
 
     }
 
@@ -107,9 +108,16 @@ public class PlayerController : MonoBehaviour
                     default:
                         break;
                 }
+
                 //Move player to cursor
                 rigidbody.velocity = (raycastHitCursor.point - transform.position).normalized*_distance;
 
+                if (!isMoving)
+                {
+                    isMoving = true;
+                    SoundManager.Instance.MovingSound.start();
+                    SoundManager.Instance.AliveMovingSound.start();
+                }
 
                 if (guideFlux.IsPlayerAlive)
                 {
@@ -122,7 +130,15 @@ public class PlayerController : MonoBehaviour
                     //Reduce Flux on road
                     guideFlux.ReduceFlux(FluxConsume,true);
                 }
-
+            }
+            else
+            {
+                if (isMoving)
+                {
+                    isMoving = false;
+                    SoundManager.Instance.MovingSound.stop(STOP_MODE.ALLOWFADEOUT);
+                    SoundManager.Instance.AliveMovingSound.stop(STOP_MODE.ALLOWFADEOUT);
+                }
             }
         }
 

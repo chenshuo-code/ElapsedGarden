@@ -24,10 +24,13 @@ public class GameManager : MonoBehaviour
         //Init instance managers
         TimeManager = FindObjectOfType<TimeManager>();
         TimeManager.Init();
+        SoundManager = FindObjectOfType<SoundManager>();
+        SoundManager.Init();
         PlayerController = FindObjectOfType<PlayerController>();
         PlayerController.Init();
         GuideFlux = FindObjectOfType<GuideFluxBehaviour>();
         GuideFlux.Init();
+
 
         ListPlantsActive = new List<PlantBehaviour>();
         ListCheckPoints = new List<CheckPoint>();

@@ -16,7 +16,6 @@ public class PlantBehaviour : MonoBehaviour
     private bool canActivate; //boolean to active plant
     private bool canDeactivate;
 
-    private bool isInitFinish=false;
     private float lifeDisplayRate;
     private float initPSRingStartSize;
 

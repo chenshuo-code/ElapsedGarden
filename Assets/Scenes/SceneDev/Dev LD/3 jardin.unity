@@ -2584,6 +2584,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &95423115 stripped
@@ -3062,6 +3066,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (90)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &125989755 stripped
@@ -3440,6 +3448,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (98)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -4126,6 +4138,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -6069,6 +6085,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (85)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &244754409 stripped
@@ -6178,6 +6198,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (53)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -6949,6 +6973,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (78)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &263163247 stripped
@@ -7058,6 +7086,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -7758,6 +7790,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (66)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -8936,6 +8972,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (105)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &348736299 stripped
@@ -9452,6 +9492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (63)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &369060196 stripped
@@ -9820,6 +9864,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &374185456 stripped
@@ -9929,6 +9977,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (75)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -10992,6 +11044,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (94)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &421305232 stripped
@@ -11322,6 +11378,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &428576165 stripped
@@ -11431,6 +11491,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -12232,6 +12296,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &466803381 stripped
@@ -12516,6 +12584,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -12825,6 +12897,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (67)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &496868880 stripped
@@ -13065,6 +13141,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -13618,6 +13698,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &534527878 stripped
@@ -14162,6 +14246,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &548342333 stripped
@@ -14408,6 +14496,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (69)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &560893291 stripped
@@ -14517,6 +14609,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (84)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -15808,6 +15904,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (50)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &615252268 stripped
@@ -15917,6 +16017,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (70)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -16417,6 +16521,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (80)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &629833867 stripped
@@ -16526,6 +16634,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -17297,6 +17409,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &662347981 stripped
@@ -17618,6 +17734,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (104)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -17941,6 +18061,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (92)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &676953456 stripped
@@ -18124,6 +18248,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (48)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -18918,6 +19046,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &716647014 stripped
@@ -19460,6 +19592,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (102)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &734722706 stripped
@@ -19733,6 +19869,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -20531,6 +20671,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (103)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -21419,6 +21563,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -22492,6 +22640,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &879880142 stripped
@@ -22703,6 +22855,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (76)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -24161,6 +24317,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &932488588 stripped
@@ -24490,6 +24650,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -25409,6 +25573,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (95)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &998880700 stripped
@@ -25938,6 +26106,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (60)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -26820,6 +26992,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1068410100 stripped
@@ -27167,6 +27343,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -27926,6 +28106,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (100)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1100818652 stripped
@@ -28144,6 +28328,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -29049,6 +29237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (65)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1145780897 stripped
@@ -29938,6 +30130,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1162776650 stripped
@@ -30047,6 +30243,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (77)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -30268,6 +30468,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1175229007 stripped
@@ -30377,6 +30581,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (61)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -31061,6 +31269,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (71)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1224840920 stripped
@@ -31244,6 +31456,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (93)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -33796,6 +34012,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1329221276 stripped
@@ -34198,6 +34418,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -34675,6 +34899,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -35243,6 +35471,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1391473410 stripped
@@ -35422,6 +35654,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (59)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -35642,6 +35878,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -35927,6 +36167,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (57)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -36554,6 +36798,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (58)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -37501,6 +37749,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1483465410 stripped
@@ -37610,6 +37862,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (68)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -37810,6 +38066,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (82)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1484222554 stripped
@@ -37920,7 +38180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4751013017770974, guid: 44101910cc413d44fa15e9693ff6baee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.67
+      value: -10.7
       objectReference: {fileID: 0}
     - target: {fileID: 4751013017770974, guid: 44101910cc413d44fa15e9693ff6baee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -38656,6 +38916,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (62)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1529586105 stripped
@@ -39073,6 +39337,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (89)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1542917093 stripped
@@ -39291,32 +39559,29 @@ Transform:
   - {fileID: 932488588}
   - {fileID: 1104094637}
   - {fileID: 1975549372}
-  - {fileID: 1746122933}
   - {fileID: 374185456}
   - {fileID: 879880142}
   - {fileID: 1329221276}
   - {fileID: 534527878}
   - {fileID: 1175229007}
   - {fileID: 2012321826}
+  - {fileID: 1746122933}
   - {fileID: 501779511}
-  - {fileID: 1162776650}
   - {fileID: 1076835997}
   - {fileID: 1391473410}
   - {fileID: 548342333}
+  - {fileID: 428576165}
   - {fileID: 95423115}
   - {fileID: 807948473}
   - {fileID: 2053892667}
+  - {fileID: 1162776650}
   - {fileID: 476850056}
   - {fileID: 1345522126}
-  - {fileID: 1068410100}
   - {fileID: 752437008}
   - {fileID: 266895212}
-  - {fileID: 1568034948}
-  - {fileID: 716647014}
-  - {fileID: 1590672307}
-  - {fileID: 428576165}
   - {fileID: 164126225}
-  - {fileID: 1399177177}
+  - {fileID: 716647014}
+  - {fileID: 1068410100}
   - {fileID: 433180924}
   - {fileID: 1809801613}
   - {fileID: 1813433385}
@@ -39324,12 +39589,15 @@ Transform:
   - {fileID: 662347981}
   - {fileID: 1723608649}
   - {fileID: 1640408412}
+  - {fileID: 1568034948}
   - {fileID: 631725470}
   - {fileID: 682435911}
   - {fileID: 1483465410}
   - {fileID: 615252268}
+  - {fileID: 1590672307}
   - {fileID: 466803381}
   - {fileID: 2137127665}
+  - {fileID: 1399177177}
   - {fileID: 245257396}
   - {fileID: 1745545581}
   - {fileID: 1804728529}
@@ -39763,6 +40031,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (83)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1558360849 stripped
@@ -40109,6 +40381,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -40654,6 +40930,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (97)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1584519487 stripped
@@ -40763,6 +41043,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (91)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -41009,6 +41293,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -42591,6 +42879,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1640408412 stripped
@@ -43230,6 +43522,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (81)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1675965785 stripped
@@ -43396,6 +43692,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (64)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -43863,6 +44163,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (74)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -44353,6 +44657,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1723608649 stripped
@@ -44775,6 +45083,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (54)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1745545581 stripped
@@ -44884,6 +45196,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -46450,6 +46766,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (55)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1804728529 stripped
@@ -46560,6 +46880,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1809801613 stripped
@@ -46669,6 +46993,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -47045,6 +47373,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (79)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1824120089 stripped
@@ -47211,6 +47543,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (56)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -47543,6 +47879,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (86)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -48353,6 +48693,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (72)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -49488,6 +49832,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (73)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -51125,6 +51473,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (88)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1959492552 stripped
@@ -51304,6 +51656,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (99)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -51631,6 +51987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (101)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &1971614938 stripped
@@ -51740,6 +52100,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -52060,6 +52424,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (96)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -52412,6 +52780,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -53017,6 +53389,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BambooGroup (87)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
 --- !u!4 &2043710576 stripped
@@ -53236,6 +53612,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
@@ -55094,6 +55474,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
       propertyPath: m_Name
       value: BambooGroup (52)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b2bc2fc00948d498a906bfc7527cac, type: 3}

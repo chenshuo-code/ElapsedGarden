@@ -31,10 +31,8 @@ public class GuideFluxBehaviour : MonoBehaviour
 
 
     //Particle System
-    private ParticleSystem particleTrail;
     private ParticleSystem particleFlux;
 
-    private float initPSTrailEmissionRate;
     private float initPSFluxSize;
     private Color initPSFluxStartColor;
 
@@ -49,7 +47,6 @@ public class GuideFluxBehaviour : MonoBehaviour
     {
         timeManager = GameManager.Instance.TimeManager;
 
-        particleTrail = transform.Find("PSTrail").GetComponent<ParticleSystem>();
         particleFlux = transform.Find("PSFlux").GetComponent<ParticleSystem>();
 
         //trail = GetComponentInChildren<TrailRenderer>();
@@ -59,8 +56,6 @@ public class GuideFluxBehaviour : MonoBehaviour
 
         CurrentFlux = MaxFlux;
 
-        //initTrailWidth = trail.endWidth;
-        initPSTrailEmissionRate = particleTrail.emissionRate;
         initPSFluxSize = particleFlux.startSize;
         initPSFluxStartColor = particleFlux.startColor;
 
@@ -77,9 +72,7 @@ public class GuideFluxBehaviour : MonoBehaviour
     private void Update()
     {
         //FeedBack
-        particleTrail.emissionRate = initPSTrailEmissionRate/ MaxFlux * CurrentFlux;
         particleFlux.startSize = initPSFluxSize / MaxFlux * CurrentFlux;
-
     }
     
 
@@ -93,8 +86,7 @@ public class GuideFluxBehaviour : MonoBehaviour
     /// </summary>
     private void OnGameOver()
     {
-        //trail.emitting = false;
-        particleTrail.Stop(true);
+
     }
 
 
@@ -169,7 +161,6 @@ public class GuideFluxBehaviour : MonoBehaviour
     {
         CurrentFlux = MaxFlux;
         particleFlux.startColor = initPSFluxStartColor;
-        particleTrail.Play(true);
 
         if (tempFlux > 0) tempFlux = 0;
     }

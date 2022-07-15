@@ -119,6 +119,7 @@ public class GuideFluxBehaviour : MonoBehaviour
 
             if (CurrentFlux<=MaxFlux*0.3f) //If current flux is lower than 30% of max flux
             {
+                SoundManager.Instance.FluxStateChangeSound.start(); ;
                 particleFlux.startColor = Color.red;
             }
             

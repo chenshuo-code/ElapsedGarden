@@ -116,7 +116,10 @@ public class PlayerController : MonoBehaviour
                 {
                     isMoving = true;
                     SoundManager.Instance.MovingSound.start();
-                    SoundManager.Instance.AliveMovingSound.start();
+                    if (guideFlux.IsPlayerAlive)
+                    {
+                        SoundManager.Instance.AliveMovingSound.start();
+                    }
                 }
 
                 if (guideFlux.IsPlayerAlive)
@@ -129,6 +132,10 @@ public class PlayerController : MonoBehaviour
                     }
                     //Reduce Flux on road
                     guideFlux.ReduceFlux(FluxConsume,true);
+                }
+                else
+                {
+                    SoundManager.Instance.AliveMovingSound.stop(STOP_MODE.ALLOWFADEOUT);
                 }
             }
             else

@@ -15,6 +15,8 @@ public class PlantBehaviour : MonoBehaviour
 
     private bool canActivate; //boolean to active plant
     private bool canDeactivate;
+    private bool isActivating;//true during activating plant
+   
 
     private float lifeDisplayRate;
     private float initPSRingStartSize;
@@ -68,16 +70,26 @@ public class PlantBehaviour : MonoBehaviour
         particleRing.startSize = initPSRingStartSize - initPSRingStartSize*(lifeFlux * lifeDisplayRate)/100;
 
         if (!IsAlive)
-        {
+        {          
             //Activating plant
             if (canActivate)
             {
-
+                if (!isActivating)
+                {
+                    isActivating = true;
+                    SoundManager.Instance.TransmissionFluxSound.start();
+                }
                 lifeFlux += guideFlux.ResolveSpeed;
                 if (lifeFlux >= MaxLifeFlux)
                 {
                     ActivatePlant(false);
                     guideFlux.ReduceFlux(MaxLifeFlux,false); // Reduce flux in FirstTree
+                    if (isActivating)
+                    {
+                        isActivating = false;
+                        SoundManager.Instance.TransmissionFluxSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                        SoundManager.Instance.PlayOneshotTrack(SoundManager.Instance.PlantActiveSoundPath,this.transform.position);
+                    }
                 }
                 else if (lifeFlux >= guideFlux.CurrentFlux) //If player didn't have enough flux
                 {
@@ -88,6 +100,11 @@ public class PlantBehaviour : MonoBehaviour
             else if (lifeFlux > 0)
             {
                 lifeFlux -= guideFlux.ResolveSpeed;
+                if (isActivating )
+                {
+                    isActivating = false;
+                    SoundManager.Instance.TransmissionFluxSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                }
             }
         }
         else //Recover flux //Not in use
@@ -108,6 +125,7 @@ public class PlantBehaviour : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && guideFlux.IsPlayerAlive)
         {
+            SoundManager.Instance.PlayOneshotTrack(SoundManager.Instance.PlantPassSoundPath, this.transform.position);
             canActivate = true;
         }
     }

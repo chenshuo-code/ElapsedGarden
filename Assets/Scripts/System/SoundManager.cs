@@ -125,7 +125,7 @@ public class SoundManager : MonoBehaviour
     /// </summary>
     /// <param name="eventPath">Fmod event path</param>
     /// <param name="position">Position to play track</param>
-    public void PlayOneshotTrack(string eventPath, Vector3 position)
+    public void PlayOneshotTrack(EventReference eventPath, Vector3 position)
     {
         FMODUnity.RuntimeManager.PlayOneShot(eventPath, position);
         

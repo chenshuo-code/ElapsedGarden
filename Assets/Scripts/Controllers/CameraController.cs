@@ -22,14 +22,13 @@ public class CameraController : MonoBehaviour
         {
             float _mouseX = Input.GetAxis("Mouse X") * Speed;
             transform.RotateAround(transform.position, Vector3.up, _mouseX);
-            print(transform.rotation.eulerAngles); 
         }
         if(Input.GetAxis("Mouse ScrollWheel") != 0)
         {
             _rotateY += Input.GetAxis("Mouse ScrollWheel")*20;
             _rotateY = Mathf.Clamp(_rotateY * Speed, -15, 15);
             transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x + _rotateY, transform.rotation.eulerAngles.y, 0));
-            print(transform.rotation);
+            
         }
 
     }

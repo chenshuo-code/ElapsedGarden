@@ -18,7 +18,7 @@ public class Obstacle_EatFlux : ObstacleBehaviour
     {
         if (canActivate && IsActive)
         {
-            guideFlux.ReduceFlux(EatSpeed);
+            guideFlux.ReduceFlux(EatSpeed,true);
         }
     }
     private void OnTriggerEnter(Collider other)

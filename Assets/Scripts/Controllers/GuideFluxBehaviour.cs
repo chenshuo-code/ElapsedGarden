@@ -14,25 +14,28 @@ public class GuideFluxBehaviour : MonoBehaviour
 
     public bool ActiveDeductByTime;
 
+    /// <summary>
+    /// Speed to resolve plante with flux
+    /// </summary>
+    public float ResolveSpeed;
+
     [HideInInspector]public bool IsPlayerAlive; //Detect if player is in state alive
     [HideInInspector] public float CurrentFlux; //Flux of player
+
+    private float tempFlux; // Temporary flux lost 
 
     private TimeManager timeManager;
 
     //FeedBack visual
     private MeshRenderer meshRenderer;
 
-    //Trail
-    private TrailRenderer trail;
-    private float initTrailWidth;
 
     //Particle System
-    private ParticleSystem particleTrace;
-    private ParticleSystem particleTrail;
     private ParticleSystem particleFlux;
 
-    private float initPSTrailEmissionRate;
     private float initPSFluxSize;
+    private Color initPSFluxStartColor;
+
 
     //UI
     private Transform canvas;
@@ -44,43 +47,35 @@ public class GuideFluxBehaviour : MonoBehaviour
     {
         timeManager = GameManager.Instance.TimeManager;
 
-        canvas = transform.Find("Canvas");
-        lifeBar = transform.Find("Canvas/LifeBar").GetComponent<Image>();
-        LifeNum = transform.Find("Canvas/LifeNum").GetComponent<TMP_Text>();
-
-        particleTrace = transform.Find("PSTrace").GetComponent<ParticleSystem>();
-        particleTrail = transform.Find("PSTrail").GetComponent<ParticleSystem>();
         particleFlux = transform.Find("PSFlux").GetComponent<ParticleSystem>();
 
-        trail = transform.Find("Trail").GetComponent<TrailRenderer>();
+        //trail = GetComponentInChildren<TrailRenderer>();
         meshRenderer = GetComponent<MeshRenderer>();
 
         lifeDisplayRate = 1 / MaxFlux;
 
         CurrentFlux = MaxFlux;
 
-        initTrailWidth = trail.endWidth;
-        initPSTrailEmissionRate = particleTrail.emissionRate;
         initPSFluxSize = particleFlux.startSize;
+        initPSFluxStartColor = particleFlux.startColor;
 
         timeManager.EventTimePass += OnTimePassed;
 
         IsPlayerAlive = true;
+
+    
     }
+
+
+
 
     private void Update()
     {
         //FeedBack
-        trail.startWidth = initTrailWidth / MaxFlux * CurrentFlux;
-        particleTrail.emissionRate = initPSTrailEmissionRate/ MaxFlux * CurrentFlux;
         particleFlux.startSize = initPSFluxSize / MaxFlux * CurrentFlux;
-
-
-        //ShowUI
-        lifeBar.fillAmount = CurrentFlux * lifeDisplayRate;
-        LifeNum.text = CurrentFlux.ToString();
-
     }
+    
+
     private void OnTimePassed()
     {
         if (ActiveDeductByTime) CurrentFlux -= LifeDeductByTime;
@@ -91,24 +86,34 @@ public class GuideFluxBehaviour : MonoBehaviour
     /// </summary>
     private void OnGameOver()
     {
-        trail.emitting = false;
-        particleTrace.Stop(true);
-        particleTrail.Stop(true);
+
     }
 
 
     #region Public, Control flux
 
     /// <summary>
-    /// Reduce flux of first tree
+    /// Reduce flux of player
     /// </summary>
     /// <param name="fluxGiven">Flux to spend</param>
-    public void ReduceFlux(float fluxGiven)
+    /// <param name="isTemporary">is flux spend temporary(can be recharge in check point)</param>
+    public void ReduceFlux(float fluxGiven, bool isTemporary)
     {
         
         if (CurrentFlux >= 0)
         {
+            if (isTemporary)
+            {
+                tempFlux += fluxGiven;
+            }
+
             CurrentFlux -= fluxGiven;
+
+            if (CurrentFlux<=MaxFlux*0.3f) //If current flux is lower than 30% of max flux
+            {
+                SoundManager.Instance.FluxStateChangeSound.start(); ;
+                particleFlux.startColor = Color.red;
+            }
             
         }
         else
@@ -118,7 +123,7 @@ public class GuideFluxBehaviour : MonoBehaviour
         }
     }
     /// <summary>
-    /// Add flux of first tree
+    /// Add flux of player
     /// </summary>
     /// <param name="fluxReceive">Flux to receive</param>
     public void AddFlux(float fluxReceive)
@@ -137,17 +142,27 @@ public class GuideFluxBehaviour : MonoBehaviour
     {
         MaxFlux += fluxIncrease;
     }
+
+    /// <summary>
+    /// Get how many flux to be recharged in this check point
+    /// </summary>
+    /// <returns>Flux to recharge</returns>
+    public float GetFluxToRecharge()
+    {
+        float _fluxToCharge;
+        return _fluxToCharge = MaxFlux - tempFlux - CurrentFlux;
+    }
+
     /// <summary>
     /// Call when player is arrived on check point
     /// </summary>
+    /// <returns>Flux to recharge</returns>
     public void OnRecharge()
     {
         CurrentFlux = MaxFlux;
+        particleFlux.startColor = initPSFluxStartColor;
 
-        trail.emitting = true;
-        trail.startWidth = initTrailWidth;
-        particleTrace.Play(true);
-        particleTrail.Play(true);
+        if (tempFlux > 0) tempFlux = 0;
     }
     #endregion
 }

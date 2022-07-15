@@ -7,37 +7,33 @@ using TMPro;
 public class PlantBehaviour : MonoBehaviour
 {
     public float MaxLifeFlux; //Max flux cost of this plant
-    public float LifeAccumulateSpeed; //Speed of life accumulation
     public float LifeDeductTime; //Time deducte with game time passed
     public bool ActiveDeductByTime;//If active, plant's life will deduct with time
     public bool IsAlive; //If this plant is activate in alive
 
-    public Mesh meshFinal; //final mesh on plant active
-
     private float lifeFlux;//Current life flux
-
 
     private bool canActivate; //boolean to active plant
     private bool canDeactivate;
+    private bool isActivating;//true during activating plant
+   
 
-    private bool isInitFinish=false;
+    private float lifeDisplayRate;
+    private float initPSRingStartSize;
 
     //Components
     private Color aliveColor; //Actual color when plant alive
     private Material material;
-    private MeshFilter meshFilter;
-    private Mesh meshBase;
+    private SkinnedMeshRenderer skinnedMesh;
+    private ParticleSystem particleRing;
 
     //Script class
     private GuideFluxBehaviour guideFlux; //Get GuideFlux
     private PlayerController playerController; //Get player controller
     private TimeManager timeManager;//get time manager
 
-    //UI
-    private Transform canvas;
-    private Image lifeBar;
-    private float lifeDisplayRate;
-    private TMP_Text LifeNum;
+
+
     private void Start()
     {
         Init();
@@ -54,82 +50,82 @@ public class PlantBehaviour : MonoBehaviour
         timeManager = GameManager.Instance.TimeManager;
         timeManager.EventTimePass += DeductLifeWithGameTime;
 
-
         lifeFlux = 0;
 
         material = transform.GetComponent<Renderer>().material;
         aliveColor = material.color;
         material.color = Color.grey;
-        meshFilter = transform.GetComponent<MeshFilter>();
-        meshBase = meshFilter.mesh;
 
-        canvas = transform.Find("Canvas");
-        lifeBar = transform.Find("Canvas/LifeBar").GetComponent<Image>();
-        LifeNum = transform.Find("Canvas/LifeNum").GetComponent<TMP_Text>();
-        lifeDisplayRate = 1 / MaxLifeFlux;
+        skinnedMesh = transform.GetComponent<SkinnedMeshRenderer>();
 
-        isInitFinish = true;
+        particleRing = transform.Find("PSRing").GetComponent<ParticleSystem>();
+        initPSRingStartSize = particleRing.startSize;
 
+        lifeDisplayRate = 100 / MaxLifeFlux;
     }
     private void Update()
     {
-        if (isInitFinish)
-        {
-            //show UI life bar
-            if (canvas != null)
+        //Apply mesh changement
+        skinnedMesh.SetBlendShapeWeight(0,lifeFlux*lifeDisplayRate);
+        particleRing.startSize = initPSRingStartSize - initPSRingStartSize*(lifeFlux * lifeDisplayRate)/100;
+
+        if (!IsAlive)
+        {          
+            //Activating plant
+            if (canActivate)
             {
-                lifeBar.fillAmount = lifeFlux * lifeDisplayRate;
-                LifeNum.text = lifeFlux.ToString();
-            }
-            if (!IsAlive)
-            {
-                //Activating plant
-                if (canActivate)
+                if (!isActivating)
                 {
-
-                    lifeFlux += LifeAccumulateSpeed;
-
-                    if (lifeFlux >= MaxLifeFlux)
-                    {
-                        ActivatePlant();
-                        guideFlux.ReduceFlux(MaxLifeFlux); // Reduce flux in FirstTree
-                    }
-                    else if (lifeFlux >= guideFlux.CurrentFlux) //If player didn't have enough flux
-                    {
-                        canActivate = false;
-                        //guideFlux.ReduceFlux(guideFlux.CurrentFlux);
-                        //GameManager.Instance.GameOver();
-                    }
-                    
-
+                    isActivating = true;
+                    SoundManager.Instance.TransmissionFluxSound.start();
                 }
-                else if (lifeFlux > 0)
+                lifeFlux += guideFlux.ResolveSpeed;
+                if (lifeFlux >= MaxLifeFlux)
                 {
-                    lifeFlux -= LifeAccumulateSpeed;
-                }
-            }
-            else //Recover flux //Not in use
-            {
-                if (canDeactivate)
-                {
-                    lifeFlux -= LifeAccumulateSpeed;
-
-                    if (lifeFlux <= 0)
+                    ActivatePlant(false);
+                    guideFlux.ReduceFlux(MaxLifeFlux,false); // Reduce flux in FirstTree
+                    if (isActivating)
                     {
-                        ReturnFlux();
-                        print(isInitFinish);
+                        isActivating = false;
+                        SoundManager.Instance.TransmissionFluxSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                        SoundManager.Instance.PlayOneshotTrack(SoundManager.Instance.PlantActiveSoundPath,this.transform.position);
                     }
+                }
+                else if (lifeFlux >= guideFlux.CurrentFlux) //If player didn't have enough flux
+                {
+                    canActivate = false;
+                }
+
+            }
+            else if (lifeFlux > 0)
+            {
+                lifeFlux -= guideFlux.ResolveSpeed;
+                if (isActivating )
+                {
+                    isActivating = false;
+                    SoundManager.Instance.TransmissionFluxSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 }
             }
         }
-       
+        else //Recover flux //Not in use
+        {
+            if (canDeactivate)
+            {
+                lifeFlux -= guideFlux.ResolveSpeed;
 
+                if (lifeFlux <= 0)
+                {
+                    ReturnFlux();
+                }
+            }
+        }
     }
     #region Interaction player
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && guideFlux.IsPlayerAlive)
         {
+            SoundManager.Instance.PlayOneshotTrack(SoundManager.Instance.PlantPassSoundPath, this.transform.position);
             canActivate = true;
         }
     }
@@ -170,17 +166,27 @@ public class PlantBehaviour : MonoBehaviour
 
 
     #region Functions public
-    public virtual void ActivatePlant()
+    /// <summary>
+    /// Function to activate plant
+    /// </summary>
+    /// <param name="needGrow">If we want to see the growth process of plant</param>
+    public virtual void ActivatePlant(bool needGrow)
     {
         GameManager.Instance.AddPlantActive(this); //To be test
 
         IsAlive = true;
         canActivate = false; //stop cumulate activate rate
         material.color = aliveColor; //Active Color 
-        meshFilter.mesh = meshFinal;
-        lifeFlux = MaxLifeFlux;
         gameObject.layer = LayerMask.NameToLayer("Color");
 
+        if (needGrow)
+        {
+            lifeFlux = Mathf.Lerp(0, MaxLifeFlux,2f) ;
+        }
+        else
+        {
+            lifeFlux = MaxLifeFlux;
+        }
 
     }
     public virtual void DeactivatePlant()

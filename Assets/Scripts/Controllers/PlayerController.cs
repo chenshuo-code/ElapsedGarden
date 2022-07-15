@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using FMOD.Studio;
 
 
 /// <summary>
@@ -22,6 +23,16 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public float FluxConsume;
 
+    /// <summary>
+    /// Prefab to coloring zone
+    /// </summary>
+    public GameObject ColorZonePrefab;
+    /// <summary>
+    /// Distance between two color zones
+    /// </summary>
+    public float ColorZoneRate;
+    
+
     //private parameters
 
     private Ray rayCursor;
@@ -29,19 +40,16 @@ public class PlayerController : MonoBehaviour
     private Ray rayForward;
     private RaycastHit raycastHitForward;
 
+    private Transform colorZoneManager;
+
     private new Rigidbody rigidbody;
     private Camera gameCamera;
 
     private bool canMove;
     private bool isBlocked;
+    private bool isMoving;
 
-    private bool isInitDone = false;
-
-    //UI
-    private Transform canvas;
-    private Image lifeBar;
-    private float lifeDisplayRate;
-    private TMP_Text LifeNum;
+    private Vector3 lastColorZonePos = Vector3.zero;
 
     private GuideFluxBehaviour guideFlux;
 
@@ -49,23 +57,21 @@ public class PlayerController : MonoBehaviour
     {
         canMove = false;
         isBlocked = false;
+        isMoving = false;
 
         rigidbody = GetComponent<Rigidbody>();
         guideFlux = transform.GetComponent<GuideFluxBehaviour>();
         gameCamera = transform.Find("Main Camera").GetComponent<Camera>();
-        //UI Bar
-        canvas = transform.Find("Canvas");
-        lifeBar = transform.Find("Canvas/LifeBar").GetComponent<Image>();
-        LifeNum = transform.Find("Canvas/LifeNum").GetComponent<TMP_Text>();
-        isInitDone = true;
+        colorZoneManager = GameObject.Find("ColorZoneManager").transform;
+
     }
-#if isInitDone
+
     private void Update()
     {
 
         rayCursor = gameCamera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(rayCursor, out raycastHitCursor,Mathf.Infinity))
+        if (Physics.Raycast(rayCursor, out raycastHitCursor,float.MaxValue, 3<<LayerMask.NameToLayer("Ground")))
         {
             Debug.DrawRay(transform.position, raycastHitCursor.point - transform.position, Color.red);
 
@@ -79,9 +85,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (raycastHitForward.collider.CompareTag("Obstacle"))
                 {
-                    print("Hit obstacle" + raycastHitForward.collider.gameObject.name);
                     isBlocked = true;
-                    
                 }
             }
             else
@@ -90,24 +94,58 @@ public class PlayerController : MonoBehaviour
             }
             if (canMove && !isBlocked)
             {
-                //Move player to cursor
-                if ((raycastHitCursor.point - transform.position).magnitude<=20)
+                float _distance = Vector3.Distance(transform.position, raycastHitCursor.point);
+
+                //Limit distance range
+                switch (_distance)
                 {
-                    transform.position = Vector3.Lerp(transform.position, raycastHitCursor.point, MoveSpeed / 100);
-                }
-                else
-                {
-                    transform.position = Vector3.MoveTowards(transform.position, raycastHitCursor.point, MoveSpeed / 10);
+                    case float n when (n <= 0):
+                        _distance = 0;
+                        break;
+                    case float n when (n >= 15):
+                        _distance = 15;
+                        break;
+                    default:
+                        break;
                 }
 
+                //Move player to cursor
+                rigidbody.velocity = (raycastHitCursor.point - transform.position).normalized*_distance;
+
+                if (!isMoving)
+                {
+                    isMoving = true;
+                    SoundManager.Instance.MovingSound.start();
+                    if (guideFlux.IsPlayerAlive)
+                    {
+                        SoundManager.Instance.AliveMovingSound.start();
+                    }
+                }
 
                 if (guideFlux.IsPlayerAlive)
                 {
 
+                    if (Vector3.Distance(lastColorZonePos, transform.position) >= ColorZoneRate)
+                    {
+                        SpawnColorZone();
+                        lastColorZonePos = SpawnColorZone();
+                    }
                     //Reduce Flux on road
-                    guideFlux.ReduceFlux(FluxConsume);
+                    guideFlux.ReduceFlux(FluxConsume,true);
                 }
-
+                else
+                {
+                    SoundManager.Instance.AliveMovingSound.stop(STOP_MODE.ALLOWFADEOUT);
+                }
+            }
+            else
+            {
+                if (isMoving)
+                {
+                    isMoving = false;
+                    SoundManager.Instance.MovingSound.stop(STOP_MODE.ALLOWFADEOUT);
+                    SoundManager.Instance.AliveMovingSound.stop(STOP_MODE.ALLOWFADEOUT);
+                }
             }
         }
 
@@ -117,8 +155,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-#endif
+    private Vector3 SpawnColorZone()
+    {
+        GameObject _gm = GameObject.Instantiate(ColorZonePrefab, colorZoneManager, true);
+        _gm.GetComponent<ColorZoneBehaviour>().ActiveColorZone(guideFlux.CurrentFlux/guideFlux.MaxFlux);
+        _gm.transform.position = this.transform.position+Vector3.down;
+        return _gm.transform.position;
+    }
 
     #region Public functions
 

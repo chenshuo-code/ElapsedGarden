@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 889507277634631008}
   - component: {fileID: 4746620965009263257}
   - component: {fileID: 889507277634631009}
+  - component: {fileID: 7811570280521307600}
   m_Layer: 0
   m_Name: BambooGroup
   m_TagString: Untagged
@@ -100,6 +101,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsActive: 0
   CanChangeState: 0
+--- !u!65 &7811570280521307600
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510026659445419994}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04346239, y: 0.0482071, z: 0.049372938}
+  m_Center: {x: 0.000000011175871, y: 0.019343069, z: 0.00000008009374}
 --- !u!1 &542142913226985629
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,6 +125,7 @@ GameObject:
   - component: {fileID: 922609792878610983}
   - component: {fileID: 4704726754119808478}
   - component: {fileID: 922609792878610976}
+  - component: {fileID: 588338209622381561}
   m_Layer: 0
   m_Name: BambooGroup (1)
   m_TagString: Untagged
@@ -200,6 +215,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsActive: 1
   CanChangeState: 0
+--- !u!65 &588338209622381561
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542142913226985629}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04346239, y: 0.0482071, z: 0.049372938}
+  m_Center: {x: 0.000000010244548, y: 0.019343069, z: 0.00000007543713}
 --- !u!1 &8095372567982444465
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Obstacle_Bamboo : ObstacleBehaviour
 {
-    public bool CanChangeState;
+    [HideInInspector]public bool CanChangeState;
 
     private float shapeWeight;
+    private float lerpSpeed=0;
 
     private SkinnedMeshRenderer skinnedMesh;
+    private BoxCollider boxCollider;
     private void Start()
     {
         skinnedMesh = transform.GetComponent<SkinnedMeshRenderer>();
+        boxCollider = transform.GetComponent<BoxCollider>();
 
         if (IsActive) skinnedMesh.SetBlendShapeWeight(0, 100);
         else skinnedMesh.SetBlendShapeWeight(0, 0);
@@ -21,33 +24,42 @@ public class Obstacle_Bamboo : ObstacleBehaviour
     {
         
         IsActive = true;
-        shapeWeight = 0;
+        boxCollider.enabled = true;
         CanChangeState = true;
-        print("Active");
         
     }
     public override void DeactivateObstacle()
     {
        
         IsActive = false;
-        shapeWeight = 1;
+        boxCollider.enabled = false;
         CanChangeState = true;
-        print("Inactive");
     }
 
     private void Update()
     {
         if (CanChangeState)
         {
+            lerpSpeed += Time.deltaTime;
             if (IsActive)
             {
-                skinnedMesh.SetBlendShapeWeight(0, Mathf.Lerp(100, 0, 2f));
-                if (skinnedMesh.GetBlendShapeWeight(0)>=100)  CanChangeState = false;
+                shapeWeight = Mathf.Lerp(0, 100, lerpSpeed);
+                skinnedMesh.SetBlendShapeWeight(0, shapeWeight);
+                if (shapeWeight >= 100)
+                {
+                    CanChangeState = false;
+                    lerpSpeed = 0;
+                }
             }
             else
             {
-                skinnedMesh.SetBlendShapeWeight(0, Mathf.Lerp(0, 100, 2f));
-                if (skinnedMesh.GetBlendShapeWeight(0) <= 0) CanChangeState = false;
+                shapeWeight = Mathf.Lerp(100, 0, lerpSpeed);
+                skinnedMesh.SetBlendShapeWeight(0,shapeWeight);
+                if (shapeWeight <= 0)
+                {
+                    CanChangeState = false;
+                    lerpSpeed = 0;
+                }
             }
             
         }

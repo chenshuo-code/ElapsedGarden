@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9180d9bc-6164-4dc7-8016-0075b2f906e3}">
+		<property name="assetPath">
+			<value>halo.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>7.7670624999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c773772a-e5b3-4234-9d67-8a29c41194c1}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e464d87c-93c1-4f7d-a6ea-e57908ed15e4}">
+		<property name="assetPath">
+			<value>gen_char_actout_quirk {624a8af3-733e-4957-a34d-18bd4e1f02b6}.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.5150833333333331</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c773772a-e5b3-4234-9d67-8a29c41194c1}</destination>
+		</relationship>
+	</object>
+</objects>

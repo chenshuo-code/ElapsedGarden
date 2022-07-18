@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{300f136b-5153-427b-8a9c-4cf409e7e91c}">
+		<property name="assetPath">
+			<value>town_abbey_meditation {cdf2968a-1fa2-4ce1-9063-7eb21636946b}.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.3916458333333335</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c773772a-e5b3-4234-9d67-8a29c41194c1}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d216221d-d00a-4168-8e24-660b50b2e9f5}">
+		<property name="assetPath">
+			<value>ting7.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.3990476190476189</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c773772a-e5b3-4234-9d67-8a29c41194c1}</destination>
+		</relationship>
+	</object>
+</objects>

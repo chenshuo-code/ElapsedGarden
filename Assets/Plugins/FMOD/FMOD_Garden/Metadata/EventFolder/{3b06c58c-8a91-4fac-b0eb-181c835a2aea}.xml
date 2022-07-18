@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{3b06c58c-8a91-4fac-b0eb-181c835a2aea}">
+		<property name="name">
+			<value>Flux</value>
+		</property>
+		<relationship name="folder">
+			<destination>{eb41bf2a-4e39-4e90-b639-bd3bee9daf8c}</destination>
+		</relationship>
+	</object>
+</objects>

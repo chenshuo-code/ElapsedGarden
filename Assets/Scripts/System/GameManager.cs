@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
 
+    [HideInInspector] public TimerSys TimerSystem;
     [HideInInspector] public TimeManager TimeManager;
     [HideInInspector] public SoundManager SoundManager;
     [HideInInspector] public UIManager UIManager;
@@ -22,6 +23,8 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         //Init instance managers
+        TimerSystem = FindObjectOfType<TimerSys>();
+        TimerSystem.InitSys();
         TimeManager = FindObjectOfType<TimeManager>();
         TimeManager.Init();
         SoundManager = FindObjectOfType<SoundManager>();

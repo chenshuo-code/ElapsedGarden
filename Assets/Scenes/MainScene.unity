@@ -2928,6 +2928,23 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
+--- !u!1 &2008089539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8035165391503602230, guid: 711c36414d8c9134eb509879da92fb2d, type: 3}
+  m_PrefabInstance: {fileID: 8035165390934392985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2008089542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008089539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b021e7517148f574985135eb2cd4943a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2015162515
 GameObject:
   m_ObjectHideFlags: 0
@@ -3719,6 +3736,10 @@ PrefabInstance:
     - target: {fileID: 6327532723489421837, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
       propertyPath: ResolveSpeed
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6327532723489421838, guid: e896cd01aff963a4e83970ee5b7ae1ed, type: 3}
+      propertyPath: m_Mass
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

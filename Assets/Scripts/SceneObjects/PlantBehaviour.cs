@@ -12,6 +12,7 @@ public class PlantBehaviour : MonoBehaviour
     public bool IsAlive; //If this plant is activate in alive
 
     private float lifeFlux;//Current life flux
+    private float autoGrowSpeed=0;
 
     private bool canActivate; //boolean to active plant
     private bool canDeactivate;
@@ -164,6 +165,12 @@ public class PlantBehaviour : MonoBehaviour
         }
     }
 
+    private void LerpToGrow()
+    {
+        autoGrowSpeed+=0.01f;
+
+        lifeFlux = Mathf.Lerp(0, MaxLifeFlux, autoGrowSpeed);
+    }
 
     #region Functions public
     /// <summary>
@@ -181,7 +188,8 @@ public class PlantBehaviour : MonoBehaviour
 
         if (needGrow)
         {
-            lifeFlux = Mathf.Lerp(0, MaxLifeFlux,2f) ;
+            autoGrowSpeed = 0;
+            TimerSys.Instance.AddTimeTask(LerpToGrow,0.02f,PETimeUint.Secound,100);
         }
         else
         {

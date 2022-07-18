@@ -172,7 +172,9 @@ public class PlayerController : MonoBehaviour
     public void TeleportToPosition(Vector3 telePos)
     {
         this.transform.position = telePos;
+        rigidbody.velocity = Vector3.zero;
     }
+
 
     #endregion
 }

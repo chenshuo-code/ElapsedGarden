@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -37,6 +38,8 @@ public class GameManager : MonoBehaviour
 
         ListPlantsActive = new List<PlantBehaviour>();
         ListCheckPoints = new List<CheckPoint>();
+
+        SceneManager.LoadSceneAsync("MainLevel1", LoadSceneMode.Additive);
     }
     public void AddPlantActive(PlantBehaviour plant)
     {

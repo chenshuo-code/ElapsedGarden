@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{0ea3d730-3bfb-4def-9d58-cfd822ad6c1a}">
 		<property name="color">
-			<value>Blue</value>
+			<value>Red</value>
 		</property>
 		<property name="name">
 			<value>Flux_change_etat</value>

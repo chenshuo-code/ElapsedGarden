@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{d97187c4-ab53-4009-af9f-8608804d2161}">
-		<property name="color">
-			<value>Blue</value>
-		</property>
 		<property name="name">
 			<value>pi_Porte</value>
 		</property>
@@ -128,6 +125,10 @@
 	</object>
 	<object class="MixerBusPanner" id="{91a4fd0b-a5ea-4f42-a9f3-591e6427788c}" />
 	<object class="MixerBusFader" id="{a94a13b1-2a73-47fa-b898-9e63ea16a19a}" />
-	<object class="SpatialiserEffect" id="{62dc8d8c-fb92-431d-9c21-5d8f015e130d}" />
+	<object class="SpatialiserEffect" id="{62dc8d8c-fb92-431d-9c21-5d8f015e130d}">
+		<property name="distanceRolloffType">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{aee664a7-8db0-480f-a1fa-6d32af65b16e}" />
 </objects>

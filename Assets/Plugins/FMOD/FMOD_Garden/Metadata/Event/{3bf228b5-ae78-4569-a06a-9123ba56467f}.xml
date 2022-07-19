@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{3bf228b5-ae78-4569-a06a-9123ba56467f}">
+		<property name="color">
+			<value>Blue</value>
+		</property>
 		<property name="name">
 			<value>pi_Porte_valider</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{92e77bb5-fb5e-4e40-9fbe-a3c7e5e0816e}</destination>
@@ -59,11 +62,18 @@
 	<object class="EventAutomatableProperties" id="{2fd65a08-996d-48b2-984d-15d2e8daccf5}" />
 	<object class="MarkerTrack" id="{09c5ae61-e68b-4cf1-bdf0-6a60b1dc974c}" />
 	<object class="GroupTrack" id="{c6047bb6-0139-481d-a21a-db6389c45f33}">
+		<relationship name="modules">
+			<destination>{3ad575d0-e85a-49ba-b97b-7ff4dd6bd86a}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{d1f38ae1-0664-4a41-b557-8f937fb83688}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{6eb92fc4-8712-430d-802a-2be3badb4667}" />
+	<object class="Timeline" id="{6eb92fc4-8712-430d-802a-2be3badb4667}">
+		<relationship name="modules">
+			<destination>{3ad575d0-e85a-49ba-b97b-7ff4dd6bd86a}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerMaster" id="{ede5a6df-6e84-45f4-8dd3-243dc21c190b}">
 		<relationship name="effectChain">
 			<destination>{2801fc78-69e1-4a13-8bf1-40b7be81ad1d}</destination>
@@ -81,6 +91,14 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d2425a2f-a726-4644-b10d-917368cd933a}" />
+	<object class="SingleSound" id="{3ad575d0-e85a-49ba-b97b-7ff4dd6bd86a}">
+		<property name="length">
+			<value>3.8641950113378685</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{489ac655-78be-4293-bee5-f3bca1d778ae}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerGroup" id="{d1f38ae1-0664-4a41-b557-8f937fb83688}">
 		<property name="name">
 			<value>Audio 1</value>

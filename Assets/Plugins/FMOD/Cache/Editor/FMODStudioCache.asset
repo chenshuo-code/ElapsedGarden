@@ -27,6 +27,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3406
+--- !u!114 &-8233449515678735908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Melodie_niveau1/Parameter 1
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  StudioPath: 
+  Min: 0
+  Max: 8
+  Default: 0
+  ID:
+    data1: 671782073
+    data2: 3109297033
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-8072038911434258849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +105,62 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7800
+--- !u!114 &-7018377744690214261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musique_ambiance/Melodie_niveau1
+  m_EditorClassIdentifier: 
+  Path: event:/Musique_ambiance/Melodie_niveau1
+  Guid:
+    Data1: -541106215
+    Data2: 1089140269
+    Data3: 557232270
+    Data4: 617047419
+  Banks:
+  - {fileID: 3798816386500455235}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -6763081907617155724}
+  - {fileID: -8233449515678735908}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 344000
+--- !u!114 &-6763081907617155724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Melodie_niveau1/Phase
+  m_EditorClassIdentifier: 
+  Name: Phase
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 3997745014
+    data2: 1670940979
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - 1
+  - 2
+  - 3
+  Exists: 1
 --- !u!114 &-6364850721737078711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +188,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3150
+--- !u!114 &-6231889575118520986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Interaction_joueur/Tomber_eau
+  m_EditorClassIdentifier: 
+  Path: event:/Interaction_joueur/Tomber_eau
+  Guid:
+    Data1: -522502902
+    Data2: 1135380605
+    Data3: 1230453908
+    Data4: 1058595847
+  Banks:
+  - {fileID: 3798816386500455235}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1079
 --- !u!114 &-3366917652214340029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,13 +235,13 @@ MonoBehaviour:
     Data4: 1039438423
   Banks:
   - {fileID: 3798816386500455235}
-  IsStream: 0
+  IsStream: 1
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 14006
 --- !u!114 &-3222571468757562675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +268,34 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 12107
+  Length: 11400
+--- !u!114 &-2307657316759146213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ingredient_important/Niveau1/Nenuphare
+  m_EditorClassIdentifier: 
+  Path: event:/Ingredient_important/Niveau1/Nenuphare
+  Guid:
+    Data1: 641241801
+    Data2: 1194700948
+    Data3: 1381003447
+    Data4: -1154790976
+  Banks:
+  - {fileID: 3798816386500455235}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 30
+  MaxDistance: 35
+  Length: 6800
 --- !u!114 &-2230929149554386912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,11 +338,38 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/FMOD_Garden/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637938239113373348
+  lastModified: 637938396718927388
   FileSizes:
   - Name: Desktop
-    Value: 1490
+    Value: 2100
   Exists: 1
+--- !u!114 &-1073895568666999776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ingredient_important/Niveau1/Bambou
+  m_EditorClassIdentifier: 
+  Path: event:/Ingredient_important/Niveau1/Bambou
+  Guid:
+    Data1: 1234480559
+    Data2: 1140963354
+    Data3: -1041813326
+    Data4: -47355580
+  Banks:
+  - {fileID: 3798816386500455235}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1237
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,13 +399,105 @@ MonoBehaviour:
   - {fileID: 7682510716094716711}
   - {fileID: -8553094610190945676}
   - {fileID: -6364850721737078711}
+  - {fileID: -6231889575118520986}
+  - {fileID: 1528152638056563105}
+  - {fileID: 8654756093796581304}
+  - {fileID: 1665619423780823620}
+  - {fileID: 6359086977094418787}
+  - {fileID: 6642199878403846069}
+  - {fileID: 7654982087252411704}
+  - {fileID: 277218152373497811}
+  - {fileID: -1073895568666999776}
+  - {fileID: -2307657316759146213}
+  - {fileID: -7018377744690214261}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3798816386500455235}
   StringsBanks:
   - {fileID: -1893013633057932657}
-  cacheTime: 637938239113373348
+  cacheTime: 637938396718927388
   cacheVersion: 131591
+--- !u!114 &277218152373497811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ingredient_important/Niveau1/Sable
+  m_EditorClassIdentifier: 
+  Path: event:/Ingredient_important/Niveau1/Sable
+  Guid:
+    Data1: -633079130
+    Data2: 1291125879
+    Data3: 1462845321
+    Data4: 1728553783
+  Banks:
+  - {fileID: 3798816386500455235}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3824
+--- !u!114 &1528152638056563105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiance_nature/Oiseau
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiance_nature/Oiseau
+  Guid:
+    Data1: -2007698409
+    Data2: 1208918574
+    Data3: -1761547863
+    Data4: 571134562
+  Banks:
+  - {fileID: 3798816386500455235}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 10
+  MaxDistance: 60
+  Length: 48959
+--- !u!114 &1665619423780823620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiance_nature/Point_eau
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiance_nature/Point_eau
+  Guid:
+    Data1: -232613569
+    Data2: 1291239627
+    Data3: 1302172295
+    Data4: -2045754097
+  Banks:
+  - {fileID: 3798816386500455235}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 12
+  MaxDistance: 60
+  Length: 12001
 --- !u!114 &3310382671755075213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,7 +524,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 3864
 --- !u!114 &3734582348481730548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,7 +551,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 9707
+  Length: 4400
 --- !u!114 &3741649293181277627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,11 +594,92 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/FMOD_Garden/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637938239113303312
+  lastModified: 637938396718857561
   FileSizes:
   - Name: Desktop
-    Value: 1356128
+    Value: 25615136
   Exists: 1
+--- !u!114 &6359086977094418787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiance_nature/Cascade
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiance_nature/Cascade
+  Guid:
+    Data1: -1458095794
+    Data2: 1207502634
+    Data3: 1526667422
+    Data4: 544503679
+  Banks:
+  - {fileID: 3798816386500455235}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 50
+  MaxDistance: 90
+  Length: 11930
+--- !u!114 &6642199878403846069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiance_nature/Grenouille
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiance_nature/Grenouille
+  Guid:
+    Data1: 1931628659
+    Data2: 1187459278
+    Data3: -658620250
+    Data4: 1980514513
+  Banks:
+  - {fileID: 3798816386500455235}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 10
+  MaxDistance: 50
+  Length: 2000
+--- !u!114 &7654982087252411704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ingredient_important/Niveau1/Plante_chaine
+  m_EditorClassIdentifier: 
+  Path: event:/Ingredient_important/Niveau1/Plante_chaine
+  Guid:
+    Data1: -873863530
+    Data2: 1333099933
+    Data3: -1596530560
+    Data4: 1589468727
+  Banks:
+  - {fileID: 3798816386500455235}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6442
 --- !u!114 &7682510716094716711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +734,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 15406
+--- !u!114 &8654756093796581304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ingredient_important/Niveau1/Torche
+  m_EditorClassIdentifier: 
+  Path: event:/Ingredient_important/Niveau1/Torche
+  Guid:
+    Data1: -1819757763
+    Data2: 1076128743
+    Data3: -1478818654
+    Data4: 284696868
+  Banks:
+  - {fileID: 3798816386500455235}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 4
+  MaxDistance: 20
+  Length: 9377
 --- !u!114 &9199196016829690977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,5 +786,5 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
-  Length: 7767
+  MaxDistance: 50
+  Length: 5500

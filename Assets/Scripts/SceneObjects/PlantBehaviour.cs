@@ -10,6 +10,7 @@ public class PlantBehaviour : MonoBehaviour
     public float LifeDeductTime; //Time deducte with game time passed
     public bool ActiveDeductByTime;//If active, plant's life will deduct with time
     public bool IsAlive; //If this plant is activate in alive
+    public bool ActiveRing;
 
     private float lifeFlux;//Current life flux
     private float autoGrowSpeed=0;
@@ -58,17 +59,18 @@ public class PlantBehaviour : MonoBehaviour
         material.color = Color.grey;
 
         skinnedMesh = transform.GetComponent<SkinnedMeshRenderer>();
-
-        particleRing = transform.Find("PSRing").GetComponent<ParticleSystem>();
-        initPSRingStartSize = particleRing.startSize;
-
+        if (ActiveRing)
+        {
+            particleRing = transform.Find("PSRing").GetComponent<ParticleSystem>();
+            initPSRingStartSize = particleRing.startSize;
+        }
         lifeDisplayRate = 100 / MaxLifeFlux;
     }
     private void Update()
     {
         //Apply mesh changement
         skinnedMesh.SetBlendShapeWeight(0,lifeFlux*lifeDisplayRate);
-        particleRing.startSize = initPSRingStartSize - initPSRingStartSize*(lifeFlux * lifeDisplayRate)/100;
+        if(ActiveRing) particleRing.startSize = initPSRingStartSize - initPSRingStartSize*(lifeFlux * lifeDisplayRate)/100;
 
         if (!IsAlive)
         {          

@@ -8,10 +8,6 @@ using UnityEngine;
 public class CheckPoint : MonoBehaviour
 {
     /// <summary>
-    /// Mesh after activate
-    /// </summary>
-    public Mesh TreeMesh;
-    /// <summary>
     /// Max flux to be Increased on check point activate 
     /// </summary>
     public float RewardFlux;
@@ -27,8 +23,6 @@ public class CheckPoint : MonoBehaviour
     private GuideFluxBehaviour guideFlux;
     private PlayerController playerController;
 
-    private MeshFilter meshFilter;
-
     private void Start()
     {
         isActive = false;
@@ -36,7 +30,6 @@ public class CheckPoint : MonoBehaviour
         guideFlux = GameManager.Instance.GuideFlux;
         playerController = GameManager.Instance.PlayerController;
 
-        meshFilter = transform.GetComponent<MeshFilter>();
 
         if (DefaultActive) ActiveCheckPoint();
     }
@@ -74,9 +67,13 @@ public class CheckPoint : MonoBehaviour
     public void ActiveCheckPoint()
     {
         isActive = true;
-        meshFilter.mesh = TreeMesh;
+
         guideFlux.IncreaseMaxFlux(RewardFlux); //Add max flux
         GameManager.Instance.ActivateCheckPoint(this);
+
+        GameManager.Instance.ObstacleDoor.CheckPointResolve(); //Record To Open Door
+        print("CheckPointActive");
+        gameObject.layer = LayerMask.NameToLayer("Color");
     }
     
 }

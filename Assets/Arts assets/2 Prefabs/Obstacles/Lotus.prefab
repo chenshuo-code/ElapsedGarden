@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 275374635772988854}
   - component: {fileID: 275374635772988855}
   m_Layer: 0
-  m_Name: TriggerLotus
+  m_Name: TriggerActiveLotus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275374635772988852}
-  m_LocalRotation: {x: -0.000000081460335, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0344, y: 0.0373, z: 0.0857}
+  m_LocalRotation: {x: -0.000000081312756, y: -0.06016951, z: -0.0000000049014477, w: 0.9981882}
+  m_LocalPosition: {x: 0.01725, y: 0.00173, z: -0.00082}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3171045318792182301}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -6.899, z: 0}
 --- !u!65 &275374635772988854
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -84,7 +84,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275374636340091894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0104, y: -0.0002, z: 0.0025}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -156,8 +156,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.018732542, y: 0.0009685589, z: 0.01935122}
-  m_Center: {x: 0.0005898022, y: 0.00033235355, z: -0.00041253926}
+  m_Size: {x: 0.018732542, y: 0.00065755367, z: 0.01935122}
+  m_Center: {x: 0.0005898023, y: 0.00016113042, z: -0.00041253926}
 --- !u!1 &2831075617409441959
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,9 +183,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2831075617409441959}
-  m_LocalRotation: {x: 5.684342e-14, y: -0.24399477, z: 0.000000039751782, w: 0.9697766}
+  m_LocalRotation: {x: 0, y: -0.24399577, z: 0, w: 0.96977633}
   m_LocalPosition: {x: 0.21256797, y: -0.03758308, z: -0.14721856}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 275374636340091895}
@@ -217,5 +217,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.018732542, y: 0.012254941, z: 0.01935122}
-  m_Center: {x: 7.686539e-17, y: 0.005554781, z: 5.192362e-17}
+  m_Size: {x: 0.018732544, y: 0.021061586, z: 0.01935122}
+  m_Center: {x: 0, y: 0.000023936032, z: 0}

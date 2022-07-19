@@ -24,6 +24,7 @@ public class Plant_Lotus : MonoBehaviour
     {
         triggerLotus =  transform.GetComponentInChildren<TriggerLotus>();
         lotusMesh = transform.GetComponentInChildren<SkinnedMeshRenderer>();
+        lotusMesh.gameObject.SetActive(false);
     }
     private void Update()
     {
@@ -99,7 +100,7 @@ public class Plant_Lotus : MonoBehaviour
     {
         print("玩家不动盘子10秒消失");
         canActivePlate = false;
-        canFishActiveLotus = false;
+        canFishActiveLotus = true;
         canPlayAnim = true;
     }
     public void ActiveLotus()

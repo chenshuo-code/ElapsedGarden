@@ -5,61 +5,106 @@ using UnityEngine;
 public class Plant_Lotus : MonoBehaviour
 {
     /// <summary>
-    /// Time delay to show lotus, in secound (>1)
+    /// Time delay to active plate of lotus, in secound
     /// </summary>
-    public float ShowWaitTime;
+    public float PlateShowTime = 6;
+
+    private float shapeWeight;
+    private float lerpSpeed = 0;
 
     private TriggerLotus triggerLotus;
     private SkinnedMeshRenderer lotusMesh;
-    private bool isLotusActive=false;
+    private bool canFishActiveLotus=false;
+    private bool isLotusShow = false;
+    private bool canActivePlate = false;
+    private bool canPlayAnim = false;
+
 
     private void Start()
     {
         triggerLotus =  transform.GetComponentInChildren<TriggerLotus>();
         lotusMesh = transform.GetComponentInChildren<SkinnedMeshRenderer>();
     }
+    private void Update()
+    {
+        if (canPlayAnim)
+        {
+            lerpSpeed += Time.deltaTime;
+            if (canActivePlate)
+            {
+                shapeWeight = Mathf.Lerp(0, 100, lerpSpeed);
+                lotusMesh.SetBlendShapeWeight(0, shapeWeight);
+                if (shapeWeight >= 100)
+                {
+                    canPlayAnim = false;
+                    lerpSpeed = 0;
+                }
+            }
+            else
+            {
+                shapeWeight = Mathf.Lerp(100, 0, lerpSpeed);
+                lotusMesh.SetBlendShapeWeight(0, shapeWeight);
+                if (shapeWeight <= 0)
+                {
+                    HideLotus();
+                    canPlayAnim = false;
+                    lerpSpeed = 0;
+                }
+            }
+        }
+
+        
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Fish")&&isLotusActive)
+        if (other.CompareTag("Fish")&&canFishActiveLotus)
         {
             ShowLotus();
         }
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")&& isLotusShow) //Can activate plate only when lotus is activated and showed
         {
             ActivePlate();
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Fish")&&isLotusActive)
+        if (other.CompareTag("Fish")&&canFishActiveLotus)
         {
             HideLotus();
         }
     }
     private void ShowLotus()
     {
+        print("然后在鱼经过时显现");
         //triggerLotus.gameObject.SetActive(true);
         lotusMesh.gameObject.SetActive(true);
+        isLotusShow = true;
     }
     private void HideLotus()
     {
+        print("鱼走了就隐藏");
         //triggerLotus.gameObject.SetActive(false);
         lotusMesh.gameObject.SetActive(false);
+        isLotusShow = false;
     }
     private void ActivePlate()
     {
-        print("我活啦");
-        isLotusActive = false;
-        Invoke("DeactivatePlate",5f);
+        print("玩家进来激活盘子");
+        canFishActiveLotus = false;
+        canActivePlate = true;
+        canPlayAnim = true;
+        Invoke("DeactivatePlate", PlateShowTime);
     }
     private void DeactivatePlate()
     {
-        print("我又死了");
-        HideLotus();
-        isLotusActive = false;
+        print("玩家不动盘子10秒消失");
+        canActivePlate = false;
+        canFishActiveLotus = false;
+        canPlayAnim = true;
     }
     public void ActiveLotus()
     {
-        isLotusActive = true;
+        print("首先优雅的激活lotus");
+        canFishActiveLotus = true;
     }
 }

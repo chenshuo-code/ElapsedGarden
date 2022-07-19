@@ -7,7 +7,7 @@ public class TriggerLotus : MonoBehaviour
     private Plant_Lotus lotus;
     private void Start()
     {
-        transform.GetComponentInParent<Plant_Lotus>();
+        lotus=transform.GetComponentInParent<Plant_Lotus>();
     }
     private void OnTriggerEnter(Collider other)
     {

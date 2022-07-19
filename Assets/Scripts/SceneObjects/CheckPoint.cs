@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using FMODUnity;
+using FMOD.Studio;
 /// <summary>
 /// Check point, for functions launche a round
 /// </summary>
@@ -23,15 +24,22 @@ public class CheckPoint : MonoBehaviour
     private GuideFluxBehaviour guideFlux;
     private PlayerController playerController;
 
+    private EventInstance inactiveSound;
+
     private void Start()
     {
         isActive = false;
 
         guideFlux = GameManager.Instance.GuideFlux;
         playerController = GameManager.Instance.PlayerController;
+        
 
+        inactiveSound = RuntimeManager.CreateInstance(SoundManager.Instance.CheckPointInactiveStateSoundPath);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(inactiveSound, this.transform);
+        inactiveSound.start();
 
         if (DefaultActive) ActiveCheckPoint();
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -72,8 +80,13 @@ public class CheckPoint : MonoBehaviour
         GameManager.Instance.ActivateCheckPoint(this);
 
         GameManager.Instance.ObstacleDoor.CheckPointResolve(); //Record To Open Door
-        print("CheckPointActive");
+
         gameObject.layer = LayerMask.NameToLayer("Color");
+        inactiveSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+        FMODUnity.RuntimeManager.PlayOneShot(SoundManager.Instance.CheckPointActiveStateSoundPath, this.transform.position);
+
+       
     }
     
 }

@@ -142,9 +142,9 @@ public class SoundManager : MonoBehaviour
     /// </summary>
     /// <param name="eventPath">Event path</param>
     /// <returns>Fmod event instance</returns>
-    public EventInstance CreateInstance(string eventPath)
+    public EventInstance CreateInstance(EventReference _ref)
     {
-        var instance = RuntimeManager.CreateInstance(eventPath);
+        var instance = RuntimeManager.CreateInstance(_ref);
         return instance;
     }
         
@@ -156,5 +156,6 @@ public class SoundManager : MonoBehaviour
     public void PlayOneshotTrack(EventReference eventPath, Vector3 position)
     {
         FMODUnity.RuntimeManager.PlayOneShot(eventPath, position);
+        print("One Shot Play");
     }
 }

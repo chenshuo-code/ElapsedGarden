@@ -75,6 +75,8 @@ public class SoundManager : MonoBehaviour
     /// Sound when we pass a plant
     /// </summary>
     public EventInstance PlantPassSound;
+    public EventInstance PlantChaineActiveSound;
+
 
     /// <summary>
     /// Sound feedback when flux state change
@@ -121,6 +123,7 @@ public class SoundManager : MonoBehaviour
         
         PlantActiveSound = RuntimeManager.CreateInstance(PlantActiveSoundPath);
         PlantPassSound = RuntimeManager.CreateInstance(PlantPassSoundPath);
+        PlantChaineActiveSound = RuntimeManager.CreateInstance(PlantChaineActiveSoundPath);
 
         FluxStateChangeSound = RuntimeManager.CreateInstance(FluxStateChangeSoundPath);
 
@@ -131,6 +134,7 @@ public class SoundManager : MonoBehaviour
         cancelRechargeFluxSound = RuntimeManager.CreateInstance(cancelRechargeFluxSoundPath);
 
         BackGroundMusicSound = RuntimeManager.CreateInstance(BackGroundMusicSoundPath);
+
     }
 
     /// <summary>
@@ -152,6 +156,5 @@ public class SoundManager : MonoBehaviour
     public void PlayOneshotTrack(EventReference eventPath, Vector3 position)
     {
         FMODUnity.RuntimeManager.PlayOneShot(eventPath, position);
-        
     }
 }

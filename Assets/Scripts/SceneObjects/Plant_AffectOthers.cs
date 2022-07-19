@@ -33,6 +33,7 @@ public class Plant_AffectOthers : PlantBehaviour
     public override void ActivatePlant(bool needGrow)
     {
         base.ActivatePlant(false);
+        SoundManager.Instance.PlantChaineActiveSound.start();
         foreach (PlantBehaviour plant in PlantsActivateList)
         {
             if (!plant.IsAlive)

@@ -11,6 +11,7 @@ public class Obstacle_Door : MonoBehaviour
         if (ConditionCount == 0)
         {
             this.gameObject.SetActive(false);
+            SoundManager.Instance.PiDoorOpenSound.start();
         }
     }
     public void TorchResolve()

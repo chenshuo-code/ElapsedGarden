@@ -116,9 +116,11 @@ public class PlayerController : MonoBehaviour
                 {
                     isMoving = true;
                     SoundManager.Instance.MovingSound.start();
+                   
                     if (guideFlux.IsPlayerAlive)
                     {
                         SoundManager.Instance.AliveMovingSound.start();
+        
                     }
                 }
 

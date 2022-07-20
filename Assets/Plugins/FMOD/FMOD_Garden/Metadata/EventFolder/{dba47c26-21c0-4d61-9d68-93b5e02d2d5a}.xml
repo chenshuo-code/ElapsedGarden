@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="EventFolder" id="{dba47c26-21c0-4d61-9d68-93b5e02d2d5a}">
 		<property name="name">
-			<value>zressources</value>
+			<value>zressourcesSurlecote</value>
 		</property>
 		<relationship name="folder">
 			<destination>{eb41bf2a-4e39-4e90-b639-bd3bee9daf8c}</destination>

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6406673925369433869}
   - component: {fileID: 6406673925369433868}
   - component: {fileID: 6406673925369433871}
+  - component: {fileID: 246389635}
   m_Layer: 0
   m_Name: Obstacle_Door
   m_TagString: Obstacle
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6406673925369433870}
-  m_LocalRotation: {x: -0, y: 0.99569434, z: -0, w: 0.09269777}
+  m_LocalRotation: {x: 0, y: 0.995694, z: 0, w: 0.09270081}
   m_LocalPosition: {x: 1.82, y: 1.17, z: -13.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -111,3 +112,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.0340436, y: 2.4020512, z: 1.2068028}
   m_Center: {x: 0.0000038146986, y: 1.2010256, z: 0.0043716445}
+--- !u!114 &246389635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6406673925369433870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -646871100
+      Data2: 1074375507
+      Data3: 143040431
+      Data4: 1629572480
+    Path: event:/Point_interet/Niveau1/pi_Porte
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

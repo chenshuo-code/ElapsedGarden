@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 952952210179285952}
   - component: {fileID: 952952210179285953}
   - component: {fileID: 1181924310}
+  - component: {fileID: 91725171560566636}
   m_Layer: 7
   m_Name: FirstTree
   m_TagString: Untagged
@@ -42,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952952210179285954}
-  m_Mesh: {fileID: 4300000, guid: afd700edd33134476b32c2af67400165, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 70e593a46123bc7418d8d68263bbdbbf, type: 3}
 --- !u!23 &952952210179285952
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,8 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d41a8bca790345f49b3ae205465ff2f8, type: 2}
-  - {fileID: 2100000, guid: 0de74cacf6310c64ca1b6862ba4b219c, type: 2}
+  - {fileID: 2100000, guid: 231cbfd0f2c87174abf4779f7ee85aa5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,8 +97,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 4.995183, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 6.4717274, y: 2.7139757, z: 6.371099}
+  m_Center: {x: -0.25439405, y: 1.1406037, z: -0.15325904}
 --- !u!114 &1181924310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +111,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f240c02ebabccb4a8bb9fb582832c80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TreeMesh: {fileID: 4300000, guid: afd700edd33134476b32c2af67400165, type: 3}
   RewardFlux: 0
   DefaultActive: 1
   TreeFlux: 600
+--- !u!114 &91725171560566636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952952210179285954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -113526853
+      Data2: 1222194220
+      Data3: 593645476
+      Data4: -162264365
+    Path: event:/Checkpoint/Checkpoint_non_active
+  Event: 
+  PlayEvent: 1
+  StopEvent: 3
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 50

@@ -128,8 +128,12 @@ public class PlantBehaviour : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && guideFlux.IsPlayerAlive)
         {
-            SoundManager.Instance.PlayOneshotTrack(SoundManager.Instance.PlantPassSoundPath, this.transform.position);
             canActivate = true;
+
+            if (IsAlive)
+            {
+                SoundManager.Instance.PlayOneshotTrack(SoundManager.Instance.PlantPassSoundPath, this.transform.position);
+            }
         }
     }
     private void OnTriggerExit(Collider other)

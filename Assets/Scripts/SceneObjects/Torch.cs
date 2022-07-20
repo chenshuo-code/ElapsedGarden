@@ -5,6 +5,8 @@ using UnityEngine;
 public class Torch : MonoBehaviour
 {
     private Transform fire;
+
+    private bool isActive=false;
     private void Start()
     {
         fire = transform.GetChild(0);
@@ -12,10 +14,12 @@ public class Torch : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")&&!isActive)
         {
+            isActive = true;
             fire.gameObject.SetActive(true);
             GameManager.Instance.ObstacleDoor.TorchResolve();
+            SoundManager.Instance.PlayOneshotTrack(SoundManager.Instance.TorchActiveSoundPath,transform.position);
         }
     }
 }

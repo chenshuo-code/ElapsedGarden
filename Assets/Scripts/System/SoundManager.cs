@@ -13,13 +13,22 @@ public class SoundManager : MonoBehaviour
     [SerializeField] public EventReference MovingSoundPath;
     [SerializeField] public EventReference AliveMovingSoundPath; 
     [SerializeField] public EventReference TransmissionFluxSoundPath; 
+    [SerializeField] public EventReference FallInWaterSoundPath; 
     
     //Important point indication
     [SerializeField] public EventReference PiExitSoundPath; 
+    [SerializeField] public EventReference PiDoorOpenSoundPath; 
 
     //Plants feedbacks
     [SerializeField] public EventReference PlantActiveSoundPath;
     [SerializeField] public EventReference PlantPassSoundPath; 
+    [SerializeField] public EventReference PlantChaineActiveSoundPath; 
+    [SerializeField] public EventReference BambooActiveSoundPath; 
+    [SerializeField] public EventReference LotusActiveSoundPath;
+
+    //Obstacle feedbacks
+    [SerializeField] public EventReference TorchActiveSoundPath;
+    [SerializeField] public EventReference SandSoundPath;
 
     //Flux sounds
     [SerializeField] public EventReference FluxStateChangeSoundPath; 
@@ -29,9 +38,10 @@ public class SoundManager : MonoBehaviour
     [SerializeField] public EventReference CheckPointActiveStateSoundPath; 
     [SerializeField] public EventReference CheckPointActivateSoundPath; 
     [SerializeField] public EventReference RechargingFluxSoundPath; 
-    //[SerializeField] public EventReference RechargeFluxFinishSoundPath; 
     [SerializeField] public EventReference cancelRechargeFluxSoundPath; 
 
+    //BGM
+    [SerializeField] public EventReference BackGroundMusicSoundPath; 
 
     //Sound event
 
@@ -47,10 +57,16 @@ public class SoundManager : MonoBehaviour
     /// Sound of transmission flux to plant
     /// </summary>
     public EventInstance TransmissionFluxSound;
+    public EventInstance FallInWaterSound;
+
+
     /// <summary>
     /// Sound of indication exit
     /// </summary>
     public EventInstance PiExitSound;
+    public EventInstance PiDoorOpenSound;
+
+
     /// <summary>
     /// Sound feed back when plant active
     /// </summary>
@@ -59,13 +75,18 @@ public class SoundManager : MonoBehaviour
     /// Sound when we pass a plant
     /// </summary>
     public EventInstance PlantPassSound;
+    public EventInstance PlantChaineActiveSound;
+
+
     /// <summary>
     /// Sound feedback when flux state change
     /// </summary>
     public EventInstance FluxStateChangeSound;
+
     /// <summary>
     /// Sound when check point is inactived
     /// </summary>
+    /// 
     public EventInstance CheckPointInactiveStateSound;
     /// <summary>
     /// Sound when check point is actived
@@ -79,14 +100,12 @@ public class SoundManager : MonoBehaviour
     /// Sound when player recharging flux at check point
     /// </summary>
     public EventInstance RechargingFluxSound;
-    ///// <summary>
-    ///// Sound when recharging flux finish
-    ///// </summary>
-    //public EventInstance RechargeFluxFinishSound;
     /// <summary>
     /// Feedback sound when player cancel flux recharge
     /// </summary>
     public EventInstance cancelRechargeFluxSound;
+
+    public EventInstance BackGroundMusicSound;
 
     public void Init()
     {
@@ -97,16 +116,25 @@ public class SoundManager : MonoBehaviour
         MovingSound = RuntimeManager.CreateInstance(MovingSoundPath);
         AliveMovingSound = RuntimeManager.CreateInstance(AliveMovingSoundPath);
         TransmissionFluxSound = RuntimeManager.CreateInstance(TransmissionFluxSoundPath);
+        FallInWaterSound = RuntimeManager.CreateInstance(FallInWaterSoundPath);
+ 
         PiExitSound = RuntimeManager.CreateInstance(PiExitSoundPath);
+        PiDoorOpenSound = RuntimeManager.CreateInstance(PiDoorOpenSoundPath);
+        
         PlantActiveSound = RuntimeManager.CreateInstance(PlantActiveSoundPath);
         PlantPassSound = RuntimeManager.CreateInstance(PlantPassSoundPath);
+        PlantChaineActiveSound = RuntimeManager.CreateInstance(PlantChaineActiveSoundPath);
+
         FluxStateChangeSound = RuntimeManager.CreateInstance(FluxStateChangeSoundPath);
+
         CheckPointInactiveStateSound = RuntimeManager.CreateInstance(CheckPointInactiveStateSoundPath);
         CheckPointActiveStateSound = RuntimeManager.CreateInstance(CheckPointActiveStateSoundPath);
         CheckPointActivateSound = RuntimeManager.CreateInstance(CheckPointActivateSoundPath);
         RechargingFluxSound = RuntimeManager.CreateInstance(RechargingFluxSoundPath);
-        //RechargeFluxFinishSound = RuntimeManager.CreateInstance(RechargeFluxFinishSoundPath);
         cancelRechargeFluxSound = RuntimeManager.CreateInstance(cancelRechargeFluxSoundPath);
+
+        BackGroundMusicSound = RuntimeManager.CreateInstance(BackGroundMusicSoundPath);
+
     }
 
     /// <summary>
@@ -114,9 +142,9 @@ public class SoundManager : MonoBehaviour
     /// </summary>
     /// <param name="eventPath">Event path</param>
     /// <returns>Fmod event instance</returns>
-    public EventInstance CreateInstance(string eventPath)
+    public EventInstance CreateInstance(EventReference _ref)
     {
-        var instance = RuntimeManager.CreateInstance(eventPath);
+        var instance = RuntimeManager.CreateInstance(_ref);
         return instance;
     }
         
@@ -128,6 +156,6 @@ public class SoundManager : MonoBehaviour
     public void PlayOneshotTrack(EventReference eventPath, Vector3 position)
     {
         FMODUnity.RuntimeManager.PlayOneShot(eventPath, position);
-        
+        print("One Shot Play");
     }
 }

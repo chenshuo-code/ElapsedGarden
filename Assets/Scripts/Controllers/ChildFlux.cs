@@ -32,6 +32,10 @@ public class ChildFlux : MonoBehaviour
         lastPos = player.transform.position;
 
     }
+    public void TeleportChildFlux(Vector3 pos)
+    {
+        this.transform.position = pos;
+    }
 
     // Update is called once per frame
     void Update()

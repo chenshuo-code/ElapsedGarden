@@ -14,6 +14,8 @@ public class GuideFluxBehaviour : MonoBehaviour
 
     public bool ActiveDeductByTime;
 
+    public Transform ChildFluxController;
+
     /// <summary>
     /// Speed to resolve plante with flux
     /// </summary>
@@ -32,6 +34,7 @@ public class GuideFluxBehaviour : MonoBehaviour
 
     //Particle System
     private ParticleSystem particleFlux;
+    private ChildFlux[] ChildFluxArry;
 
     private float initPSFluxSize;
     private Color initPSFluxStartColor;
@@ -63,10 +66,37 @@ public class GuideFluxBehaviour : MonoBehaviour
 
         IsPlayerAlive = true;
 
-    
+        if (ChildFluxController != null)
+        {
+            ChildFluxArry = ChildFluxController.GetComponentsInChildren<ChildFlux>();
+            foreach (var childFlux in ChildFluxArry)
+            {
+                childFlux.gameObject.SetActive(false);
+            }
+
+            RechargeChildFlux();
+        }
     }
 
+    private void RechargeChildFlux()
+    {
+        for (int i = 0; i < MaxFlux / 20; i++)
+        {
+            ChildFluxArry[i].TeleportChildFlux(transform.position);
+            ChildFluxArry[i].gameObject.SetActive(true);
+        }
+    }
 
+    private void CheckDeactivateChildFlux()
+    {
+        for (int i = (int)(MaxFlux / 20) - 1; i > CurrentFlux / 20; i--)
+        {
+            if (ChildFluxArry[i].gameObject.activeSelf)
+            {
+                ChildFluxArry[i].gameObject.SetActive(false);
+            }
+        }
+    }
 
 
     private void Update()
@@ -108,6 +138,8 @@ public class GuideFluxBehaviour : MonoBehaviour
             }
 
             CurrentFlux -= fluxGiven;
+
+            CheckDeactivateChildFlux();
 
             if (CurrentFlux<=MaxFlux*0.3f) //If current flux is lower than 30% of max flux
             {
@@ -163,6 +195,7 @@ public class GuideFluxBehaviour : MonoBehaviour
         particleFlux.startColor = initPSFluxStartColor;
 
         if (tempFlux > 0) tempFlux = 0;
+        RechargeChildFlux();
     }
     #endregion
 }

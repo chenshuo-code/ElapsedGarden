@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public PlayerController PlayerController;
     [HideInInspector] public GuideFluxBehaviour GuideFlux;
     [HideInInspector] public FirstTreeBehaviour FirstTreeBehaviour;
-    [HideInInspector] public Obstacle_Door ObstacleDoor;
 
     [HideInInspector] public  List<PlantBehaviour> ListPlantsActive; //list of active plants from the last check point
     [HideInInspector] public List<CheckPoint> ListCheckPoints; //list of active check point
@@ -36,7 +35,6 @@ public class GameManager : MonoBehaviour
         PlayerController.Init();
         GuideFlux = FindObjectOfType<GuideFluxBehaviour>();
         GuideFlux.Init();
-        ObstacleDoor = FindObjectOfType<Obstacle_Door>();
 
         ListPlantsActive = new List<PlantBehaviour>();
         ListCheckPoints = new List<CheckPoint>();

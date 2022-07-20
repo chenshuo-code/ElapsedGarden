@@ -44,7 +44,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 1.5, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &275374635772988855
 MonoBehaviour:
@@ -67,8 +67,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 275374636340091895}
-  - component: {fileID: 275374636340091880}
   - component: {fileID: 275374636340091881}
+  - component: {fileID: 3357901948052696068}
   m_Layer: 0
   m_Name: LotusMesh
   m_TagString: Untagged
@@ -85,13 +85,26 @@ Transform:
   m_GameObject: {fileID: 275374636340091894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3171045318792182301}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!137 &275374636340091880
+--- !u!65 &275374636340091881
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275374636340091894}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.024104523, y: 0.0011999655, z: 0.023258617}
+  m_Center: {x: -0.0020961761, y: 0.005623954, z: 0.0012223346}
+--- !u!137 &3357901948052696068
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,7 +124,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c8fab77635469994586774c6735f7ba4, type: 2}
+  - {fileID: -3977856927420015776, guid: b8115a5ab27766e46a5859b98242e299, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -136,28 +149,15 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 3651041836676263783, guid: 8ac7770b8fee1274cb5ebbf9808523cd, type: 3}
+  m_Mesh: {fileID: 4026074618247921541, guid: b8115a5ab27766e46a5859b98242e299, type: 3}
   m_Bones: []
   m_BlendShapeWeights:
   - 0
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.0005746491, y: 0.004431969, z: 0.000006868271}
-    m_Extent: {x: 0.0073941313, y: 0.004817817, z: 0.007062801}
+    m_Center: {x: -0.0029496555, y: 0.0035712817, z: 0.0010867412}
+    m_Extent: {x: 0.0075983354, y: 0.0035712817, z: 0.0073604933}
   m_DirtyAABB: 0
---- !u!65 &275374636340091881
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 275374636340091894}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.018732542, y: 0.00065755367, z: 0.01935122}
-  m_Center: {x: 0.0005898023, y: 0.00016113042, z: -0.00041253926}
 --- !u!1 &2831075617409441959
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,5 +217,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.018732544, y: 0.021061586, z: 0.01935122}
-  m_Center: {x: 0, y: 0.000023936032, z: 0}
+  m_Size: {x: 0.024163855, y: 0.021061586, z: 0.023418078}
+  m_Center: {x: -0.0020008744, y: 0.000023936032, z: 0.0012159717}

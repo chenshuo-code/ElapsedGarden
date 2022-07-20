@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Torch : MonoBehaviour
 {
+    public Obstacle_Door Door;
+
     private Transform fire;
 
     private bool isActive=false;
@@ -18,7 +20,7 @@ public class Torch : MonoBehaviour
         {
             isActive = true;
             fire.gameObject.SetActive(true);
-            GameManager.Instance.ObstacleDoor.TorchResolve();
+            if (Door!=null) Door.TorchResolve();
             SoundManager.Instance.PlayOneshotTrack(SoundManager.Instance.TorchActiveSoundPath,transform.position);
         }
     }

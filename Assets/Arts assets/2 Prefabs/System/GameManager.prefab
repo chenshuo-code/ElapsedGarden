@@ -65,6 +65,13 @@ MonoBehaviour:
       Data3: 141433019
       Data4: 786552655
     Path: event:/Interaction_joueur/Transmission_flux_charge 3
+  FallInWaterSoundPath:
+    Guid:
+      Data1: -522502902
+      Data2: 1135380605
+      Data3: 1230453908
+      Data4: 1058595847
+    Path: event:/Interaction_joueur/Tomber_eau
   PiExitSoundPath:
     Guid:
       Data1: -646871100
@@ -72,6 +79,13 @@ MonoBehaviour:
       Data3: 143040431
       Data4: 1629572480
     Path: event:/Point_interet/Niveau1/pi_Porte
+  PiDoorOpenSoundPath:
+    Guid:
+      Data1: 1005725877
+      Data2: 1164553848
+      Data3: 596732576
+      Data4: 2135316154
+    Path: event:/Point_interet/Niveau1/pi_Porte_valider
   PlantActiveSoundPath:
     Guid:
       Data1: -1513962010
@@ -86,6 +100,41 @@ MonoBehaviour:
       Data3: 584706221
       Data4: -2062098109
     Path: event:/Ingredient_basic/Fleur_croissance
+  PlantChaineActiveSoundPath:
+    Guid:
+      Data1: -873863530
+      Data2: 1333099933
+      Data3: -1596530560
+      Data4: 1589468727
+    Path: event:/Ingredient_important/Niveau1/Plante_chaine
+  BambooActiveSoundPath:
+    Guid:
+      Data1: 1234480559
+      Data2: 1140963354
+      Data3: -1041813326
+      Data4: -47355580
+    Path: event:/Ingredient_important/Niveau1/Bambou
+  LotusActiveSoundPath:
+    Guid:
+      Data1: 641241801
+      Data2: 1194700948
+      Data3: 1381003447
+      Data4: -1154790976
+    Path: event:/Ingredient_important/Niveau1/Nenuphare
+  TorchActiveSoundPath:
+    Guid:
+      Data1: -1819757763
+      Data2: 1076128743
+      Data3: -1478818654
+      Data4: 284696868
+    Path: event:/Ingredient_important/Niveau1/Torche
+  SandSoundPath:
+    Guid:
+      Data1: -633079130
+      Data2: 1291125879
+      Data3: 1462845321
+      Data4: 1728553783
+    Path: event:/Ingredient_important/Niveau1/Sable
   FluxStateChangeSoundPath:
     Guid:
       Data1: 245618480
@@ -128,6 +177,13 @@ MonoBehaviour:
       Data3: -150466670
       Data4: -1935413123
     Path: event:/Checkpoint/Nouveau_cycle_annuler
+  BackGroundMusicSoundPath:
+    Guid:
+      Data1: -541106215
+      Data2: 1089140269
+      Data3: 557232270
+      Data4: 617047419
+    Path: event:/Musique_ambiance/Melodie_niveau1
 --- !u!1 &8035165389814241313
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,6 +237,7 @@ MonoBehaviour:
   PlayerController: {fileID: 0}
   GuideFlux: {fileID: 0}
   FirstTreeBehaviour: {fileID: 0}
+  ObstacleDoor: {fileID: 0}
   ListPlantsActive: []
   ListCheckPoints: []
 --- !u!1 &8035165391503602230

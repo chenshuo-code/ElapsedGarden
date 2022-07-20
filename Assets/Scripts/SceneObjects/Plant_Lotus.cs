@@ -60,33 +60,33 @@ public class Plant_Lotus : MonoBehaviour
     {
         if (other.CompareTag("Fish")&&canFishActiveLotus)
         {
-            ShowLotus();
+            if(!isLotusShow)ShowLotus();
         }
         if (other.CompareTag("Player")&& isLotusShow) //Can activate plate only when lotus is activated and showed
         {
             ActivePlate();
         }
     }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Fish")&&canFishActiveLotus)
-        {
-            HideLotus();
-        }
-    }
+
     private void ShowLotus()
     {
         print("然后在鱼经过时显现");
         //triggerLotus.gameObject.SetActive(true);
         lotusMesh.gameObject.SetActive(true);
         isLotusShow = true;
+        Invoke("HideLotus", 3f);
     }
+
     private void HideLotus()
     {
-        print("鱼走了就隐藏");
-        //triggerLotus.gameObject.SetActive(false);
-        lotusMesh.gameObject.SetActive(false);
-        isLotusShow = false;
+        if (!canActivePlate)
+        {
+            print("鱼走了就隐藏");
+            //triggerLotus.gameObject.SetActive(false);
+            lotusMesh.gameObject.SetActive(false);
+            isLotusShow = false;
+        }
+
     }
     private void ActivePlate()
     {

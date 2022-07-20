@@ -5154,6 +5154,7 @@ MonoBehaviour:
   MaxFlux: 200
   LifeDeductByTime: 0
   ActiveDeductByTime: 0
+  ChildFluxController: {fileID: 0}
   ResolveSpeed: 0.5
   IsPlayerAlive: 0
   CurrentFlux: 0
@@ -5441,6 +5442,7 @@ GameObject:
   - component: {fileID: 6327532724055165928}
   - component: {fileID: 6327532724055165934}
   - component: {fileID: 6327532724055165929}
+  - component: {fileID: 2702590648926587595}
   m_Layer: 0
   m_Name: PSFluxHeart
   m_TagString: Untagged
@@ -10227,3 +10229,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &2702590648926587595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6327532724055165931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}

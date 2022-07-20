@@ -19,6 +19,8 @@ public class CheckPoint : MonoBehaviour
 
     public float TreeFlux = 600;
 
+    public Obstacle_Door Door;
+
     private bool isActive;
 
     private GuideFluxBehaviour guideFlux;
@@ -49,6 +51,7 @@ public class CheckPoint : MonoBehaviour
             if (!isActive)
             {
                 ActiveCheckPoint();
+                if(Door!=null) Door.CheckPointResolve(); //Record To Open Door
             }
             else
             {
@@ -78,8 +81,6 @@ public class CheckPoint : MonoBehaviour
 
         guideFlux.IncreaseMaxFlux(RewardFlux); //Add max flux
         GameManager.Instance.ActivateCheckPoint(this);
-
-        GameManager.Instance.ObstacleDoor.CheckPointResolve(); //Record To Open Door
 
         gameObject.layer = LayerMask.NameToLayer("Color");
         inactiveSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);

@@ -55,7 +55,6 @@ public class GameManager : MonoBehaviour
         }
         print(BGMParameter);
         SoundManager.BackGroundMusicSound.setParameterByName("Parameter 1", BGMParameter);
-        SoundManager.BackGroundMusicSound.setParameterByName("Phase",2);
     }
 
     /// <summary>
@@ -81,5 +80,12 @@ public class GameManager : MonoBehaviour
     {
         ListCheckPoints.Add(checkPoint);
         CheckGame();
+
+        int _ParaPhase = (ListCheckPoints.Count - 1);
+        if (_ParaPhase>=3)
+        {
+            _ParaPhase = 3;
+        }
+        SoundManager.BackGroundMusicSound.setParameterByName("Phase", _ParaPhase);
     }
 }

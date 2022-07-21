@@ -35,6 +35,8 @@ public class Obstacle_Bamboo : ObstacleBehaviour
         IsActive = true;
         boxCollider.enabled = true;
         CanChangeState = true;
+
+        SoundManager.Instance.PlayOneshotTrack(SoundManager.Instance.BambooActiveSoundPath,transform.position);
         
     }
     public override void DeactivateObstacle()

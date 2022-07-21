@@ -10,6 +10,7 @@ public class LakeWater : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerController _player = other.GetComponent<PlayerController>();
+            SoundManager.Instance.PlayOneshotTrack(SoundManager.Instance.FallInWaterSoundPath, _player.transform.position);
             _player.TeleportToPosition(StartPoint.position);
         }
     }

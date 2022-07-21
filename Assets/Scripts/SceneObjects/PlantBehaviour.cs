@@ -59,10 +59,15 @@ public class PlantBehaviour : MonoBehaviour
         material.color = Color.grey;
 
         skinnedMesh = transform.GetComponent<SkinnedMeshRenderer>();
+        particleRing = transform.Find("PSRing").GetComponent<ParticleSystem>();
+        initPSRingStartSize = particleRing.startSize;
         if (ActiveRing)
         {
-            particleRing = transform.Find("PSRing").GetComponent<ParticleSystem>();
-            initPSRingStartSize = particleRing.startSize;
+            particleRing.gameObject.SetActive(true);
+        }
+        else
+        {
+            particleRing.gameObject.SetActive(false);
         }
         lifeDisplayRate = 100 / MaxLifeFlux;
     }

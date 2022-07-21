@@ -6,6 +6,14 @@ public class ObstacleBehaviour : MonoBehaviour
 {
     public bool IsActive=true;
 
+    private void Start()
+    {
+        if (IsActive)
+        {
+            this.gameObject.SetActive(true);
+        }
+        else this.gameObject.SetActive(false);
+    }
     public virtual void ActivateObstacle()
     {
         IsActive = true;

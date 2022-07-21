@@ -16,8 +16,17 @@ public class Obstacle_Bamboo : ObstacleBehaviour
         skinnedMesh = transform.GetComponent<SkinnedMeshRenderer>();
         boxCollider = transform.GetComponent<BoxCollider>();
 
-        if (IsActive) skinnedMesh.SetBlendShapeWeight(0, 100);
-        else skinnedMesh.SetBlendShapeWeight(0, 0);
+        if (IsActive)
+        {
+            skinnedMesh.SetBlendShapeWeight(0, 100);
+            boxCollider.enabled = true;
+        }
+        else
+        {
+            skinnedMesh.SetBlendShapeWeight(0, 0);
+            boxCollider.enabled = false;
+        }
+
 
     }
     public override void ActivateObstacle()

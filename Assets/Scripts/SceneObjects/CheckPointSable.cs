@@ -21,6 +21,7 @@ public class CheckPointSable : MonoBehaviour
         {
             fluxGroup.gameObject.SetActive(true);
             isCheckPointActive = true;
+            print("Sand Check Point Active");
         }
     }
 
@@ -36,5 +37,6 @@ public class CheckPointSable : MonoBehaviour
     {
         isCheckPointActive = false;
         fluxGroup.gameObject.SetActive(false);
+        print("Sand Check Point close");
     }
 }

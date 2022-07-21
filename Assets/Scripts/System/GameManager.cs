@@ -73,7 +73,6 @@ public class GameManager : MonoBehaviour
     {
         //UIManager.ShowReloadGameUI();
         GuideFlux.OnRecharge();
-        GuideFlux.IsPlayerAlive = true;
     }
     /// <summary>
     /// Call on player active the check point

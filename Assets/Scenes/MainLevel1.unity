@@ -31418,7 +31418,8 @@ MonoBehaviour:
   PlantsActivateList:
   - {fileID: 676654883}
   PlantsDeactivateList: []
-  ObstaclesDeactivateList: []
+  ObstaclesDeactivateList:
+  - {fileID: 2065240551}
   ObstaclesActivateList: []
 --- !u!4 &875235854 stripped
 Transform:
@@ -88580,6 +88581,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2065240549}
   - component: {fileID: 2065240550}
+  - component: {fileID: 2065240551}
   m_Layer: 0
   m_Name: BlockPassage
   m_TagString: Untagged
@@ -88615,6 +88617,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1552628, y: 1, z: 1}
   m_Center: {x: -0.07763206, y: 0, z: 0}
+--- !u!114 &2065240551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065240548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5d86a2bcb1e8f42a0b5560a2d8dbb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsActive: 1
 --- !u!1 &2070170681
 GameObject:
   m_ObjectHideFlags: 0

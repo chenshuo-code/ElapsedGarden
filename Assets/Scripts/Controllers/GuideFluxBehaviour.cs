@@ -191,6 +191,7 @@ public class GuideFluxBehaviour : MonoBehaviour
     /// <returns>Flux to recharge</returns>
     public void OnRecharge()
     {
+        IsPlayerAlive = true;
         CurrentFlux = MaxFlux;
         particleFlux.startColor = initPSFluxStartColor;
 
@@ -202,6 +203,7 @@ public class GuideFluxBehaviour : MonoBehaviour
     {
         if (tempFlux > 0)
         {
+            IsPlayerAlive = true;
             CurrentFlux = tempFlux;
             tempFlux = 0;
             particleFlux.startColor = initPSFluxStartColor;

@@ -19,6 +19,10 @@ public class Obstacle_EatFlux : ObstacleBehaviour
         if (canActivate && IsActive)
         {
             guideFlux.ReduceFlux(EatSpeed,true);
+            if (!guideFlux.IsPlayerAlive)
+            {
+                CheckPointSable.Instance.ActiveCheckPoint();
+            }
         }
     }
     private void OnTriggerEnter(Collider other)

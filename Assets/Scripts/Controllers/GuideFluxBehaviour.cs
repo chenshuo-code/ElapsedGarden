@@ -80,7 +80,7 @@ public class GuideFluxBehaviour : MonoBehaviour
 
     private void RechargeChildFlux()
     {
-        for (int i = 0; i < MaxFlux / 20; i++)
+        for (int i = 0; i < CurrentFlux / 20; i++)
         {
             ChildFluxArry[i].TeleportChildFlux(transform.position);
             ChildFluxArry[i].gameObject.SetActive(true);
@@ -197,5 +197,17 @@ public class GuideFluxBehaviour : MonoBehaviour
         if (tempFlux > 0) tempFlux = 0;
         RechargeChildFlux();
     }
+
+    public void RechargeTempFlux()
+    {
+        if (tempFlux > 0)
+        {
+            CurrentFlux = tempFlux;
+            tempFlux = 0;
+            particleFlux.startColor = initPSFluxStartColor;
+            RechargeChildFlux();
+        }
+    }
+
     #endregion
 }

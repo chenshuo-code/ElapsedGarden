@@ -31,7 +31,9 @@ public class PlayerController : MonoBehaviour
     /// Distance between two color zones
     /// </summary>
     public float ColorZoneRate;
-    
+
+    public bool CanSpawnColorZone;
+
 
     //private parameters
 
@@ -40,6 +42,7 @@ public class PlayerController : MonoBehaviour
     private Ray rayForward;
     private RaycastHit raycastHitForward;
 
+    private Transform defaultColorZoneManager;
     private Transform colorZoneManager;
 
     private new Rigidbody rigidbody;
@@ -48,6 +51,8 @@ public class PlayerController : MonoBehaviour
     private bool canMove;
     private bool isBlocked;
     private bool isMoving;
+
+    private bool isSignColorManager = false;
 
     private Vector3 lastColorZonePos = Vector3.zero;
 
@@ -62,7 +67,7 @@ public class PlayerController : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         guideFlux = transform.GetComponent<GuideFluxBehaviour>();
         gameCamera = transform.Find("Main Camera").GetComponent<Camera>();
-        colorZoneManager = GameObject.Find("ColorZoneManager").transform;
+        defaultColorZoneManager = GameObject.Find("DefaultColorZoneManager").transform;
 
     }
 
@@ -129,8 +134,11 @@ public class PlayerController : MonoBehaviour
 
                     if (Vector3.Distance(lastColorZonePos, transform.position) >= ColorZoneRate)
                     {
-                        SpawnColorZone();
-                        lastColorZonePos = SpawnColorZone();
+                        if (CanSpawnColorZone)
+                        {
+                            SpawnColorZone();
+                            lastColorZonePos = SpawnColorZone();
+                        }
                     }
                     //Reduce Flux on road
                     guideFlux.ReduceFlux(FluxConsume,true);
@@ -159,7 +167,18 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 SpawnColorZone()
     {
-        GameObject _gm = GameObject.Instantiate(ColorZonePrefab, colorZoneManager, true);
+
+        GameObject _gm;
+
+        if (isSignColorManager)
+        {
+            _gm = GameObject.Instantiate(ColorZonePrefab, colorZoneManager, true);
+        }
+        else
+        {
+            _gm = GameObject.Instantiate(ColorZonePrefab, defaultColorZoneManager, true);
+        }
+
         _gm.GetComponent<ColorZoneBehaviour>().ActiveColorZone(guideFlux.CurrentFlux/guideFlux.MaxFlux);
         _gm.transform.position = this.transform.position+Vector3.down;
         return _gm.transform.position;
@@ -177,6 +196,15 @@ public class PlayerController : MonoBehaviour
         rigidbody.velocity = Vector3.zero;
     }
 
+    public void SignColorZoneManager(Transform  transform)
+    {
+        isSignColorManager = true;
+        this.colorZoneManager = transform;
+    }
+    public void DeSignColorZoneManager()
+    {
+        isSignColorManager = false;
+    }
 
     #endregion
 }

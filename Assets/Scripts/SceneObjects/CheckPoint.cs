@@ -23,6 +23,8 @@ public class CheckPoint : MonoBehaviour
 
     public float ColorZoneSize=7;
 
+    public ColorZoneManager ColorZoneManager;
+
     private bool isActive;
 
     private GuideFluxBehaviour guideFlux;
@@ -105,6 +107,7 @@ public class CheckPoint : MonoBehaviour
             }
         
         }
+        if (ColorZoneManager!=null) ColorZoneManager.ActiveColorZone();
     }
     
 }

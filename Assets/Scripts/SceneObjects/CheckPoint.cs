@@ -21,10 +21,14 @@ public class CheckPoint : MonoBehaviour
 
     public Obstacle_Door Door;
 
+    public float ColorZoneSize=7;
+
     private bool isActive;
 
     private GuideFluxBehaviour guideFlux;
     private PlayerController playerController;
+
+    private ColorZoneBehaviour[] colorZone;
 
     private EventInstance inactiveSound;
 
@@ -34,7 +38,12 @@ public class CheckPoint : MonoBehaviour
 
         guideFlux = GameManager.Instance.GuideFlux;
         playerController = GameManager.Instance.PlayerController;
-        
+
+        colorZone = transform.GetComponentsInChildren<ColorZoneBehaviour>();
+        foreach (var item in colorZone)
+        {
+            item.gameObject.SetActive(false);
+        }
 
         inactiveSound = RuntimeManager.CreateInstance(SoundManager.Instance.CheckPointInactiveStateSoundPath);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(inactiveSound, this.transform);
@@ -87,7 +96,15 @@ public class CheckPoint : MonoBehaviour
 
         FMODUnity.RuntimeManager.PlayOneShot(SoundManager.Instance.CheckPointActiveStateSoundPath, this.transform.position);
 
-       
+        if (!DefaultActive) 
+        {
+            foreach (var item in colorZone)
+            {
+                item.gameObject.SetActive(true);
+                item.ActiveColorZone(ColorZoneSize);
+            }
+        
+        }
     }
     
 }

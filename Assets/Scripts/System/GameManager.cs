@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public  List<PlantBehaviour> ListPlantsActive; //list of active plants from the last check point
     [HideInInspector] public List<CheckPoint> ListCheckPoints; //list of active check point
+    //FMODUnity.StudioGlobalParameterTrigger trigger;
 
     private int BGMParameterCount = 0;
     private int BGMParameter = 0;
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadSceneAsync("MainLevel1", LoadSceneMode.Additive);
 
         SoundManager.BackGroundMusicSound.start();
+
     }
     public void AddPlantActive(PlantBehaviour plant)
     {
@@ -52,6 +54,10 @@ public class GameManager : MonoBehaviour
         {
             BGMParameter++;
             BGMParameterCount = 0;
+            if (BGMParameter>=8)
+            {
+                BGMParameter = 8;
+            }
         }
         print(BGMParameter);
         SoundManager.BackGroundMusicSound.setParameterByName("Parameter 1", BGMParameter);
@@ -86,6 +92,7 @@ public class GameManager : MonoBehaviour
         {
             _ParaPhase = 3;
         }
-        SoundManager.BackGroundMusicSound.setParameterByName("Phase", _ParaPhase);
+
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByNameWithLabel("MusicState", _ParaPhase.ToString());
     }
 }

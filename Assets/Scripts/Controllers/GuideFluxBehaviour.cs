@@ -26,6 +26,8 @@ public class GuideFluxBehaviour : MonoBehaviour
 
     private float tempFlux; // Temporary flux lost 
 
+    private bool isNeedCharge=false;
+
     private TimeManager timeManager;
 
     //FeedBack visual
@@ -143,7 +145,12 @@ public class GuideFluxBehaviour : MonoBehaviour
 
             if (CurrentFlux<=MaxFlux*0.3f) //If current flux is lower than 30% of max flux
             {
-                SoundManager.Instance.FluxStateChangeSound.start(); ;
+                if (isNeedCharge)
+                {
+                    SoundManager.Instance.FluxStateChangeSound.start();
+                    isNeedCharge = true;
+                }
+
                 particleFlux.startColor = Color.red;
             }
             
@@ -197,6 +204,8 @@ public class GuideFluxBehaviour : MonoBehaviour
 
         if (tempFlux > 0) tempFlux = 0;
         RechargeChildFlux();
+
+        isNeedCharge = false;
     }
 
     public void RechargeTempFlux()
@@ -208,6 +217,7 @@ public class GuideFluxBehaviour : MonoBehaviour
             tempFlux = 0;
             particleFlux.startColor = initPSFluxStartColor;
             RechargeChildFlux();
+            isNeedCharge = false;
         }
     }
 
